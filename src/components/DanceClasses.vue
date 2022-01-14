@@ -3,20 +3,26 @@
     <h1>All Classes</h1>
     <button @click="showJoke">Show Joke</button>
     <button @click="classList">Classes</button>
+
+    <ClassCard />
     <div>
-      <p>{{ library }}</p>
+      <p>{{ classes }}</p>
+    </div>
+    <div>
+      <p>{{ joke }}</p>
     </div>
   </div>
 </template>
 
 <script>
 import axios from "axios";
+import ClassCard from "@/components/ClassCard";
 
 export default {
   name: "DanceClasses",
   data: function () {
     return {
-      library: [],
+      classes: "",
       joke: "",
     };
   },
@@ -25,7 +31,7 @@ export default {
       const response = await axios.get(
         "https://r5j2p.sse.codesandbox.io/classes"
       );
-      this.library = response.data;
+      this.classes = response.data;
     },
   },
   methods: {
@@ -38,8 +44,13 @@ export default {
     },
     async classList() {
       const response = await axios.get("http://localhost:3000/classes");
-      this.library = response.data;
+      this.classes = response.data;
       console.log(response.data);
+    },
+    async linkToImg() {
+      const response = await axios.get("http://localhost:3000/classes");
+      let image = response.data.link;
+      this.linkToImg = image;
     },
   },
 };

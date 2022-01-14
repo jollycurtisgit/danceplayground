@@ -4,46 +4,55 @@
       <!--navbar-->
       <ul class="nav nav-tabs">
         <li class="nav-item">
-          <a v-on:click="gotoDanceClasses" class="nav-link active" aria-current="page">Dance Classes</a>
+          <a
+            v-on:click="gotoDanceClasses"
+            class="nav-link active"
+            aria-current="page"
+            >Dance Classes</a
+          >
         </li>
         <li class="nav-item">
-          <a v-on:click="gotoAddClasses" class="nav-link" >Add a New Class</a>
-        </li>  
+          <a v-on:click="gotoAddClasses" class="nav-link">Add a New Class</a>
+        </li>
       </ul>
       <!--end of navbar-->
       <!--pages-->
       <div>
-        <Dance-classes v-if="page=='DanceClasses'"/>
-        <AddClasses v-if="page=='AddClasses'"/>
-      </div>  
-       <!--endofPages-->
+        <Dance-classes v-if="page == 'DanceClasses'" />
+        <AddClasses v-if="page == 'AddClasses'" />
+      </div>
+      <!--endofPages-->
     </div>
   </div>
 </template>
 
 <script>
-import AddClasses from "@/components/AddClasses"
-import DanceClasses from "@/components/DanceClasses"
+import AddClasses from "@/components/AddClasses";
+import DanceClasses from "@/components/DanceClasses";
 
 export default {
-  name: 'App',
+  name: "App",
+  componentDidMount: function () {
+    console.log("App has just been rendered for the first time.");
+  },
   components: {
-    AddClasses, DanceClasses
+    AddClasses,
+    DanceClasses,
   },
-  data: function() {
+  data: function () {
     return {
-      'page': 'DanceClasses'
-    }
+      page: "DanceClasses",
+    };
   },
-  methods:{
-    'gotoDanceClasses': function() {
-      this.page = "DanceClasses"
+  methods: {
+    gotoDanceClasses: function () {
+      this.page = "DanceClasses";
     },
-    'gotoAddClasses': function() {
-      this.page = "AddClasses"
-    }
+    gotoAddClasses: function () {
+      this.page = "AddClasses";
+    },
   },
-}
+};
 </script>
 
 <style>
