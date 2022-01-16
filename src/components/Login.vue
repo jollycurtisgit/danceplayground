@@ -26,6 +26,11 @@
         <label class="form-check-label" for="exampleCheck1">Check me out</label>
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
+      <br />
+      <hr />
+      <button type="submit" class="btn btn-outline-primary">
+        Create New Account
+      </button>
     </form>
   </div>
 </template>
@@ -40,5 +45,13 @@ export default {
 <style scoped>
 #LoginForm {
   background-color: white;
+  border: 2px solid yellow;
+  border-radius: 5px;
+  width: 600px;
+  height: 460px;
+  padding: 50px 50px 80px 50px;
+  position: relative;
+  right: 30px;
+  left: 800px;
 }
 </style>
