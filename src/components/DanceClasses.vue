@@ -3,8 +3,6 @@
     <h1>All Classes</h1>
     <button @click="showJoke">Show Joke</button>
     <button @click="classList">Classes</button>
-
-    <ClassCard />
     <div>
       <p>{{ classes }}</p>
     </div>
@@ -16,7 +14,7 @@
 
 <script>
 import axios from "axios";
-import ClassCard from "@/components/ClassCard";
+//import ClassCard from "@/components/ClassCard";
 
 export default {
   name: "DanceClasses",

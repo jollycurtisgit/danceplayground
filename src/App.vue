@@ -1,27 +1,15 @@
 <template>
   <div id="app">
     <div class="container-fluid">
-      <!--navbar-->
-      <ul class="nav nav-tabs">
-        <li class="nav-item">
-          <a
-            v-on:click="gotoDanceClasses"
-            class="nav-link active"
-            aria-current="page"
-            >Dance Classes</a
-          >
-        </li>
-        <li class="nav-item">
-          <a v-on:click="gotoAddClasses" class="nav-link">Add a New Class</a>
-        </li>
-      </ul>
-      <!--end of navbar-->
+      <Nav />
       <!--pages-->
       <div>
         <Dance-classes v-if="page == 'DanceClasses'" />
         <AddClasses v-if="page == 'AddClasses'" />
+        <Login />
       </div>
       <!--endofPages-->
+      <SignUp />
     </div>
   </div>
 </template>
@@ -29,6 +17,9 @@
 <script>
 import AddClasses from "@/components/AddClasses";
 import DanceClasses from "@/components/DanceClasses";
+import Nav from "@/components/Nav";
+import SignUp from "@/components/SignUp";
+import Login from "@/components/Login";
 
 export default {
   name: "App",
@@ -38,6 +29,9 @@ export default {
   components: {
     AddClasses,
     DanceClasses,
+    Nav,
+    Login,
+    SignUp,
   },
   data: function () {
     return {
@@ -56,4 +50,7 @@ export default {
 </script>
 
 <style>
+body {
+  background-color: blueviolet;
+}
 </style>
