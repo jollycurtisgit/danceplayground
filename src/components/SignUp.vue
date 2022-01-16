@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="SignUpForm">
     <form class="row g-3">
       <div class="col-md-6">
         <label for="inputEmail4" class="form-label">Email</label>
@@ -60,4 +60,13 @@ export default {};
 </script>
 
 <style scoped>
+#SignUpForm {
+  background-color: white;
+  border: 2px solid yellow;
+  border-radius: 5px;
+  width: 600px;
+  height: 500px;
+  padding: 50px 50px 80px 50px;
+  position: relative;
+}
 </style>

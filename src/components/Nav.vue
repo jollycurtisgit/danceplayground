@@ -43,6 +43,7 @@
               </ul>
             </li>
           </ul>
+          <!--Search-->
           <form class="d-flex">
             <input
               class="form-control me-2"
@@ -54,6 +55,7 @@
               Search
             </button>
           </form>
+          <!--End of Search-->
         </div>
       </div>
     </nav>
