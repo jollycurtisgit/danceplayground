@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="forAdvertisement">
     <form id="LoginForm">
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Email address</label>
@@ -44,6 +44,17 @@ export default {
 
 <style scoped>
 /* for desktop */
+#forAdvertisement {
+  width: 1000px;
+  height: 800px;
+  margin-right: 0px;
+  margin-top: 0px;
+  background-position: 0px 30px;
+  background-repeat: no-repeat;
+  background-size: 900px 600px;
+  background-image: url("https://scontent.fcrk3-1.fna.fbcdn.net/v/t39.30808-6/272024971_3044864865752901_119031524630565305_n.jpg?_nc_cat=111&ccb=1-5&_nc_sid=0debeb&_nc_eui2=AeHrZurqUbaQo33UlGke2L3hZ6Ro36UdPjNnpGjfpR0-M1yLp2l0xJcO3sHuxrrEt7jXHFMNKOsgeoemFEThieKR&_nc_ohc=1Fp2H8JUw1UAX8hfEea&_nc_ht=scontent.fcrk3-1.fna&oh=00_AT8QoX-PjcZBAotv3il8LJ_7X8DtYQki-60eaXdLXyQJ0Q&oe=61EB134F");
+}
+
 #LoginForm {
   background-color: white;
   border: 2px solid yellow;
@@ -67,6 +78,9 @@ export default {
     margin-left: 60px;
     position: absolute;
   }
+  #forAdvertisement {
+    background: none;
+  }
 }
 
 /* for celpphone */
@@ -82,6 +96,9 @@ export default {
     margin-right: 20px;
     margin-top: 50px;
     position: absolute;
+  }
+  #forAdvertisement {
+    background: none;
   }
 }
 </style>

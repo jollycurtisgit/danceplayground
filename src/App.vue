@@ -137,11 +137,7 @@ export default {
 
 <style>
 body {
-  background-image: url("https://scontent.fcrk3-1.fna.fbcdn.net/v/t39.30808-6/272024971_3044864865752901_119031524630565305_n.jpg?_nc_cat=111&ccb=1-5&_nc_sid=0debeb&_nc_eui2=AeHrZurqUbaQo33UlGke2L3hZ6Ro36UdPjNnpGjfpR0-M1yLp2l0xJcO3sHuxrrEt7jXHFMNKOsgeoemFEThieKR&_nc_ohc=1Fp2H8JUw1UAX8hfEea&_nc_ht=scontent.fcrk3-1.fna&oh=00_AT8QoX-PjcZBAotv3il8LJ_7X8DtYQki-60eaXdLXyQJ0Q&oe=61EB134F");
-  background-repeat: no-repeat;
-  background-size: 900px 600px;
   background-color: blueviolet;
-  background-position: 0px 100px;
 }
 /* On screens that are 992px or less, set the background color to yellow */
 @media screen and (max-width: 992px) {
