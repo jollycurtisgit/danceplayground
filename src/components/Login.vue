@@ -102,6 +102,8 @@
 
 
 <script>
+import axios from "axios";
+
 export default {
   name: "Login",
   data: function () {
@@ -125,6 +127,14 @@ export default {
         password_confirm: this.password_confirm,
       };
       console.log(data);
+      axios
+        .post("http://localhost:3000/members", data)
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     },
   },
 };
