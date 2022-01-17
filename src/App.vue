@@ -3,7 +3,9 @@
     <!---Nav-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Dance Playground</a>
+        <a class="navbar-brand" v-on:click="gotoLogIn" href="#"
+          >Dance Playground</a
+        >
         <button
           class="navbar-toggler"
           type="button"
@@ -99,9 +101,7 @@
 import DanceClasses from "@/components/DanceClasses";
 import AddClasses from "@/components/AddClasses";
 import SignUp from "@/components/SignUp";
-
 import Login from "@/components/Login";
-
 export default {
   name: "App",
   componentDidMount: function () {
@@ -109,7 +109,7 @@ export default {
   },
   data: function () {
     return {
-      'page': 'LogIn',
+      page: "LogIn",
     };
   },
   components: {
@@ -117,11 +117,6 @@ export default {
     DanceClasses,
     AddClasses,
     SignUp,
-  },
-  data: function () {
-    return {
-      page: "Login",
-    };
   },
   methods: {
     gotoDanceClasses: function () {
@@ -132,6 +127,9 @@ export default {
     },
     gotoSignUp: function () {
       this.page = "SignUp";
+    },
+    gotoLogIn: function () {
+      this.page = "LogIn";
     },
   },
 };
@@ -145,7 +143,6 @@ body {
   background-color: blueviolet;
   background-position: 0px 100px;
 }
-
 /* On screens that are 992px or less, set the background color to yellow */
 @media screen and (max-width: 992px) {
   body {
@@ -155,7 +152,6 @@ body {
     background-size: cover;
   }
 }
-
 /* On screens that are 600px or less, set the background color to olive */
 @media screen and (max-width: 600px) {
   body {
@@ -165,7 +161,6 @@ body {
     background-size: 600px 580px;
   }
 }
-
 .container-sm {
   display: flex;
 }
