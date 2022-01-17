@@ -60,6 +60,7 @@ export default {};
 </script>
 
 <style scoped>
+/* Set the background color of body to tan */
 #SignUpForm {
   background-color: white;
   border: 2px solid yellow;
@@ -68,5 +69,34 @@ export default {};
   height: 500px;
   padding: 50px 50px 80px 50px;
   position: relative;
+  flex: 1;
+}
+
+/* On screens that are 992px or less, set the background color to blue */
+@media screen and (max-width: 992px) {
+  #SignUpForm {
+    background-color: white;
+    border: 2px solid red;
+    border-radius: 5px;
+    width: 600px;
+    height: 500px;
+    padding: 50px 50px 80px 50px;
+    position: relative;
+    flex: 1;
+  }
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
+  #SignUpForm {
+    background-color: white;
+    border: 2px solid green;
+    border-radius: 5px;
+    width: 600px;
+    height: 500px;
+    padding: 50px 50px 80px 50px;
+    position: relative;
+    flex: 1;
+  }
 }
 </style>

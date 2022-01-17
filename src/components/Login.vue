@@ -1,6 +1,6 @@
 <template>
-  <div id="LoginForm">
-    <form>
+  <div class="position-absolute top-50 end-0 translate-middle-y">
+    <form id="LoginForm">
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Email address</label>
         <input
@@ -50,8 +50,7 @@ export default {
   width: 600px;
   height: 460px;
   padding: 50px 50px 80px 50px;
-  position: relative;
-  right: 30px;
-  left: 800px;
+  margin-right: 40px;
+  margin-top: 50px;
 }
 </style>
