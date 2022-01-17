@@ -109,7 +109,7 @@ export default {
   },
   data: function () {
     return {
-      page: "LogIn",
+      'page': 'LogIn',
     };
   },
   components: {
