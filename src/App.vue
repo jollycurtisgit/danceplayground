@@ -54,10 +54,10 @@ body {
 /* On screens that are 992px or less, set the background color to yellow */
 @media screen and (max-width: 992px) {
   body {
-    background-image: url("https://scontent.fcrk3-2.fna.fbcdn.net/v/t39.30808-6/272051571_3044126872493367_6797284298872454994_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=0debeb&_nc_eui2=AeGth-4ajJfzjVhj2-NhUKGccgbPHUEbGbZyBs8dQRsZtuvZCU12Qk2Cc6-gFsLjB37GiYYAeIHPMi5-mLg8lkMY&_nc_ohc=hU1CxPs6yJoAX8SPlZ5&_nc_ht=scontent.fcrk3-2.fna&oh=00_AT8iljL31qPY7m7l4mMRI0U5QXwi7dr-asfB6yE4Mwxa3w&oe=61E8BDC4");
+    background-image: url("https://scontent.fmnl3-4.fna.fbcdn.net/v/t39.30808-6/272027619_3044447049128016_6083752026578421933_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=0debeb&_nc_eui2=AeF5kZShzqlpUmrr7I6OckrMyQkOrs290ULJCQ6uzb3RQjAWO7KQsaf2TYmhKIqsyOGyBP1XbLf-bI5-GC1F7_M8&_nc_ohc=HwKDwfqQBnEAX_4XGh-&_nc_ht=scontent.fmnl3-4.fna&oh=00_AT-ouT2FW1jhlzsB1TVufCRiSqNxASzAlVaHeDRtiNulaQ&oe=61E93055");
     background-repeat: no-repeat;
     background-color: yellow;
-    background-size: 500px 300px;
+    background-size: cover;
   }
 }
 

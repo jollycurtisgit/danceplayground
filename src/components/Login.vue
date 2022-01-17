@@ -1,5 +1,5 @@
 <template>
-  <div class="position-absolute top-50 end-0 translate-middle-y">
+  <div>
     <form id="LoginForm">
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Email address</label>
@@ -50,7 +50,35 @@ export default {
   width: 600px;
   height: 460px;
   padding: 50px 50px 80px 50px;
-  margin-right: 40px;
+  margin-left: 750px;
   margin-top: 50px;
+}
+
+/* On screens that are 992px or less, set the background color to yellow */
+@media screen and (max-width: 992px) {
+  #LoginForm {
+    background-color: white;
+    border: 2px solid yellow;
+    border-radius: 5px;
+    width: 600px;
+    height: 460px;
+    padding: 50px 50px 80px 50px;
+    margin-left: 60px;
+    position: absolute;
+  }
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
+  #LoginForm {
+    background-color: white;
+    border: 2px solid green;
+    border-radius: 5px;
+    width: 600px;
+    height: 460px;
+    padding: 50px 50px 80px 50px;
+    margin-right: 50px;
+    margin-top: 50px;
+  }
 }
 </style>
