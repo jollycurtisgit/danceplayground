@@ -1,4 +1,4 @@
-<template>
+ <template>
   <div>
     <h1>All Classes</h1>
     <button @click="showJoke">Show Joke</button>

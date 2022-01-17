@@ -1,20 +1,105 @@
 <template>
   <div id="app">
-    <Nav />
-    <div class="container-sm">
-      <Login />
-      <!--pages-->
-      <!--Dance-classes v-if="page == 'DanceClasses'" />
-        <!--AddClasses v-if="page == 'AddClasses'" />
-        <Login />
+    <!---Nav-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Dance Playground</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                v-on:click="gotoDanceClasses"
+                aria-current="page"
+                href="#"
+                >Classes</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Members</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" v-on:click="gotoAddClasses" href="#"
+                >Add Classes</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" v-on:click="gotoSignUp" href="#"
+                >Not a member?</a
+              >
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Dropdown
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">About Us</a></li>
+                <li><a class="dropdown-item" href="#">Gallery</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="#">Contact Us</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link disabled"
+                href="#"
+                tabindex="-1"
+                aria-disabled="true"
+                >Disabled</a
+              >
+            </li>
+          </ul>
+          <form class="d-flex">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
       </div>
-      <!--endofPages-->
+    </nav>
+    <!--end of Nav-->
+    <div class="container-sm">
+      <!--pages-->
+      <Dance-classes v-if="page == 'DanceClasses'" />
+      <AddClasses v-if="page == 'AddClasses'" />
+      <SignUp v-if="page == 'SignUp'" />
+      <Login v-if="page == 'LogIn'" />
     </div>
+    <!--endofPages-->
   </div>
 </template>
 
 <script>
-import Nav from "@/components/Nav";
+import DanceClasses from "@/components/DanceClasses";
+import AddClasses from "@/components/AddClasses";
+import SignUp from "@/components/SignUp";
+
 import Login from "@/components/Login";
 
 export default {
@@ -22,9 +107,16 @@ export default {
   componentDidMount: function () {
     console.log("App has just been rendered for the first time.");
   },
+  data: function () {
+    return {
+      page: "LogIn",
+    };
+  },
   components: {
-    Nav,
     Login,
+    DanceClasses,
+    AddClasses,
+    SignUp,
   },
   data: function () {
     return {
@@ -37,6 +129,9 @@ export default {
     },
     gotoAddClasses: function () {
       this.page = "AddClasses";
+    },
+    gotoSignUp: function () {
+      this.page = "SignUp";
     },
   },
 };
