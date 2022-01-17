@@ -1,7 +1,7 @@
 <template>
   <div id="forAdvertisement">
     <!---firstform--->
-    <form id="LoginForm">
+    <form id="LoginForm" @submit.prevent="handleSubmit">
       <div v-if="display === 'LogInForm'">
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label"
@@ -47,21 +47,41 @@
       <div v-if="display === 'SignUpForm'">
         <div class="mb-3">
           <label for="validationCustom01" class="form-label">User Name</label>
-          <input type="text" class="form-control" id="validationCustom01" />
+          <input
+            type="text"
+            class="form-control"
+            v-model="userName"
+            id="validationCustom01"
+          />
           <div class="valid-feedback">Looks good!</div>
         </div>
         <div class="mb-3">
           <label for="inputEmail4" class="form-label">Email</label>
-          <input type="email" class="form-control" id="inputEmail4" />
+          <input
+            type="email"
+            class="form-control"
+            v-model="email"
+            id="inputEmail4"
+          />
           <div class="valid-feedback">Looks good!</div>
         </div>
         <div class="col-md-6">
           <label for="inputPassword4" class="form-label">Password</label>
-          <input type="password" class="form-control" id="inputPassword4" />
+          <input
+            type="password"
+            class="form-control"
+            v-model="password"
+            id="inputPassword4"
+          />
         </div>
         <div class="col-md-6">
           <label for="inputPassword4" class="form-label">Repeat Password</label>
-          <input type="password" class="form-control" id="inputPassword4" />
+          <input
+            type="password"
+            class="form-control"
+            v-model="password_confirm"
+            id="inputPassword4"
+          />
         </div>
         <div class="col-12">
           <div class="form-check">
@@ -87,11 +107,24 @@ export default {
   data: function () {
     return {
       display: "LogInForm",
+      userName: "",
+      email: "",
+      password: "",
+      password_confirm: "",
     };
   },
   methods: {
     gotoSignUp: function () {
       this.display = "SignUpForm";
+    },
+    handleSubmit: function () {
+      const data = {
+        userName: this.userName,
+        email: this.email,
+        password: this.password,
+        password_confirm: this.password_confirm,
+      };
+      console.log(data);
     },
   },
 };

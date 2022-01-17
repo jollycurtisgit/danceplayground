@@ -92,6 +92,7 @@
       <AddClasses v-if="page == 'AddClasses'" />
       <SignUp v-if="page == 'SignUp'" />
       <Login v-if="page == 'LogIn'" />
+      <router-view />
     </div>
     <!--endofPages-->
   </div>

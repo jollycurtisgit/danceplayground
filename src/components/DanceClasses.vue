@@ -1,7 +1,7 @@
   <template>
   <div>
     <h1>All Classes</h1>
-    <button @click="showJoke">Show Joke</button>
+    <button @click="showMembers">Show Members</button>
     <button @click="classList">Classes</button>
     <div
       class="card"
@@ -23,7 +23,7 @@
       </div>
     </div>
     <div>
-      <p>{{ joke }}</p>
+      <p>{{ members }}</p>
     </div>
   </div>
 </template>
@@ -37,7 +37,7 @@ export default {
   data: function () {
     return {
       classes: "",
-      joke: "",
+      members: "",
     };
   },
   created: {
@@ -49,12 +49,10 @@ export default {
     },
   },
   methods: {
-    async showJoke() {
-      const jokeTime = await axios.get("https://icanhazdadjoke.com", {
-        headers: { Accept: "text/plain" },
-      });
-      this.joke = jokeTime.data;
-      console.log(jokeTime);
+    async showMembers() {
+      const response = await axios.get("http://localhost:3000/members");
+      this.members = response.data;
+      console.log(response.data);
     },
     async classList() {
       const response = await axios.get("http://localhost:3000/classes");
