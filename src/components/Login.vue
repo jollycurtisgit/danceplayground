@@ -43,6 +43,7 @@ export default {
 </script>
 
 <style scoped>
+/* for desktop */
 #LoginForm {
   background-color: white;
   border: 2px solid yellow;
@@ -54,7 +55,7 @@ export default {
   margin-top: 50px;
 }
 
-/* On screens that are 992px or less, set the background color to yellow */
+/* for tablet */
 @media screen and (max-width: 992px) {
   #LoginForm {
     background-color: white;
@@ -68,17 +69,19 @@ export default {
   }
 }
 
-/* On screens that are 600px or less, set the background color to olive */
+/* for celpphone */
 @media screen and (max-width: 600px) {
   #LoginForm {
     background-color: white;
     border: 2px solid green;
     border-radius: 5px;
-    width: 600px;
+    width: 300px;
     height: 460px;
-    padding: 50px 50px 80px 50px;
-    margin-right: 50px;
+    padding: 50px 20px 80px 20px;
+    margin-left: 20px;
+    margin-right: 20px;
     margin-top: 50px;
+    position: absolute;
   }
 }
 </style>
