@@ -90,9 +90,9 @@
       <!--pages-->
       <Dance-classes v-if="page == 'DanceClasses'" />
       <AddClasses v-if="page == 'AddClasses'" />
+      <Login2 v-if="page == 'Login2'" />
       <SignUp v-if="page == 'SignUp'" />
-      <Login v-if="page == 'LogIn'" />
-      <router-view />
+      <router-view v-if="page == 'Login'" />
     </div>
     <!--endofPages-->
   </div>
@@ -101,8 +101,10 @@
 <script>
 import DanceClasses from "@/components/DanceClasses";
 import AddClasses from "@/components/AddClasses";
-import SignUp from "@/components/SignUp";
 import Login from "@/components/Login";
+import Login2 from "@/components/Login2";
+import SignUp from "@/components/SignUp";
+
 export default {
   name: "App",
   componentDidMount: function () {
@@ -110,11 +112,12 @@ export default {
   },
   data: function () {
     return {
-      page: "LogIn",
+      page: "Login",
     };
   },
   components: {
     Login,
+    Login2,
     DanceClasses,
     AddClasses,
     SignUp,
@@ -130,7 +133,8 @@ export default {
       this.page = "SignUp";
     },
     gotoLogIn: function () {
-      this.page = "LogIn";
+      this.page = "Login";
+      this.$router.push("signUp");
     },
   },
 };

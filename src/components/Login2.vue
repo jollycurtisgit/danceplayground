@@ -1,7 +1,7 @@
 <template>
   <div id="forAdvertisement">
     <!---firstform--->
-    <form id="LoginForm" @submit.prevent="handleSubmit">
+    <form id="LoginForm" @submit.prevent="handleSubmit2">
       <div v-if="display === 'LogInForm'">
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label"
@@ -10,6 +10,7 @@
           <input
             type="email"
             class="form-control"
+            v-model="email"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
           />
@@ -23,6 +24,7 @@
           <input
             type="password"
             class="form-control"
+            v-model="password"
             id="exampleInputPassword1"
           />
         </div>
@@ -34,67 +36,6 @@
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
         <br />
-        <hr />
-        <button
-          type="submit"
-          v-on:click="gotoSignUp"
-          class="btn btn-outline-primary"
-        >
-          Create New Account
-        </button>
-      </div>
-      <!---new form--->
-      <div v-if="display === 'SignUpForm'">
-        <div class="mb-3">
-          <label for="validationCustom01" class="form-label">User Name</label>
-          <input
-            type="text"
-            class="form-control"
-            v-model="userName"
-            id="validationCustom01"
-          />
-          <div class="valid-feedback">Looks good!</div>
-        </div>
-        <div class="mb-3">
-          <label for="inputEmail4" class="form-label">Email</label>
-          <input
-            type="email"
-            class="form-control"
-            v-model="email"
-            id="inputEmail4"
-          />
-          <div class="valid-feedback">Looks good!</div>
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">Password</label>
-          <input
-            type="password"
-            class="form-control"
-            v-model="password"
-            id="inputPassword4"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">Repeat Password</label>
-          <input
-            type="password"
-            class="form-control"
-            v-model="password_confirm"
-            id="inputPassword4"
-          />
-        </div>
-        <div class="col-12">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="gridCheck" />
-            <label class="form-check-label" for="gridCheck">
-              Agree to terms and condition
-            </label>
-          </div>
-        </div>
-        <hr />
-        <div class="col-12">
-          <button type="submit" class="btn btn-primary">Sign up</button>
-        </div>
       </div>
     </form>
   </div>
@@ -105,17 +46,22 @@
 import axios from "axios";
 
 export default {
-  name: "Login",
-  data: function () {
+  name: "Login2",
+  data() {
     return {
-      display: "LogInForm",
       email: "",
       password: "",
     };
   },
   methods: {
-    gotoSignUp: function () {
-      this.$router.push("SignUp");
+    async handleSubmit2() {
+      const response = await axios.post("login", {
+        email: this.email,
+        password: this.password,
+      });
+      localStorage.setItem("token", response.data.token);
+      console.log(response);
+      swal("Welcome!", "You are now inside your account!", "success");
     },
   },
 };
@@ -139,10 +85,10 @@ export default {
   border: 2px solid yellow;
   border-radius: 5px;
   width: 600px;
-  height: 470px;
+  height: 400px;
   padding: 40px 50px 80px 50px;
   margin-left: 780px;
-  margin-top: 50px;
+  margin-top: 120px;
 }
 
 /* for tablet */
