@@ -88,7 +88,7 @@
     <!--end of Nav-->
     <div class="container-sm">
       <!--pages-->
-      <Dance-classes v-if="page == 'DanceClasses'" />
+      <DanceClasses v-if="page == 'DanceClasses'" />
       <AddClasses v-if="page == 'AddClasses'" />
       <Login2 v-if="page == 'Login2'" />
       <SignUp v-if="page == 'SignUp'" />
@@ -101,7 +101,6 @@
 <script>
 import DanceClasses from "@/components/DanceClasses";
 import AddClasses from "@/components/AddClasses";
-import Login from "@/components/Login";
 import Login2 from "@/components/Login2";
 import SignUp from "@/components/SignUp";
 
@@ -116,7 +115,6 @@ export default {
     };
   },
   components: {
-    Login,
     Login2,
     DanceClasses,
     AddClasses,
@@ -133,8 +131,7 @@ export default {
       this.page = "SignUp";
     },
     gotoLogIn: function () {
-      this.page = "Login";
-      this.$router.push("signUp");
+      this.$router.push("/Login2");
     },
   },
 };

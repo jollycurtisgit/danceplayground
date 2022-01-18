@@ -2,7 +2,7 @@
   <div id="forAdvertisement">
     <!---firstform--->
     <form id="LoginForm" @submit.prevent="handleSubmit2">
-      <div v-if="display === 'LogInForm'">
+      <div>
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label"
             >Email address</label
@@ -54,13 +54,21 @@ export default {
     };
   },
   methods: {
-    async handleSubmit2() {
-      const response = await axios.post("login", {
+    manageSubmit: function () {
+      const response = {
         email: this.email,
         password: this.password,
-      });
-      localStorage.setItem("token", response.data.token);
+      };
       console.log(response);
+      axios
+        .post("http://localhost:3000", response)
+        .then((res) => {
+          localStorage.setItem("token", response.data.token);
+          console.log(res);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
       swal("Welcome!", "You are now inside your account!", "success");
     },
   },

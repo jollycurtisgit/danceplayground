@@ -1,7 +1,7 @@
 <template>
   <div id="forAdvertisement">
     <!---firstform--->
-    <form id="LoginForm" @submit.prevent="handleSubmit2">
+    <form id="LoginForm" @submit.prevent="manageSubmit">
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Email address</label>
         <input
@@ -34,6 +34,15 @@
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
       <br />
+      <br />
+      <hr />
+      <button
+        type="submit"
+        v-on:click="gotoSignUp"
+        class="btn btn-outline-primary"
+      >
+        Create New Account
+      </button>
 
       <!--end of checkbox-->
     </form>
@@ -53,12 +62,23 @@ export default {
     };
   },
   methods: {
-    async handleSubmit2() {
-      const response = await axios.post("/login", {
+    gotoSignUp: function () {
+      this.$router.push("SignUp");
+    },
+    manageSubmit: function () {
+      const response = {
         email: this.email,
         password: this.password,
-      });
+      };
       console.log(response);
+      axios
+        .post("http://localhost:3000", response)
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
       localStorage.setItem("token", response.data.token);
       swal("Welcome!", "You are now inside your account!", "success");
     },
