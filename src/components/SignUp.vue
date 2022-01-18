@@ -91,23 +91,14 @@ export default {
     gotoSignUp: function () {
       this.$router.push("Login2");
     },
-    handleSubmit: function () {
-      const data = {
+    async handleSubmit() {
+      const response = await axios.post("members", {
         fName: this.fName,
         lName: this.lName,
         email: this.email,
         password: this.password,
         password_confirm: this.password_confirm,
-      };
-      console.log(data);
-      axios
-        .post("http://localhost:3000/members", data)
-        .then((res) => {
-          console.log(res);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+      });
       swal("Welcome!", "You may now login!", "success");
       this.$router.push("Login2");
     },

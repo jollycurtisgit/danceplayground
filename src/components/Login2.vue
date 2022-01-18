@@ -1,7 +1,7 @@
 <template>
   <div id="forAdvertisement">
     <!---firstform--->
-    <form id="LoginForm" @submit.prevent="handleSubmit2">
+    <form id="LoginForm" @submit.prevent="manageSubmit">
       <div>
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label"
@@ -54,21 +54,13 @@ export default {
     };
   },
   methods: {
-    manageSubmit: function () {
-      const response = {
+    async manageSubmit() {
+      const response = await axios.post("", {
         email: this.email,
         password: this.password,
-      };
+      });
       console.log(response);
-      axios
-        .post("http://localhost:3000", response)
-        .then((res) => {
-          localStorage.setItem("token", response.data.token);
-          console.log(res);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+      localStorage.setItem("token", response.data.token);
       swal("Welcome!", "You are now inside your account!", "success");
     },
   },

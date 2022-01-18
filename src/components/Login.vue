@@ -65,20 +65,12 @@ export default {
     gotoSignUp: function () {
       this.$router.push("SignUp");
     },
-    manageSubmit: function () {
-      const response = {
+    async manageSubmit() {
+      const response = await axios.post("", {
         email: this.email,
         password: this.password,
-      };
+      });
       console.log(response);
-      axios
-        .post("http://localhost:3000", response)
-        .then((res) => {
-          console.log(res);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
       localStorage.setItem("token", response.data.token);
       swal("Welcome!", "You are now inside your account!", "success");
     },

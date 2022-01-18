@@ -1,26 +1,23 @@
 <template>
-  <h3></h3>
+  <div v-bind:key="accountNum">
+    <h3 v-if="Name">Hello, {{ accountNum.fName }} {{ accountNum.lName }}</h3>
+    <h3 v-if="!Name">Hello You are not logged in!</h3>
+  </div>
 </template>
 
 <script>
 import axios from "axios";
 export default {
   name: "Home",
-  created: function () {
-    const response = {
-      headers: {
-        Authorization: "Bearer" + localStorage.getItem("token"),
-      },
+  data() {
+    return {
+      Name: null,
     };
-    console.log();
-    axios
-      .get("http://localhost:3000", response)
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+  },
+  async created() {
+    const response = await axios.get("");
+    console.log(response);
+    this.Name = response.data;
   },
 };
 </script>
