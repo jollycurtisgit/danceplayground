@@ -3,6 +3,7 @@ import App from "./App.vue";
 import "bootstrap/dist/css/bootstrap.css";
 import swal from "sweetalert";
 import router from "./router";
+import "./axios";
 
 Vue.config.productionTip = false;
 

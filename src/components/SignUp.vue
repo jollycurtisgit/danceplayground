@@ -80,7 +80,8 @@ export default {
   name: "SignUp",
   data: function () {
     return {
-      userName: "",
+      fName: "",
+      lName: "",
       email: "",
       password: "",
       password_confirm: "",
@@ -92,7 +93,8 @@ export default {
     },
     handleSubmit: function () {
       const data = {
-        userName: this.userName,
+        fName: this.fName,
+        lName: this.lName,
         email: this.email,
         password: this.password,
         password_confirm: this.password_confirm,
