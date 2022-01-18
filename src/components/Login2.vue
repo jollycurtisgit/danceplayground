@@ -62,6 +62,7 @@ export default {
       console.log(response);
       localStorage.setItem("token", response.data.token);
       swal("Welcome!", "You are now inside your account!", "success");
+      this.$router.push("Home");
     },
   },
 };
