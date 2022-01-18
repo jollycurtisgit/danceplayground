@@ -4,16 +4,29 @@
     <form id="SignUpForm" @submit.prevent="handleSubmit">
       <!---new form--->
       <div>
-        <div class="mb-3">
-          <label for="validationCustom01" class="form-label">User Name</label>
+        <div class="my-1">
+          <label for="validationCustom01" class="form-label">Name</label>
+        </div>
+
+        <div class="my-3">
           <input
             type="text"
             class="form-control"
-            v-model="userName"
+            v-model="fName"
             id="validationCustom01"
+            placeholder="First Name"
           />
-          <div class="valid-feedback">Looks good!</div>
         </div>
+        <div class="my-3">
+          <input
+            type="text"
+            class="form-control"
+            v-model="lName"
+            id="validationCustom01"
+            placeholder="Last Name"
+          />
+        </div>
+
         <div class="mb-3">
           <label for="inputEmail4" class="form-label">Email</label>
           <input
@@ -118,10 +131,14 @@ export default {
   border: 2px solid yellow;
   border-radius: 5px;
   width: 600px;
-  height: 470px;
-  padding: 40px 50px 80px 50px;
+  height: 550px;
+  padding: 40px 50px 40px 50px;
   margin-left: 780px;
   margin-top: 50px;
+}
+
+#flex {
+  display: flex;
 }
 
 /* for tablet */
