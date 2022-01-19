@@ -89,7 +89,10 @@
     <div class="container-sm">
       <!--pages-->
       <DanceClasses v-if="page == 'DanceClasses'" />
-      <AddClasses v-if="page == 'AddClasses'" />
+      <AddClasses
+        v-if="page == 'AddClasses'"
+        v-on:new-class-created="onNewRecipeCreated"
+      />
       <Login2 v-if="page == 'Login2'" />
       <SignUp v-if="page == 'SignUp'" />
       <router-view v-if="page == 'Login'" />
@@ -125,13 +128,16 @@ export default {
       this.page = "DanceClasses";
     },
     gotoAddClasses: function () {
-      this.$router.push("/AddClasses");
+      this.page = "AddClasses";
     },
     gotoSignUp: function () {
       this.page = "SignUp";
     },
     gotoLogIn: function () {
-      this.$router.push("/Login2");
+      this.page = "Login2";
+    },
+    onNewRecipeCreated: function () {
+      this.page = "DanceClasses";
     },
   },
 };
