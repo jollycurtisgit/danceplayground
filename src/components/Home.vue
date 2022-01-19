@@ -1,7 +1,9 @@
 <template>
-  <div v-bind:key="accountNum">
-    <h3 v-if="Name">Hello, {{ accountNum.fName }} {{ accountNum.lName }}</h3>
-    <h3 v-if="!Name">Hello You are not logged in!</h3>
+  <div>
+    <div v-for="n in login" v-bind:key="n.accountNum">
+      <h3 v-if="Name">Hello, {{ n.email }}</h3>
+      <h3 v-if="!Name">Hello You are not logged in!</h3>
+    </div>
   </div>
 </template>
 
@@ -11,10 +13,10 @@ export default {
   name: "Home",
   data() {
     return {
-      Name: null,
+      Name: [],
     };
   },
-  async created() {
+  created: async function () {
     const response = await axios.get("");
     console.log(response);
     this.Name = response.data;

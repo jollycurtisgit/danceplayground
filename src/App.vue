@@ -125,7 +125,7 @@ export default {
       this.page = "DanceClasses";
     },
     gotoAddClasses: function () {
-      this.page = "AddClasses";
+      this.$router.push("/AddClasses");
     },
     gotoSignUp: function () {
       this.page = "SignUp";

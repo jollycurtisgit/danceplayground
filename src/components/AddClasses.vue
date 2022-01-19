@@ -1,94 +1,48 @@
 <template>
   <div>
-    <h1>Add Classes</h1>
-    <div class="input-group mb-3">
-      <button
-        class="btn btn-outline-secondary dropdown-toggle"
-        type="button"
-        data-bs-toggle="dropdown"
-        aria-expanded="false"
-      >
-        Dropdown
-      </button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Action</a></li>
-        <li><a class="dropdown-item" href="#">Another action</a></li>
-        <li><a class="dropdown-item" href="#">Something else here</a></li>
-        <li><hr class="dropdown-divider" /></li>
-        <li><a class="dropdown-item" href="#">Separated link</a></li>
-      </ul>
-      <input
-        type="text"
-        class="form-control"
-        aria-label="Text input with dropdown button"
-      />
+    <h1>Add Recipe</h1>
+    <div>
+      <label>Dance Name</label>
+      <input type="text" v-model="Dance_Name" />
     </div>
-
-    <div class="input-group mb-3">
-      <input
-        type="text"
-        class="form-control"
-        aria-label="Text input with dropdown button"
-      />
-      <button
-        class="btn btn-outline-secondary dropdown-toggle"
-        type="button"
-        data-bs-toggle="dropdown"
-        aria-expanded="false"
-      >
-        Dropdown
-      </button>
-      <ul class="dropdown-menu dropdown-menu-end">
-        <li><a class="dropdown-item" href="#">Action</a></li>
-        <li><a class="dropdown-item" href="#">Another action</a></li>
-        <li><a class="dropdown-item" href="#">Something else here</a></li>
-        <li><hr class="dropdown-divider" /></li>
-        <li><a class="dropdown-item" href="#">Separated link</a></li>
-      </ul>
+    <div>
+      <label>Location</label>
+      <input type="text" v-model="Location" />
     </div>
-
-    <div class="input-group">
-      <button
-        class="btn btn-outline-secondary dropdown-toggle"
-        type="button"
-        data-bs-toggle="dropdown"
-        aria-expanded="false"
-      >
-        Dropdown
-      </button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Action before</a></li>
-        <li><a class="dropdown-item" href="#">Another action before</a></li>
-        <li><a class="dropdown-item" href="#">Something else here</a></li>
-        <li><hr class="dropdown-divider" /></li>
-        <li><a class="dropdown-item" href="#">Separated link</a></li>
-      </ul>
-      <input
-        type="text"
-        class="form-control"
-        aria-label="Text input with 2 dropdown buttons"
-      />
-      <button
-        class="btn btn-outline-secondary dropdown-toggle"
-        type="button"
-        data-bs-toggle="dropdown"
-        aria-expanded="false"
-      >
-        Dropdown
-      </button>
-      <ul class="dropdown-menu dropdown-menu-end">
-        <li><a class="dropdown-item" href="#">Action</a></li>
-        <li><a class="dropdown-item" href="#">Another action</a></li>
-        <li><a class="dropdown-item" href="#">Something else here</a></li>
-        <li><hr class="dropdown-divider" /></li>
-        <li><a class="dropdown-item" href="#">Separated link</a></li>
-      </ul>
+    <div>
+      <label>Schedule</label>
+      <input type="text" v-model="Schedule" class="form-control" />
     </div>
+    <div>
+      <label>Price per Session:</label>
+      <input type="text" v-model="Price" class="form-control" />
+    </div>
+    <button v-on:click="addNew">Add New</button>
   </div>
 </template>
 
 <script>
+import axios from "axios";
 export default {
   name: "AddClasses",
+  data: function () {
+    return {
+      Dance_Name: "",
+      Location: "",
+      Schedule: "",
+      Price: "",
+    };
+  },
+  methods: {
+    async addNew() {
+      const response = await axios.post("/add.class", {
+        Dance_Name: this.Dance_Name,
+        Location: this.Location,
+        Schedule: this.Schedule,
+        Price: this.Price,
+      });
+      console.log(response);
+    },
+  },
 };
 </script>
