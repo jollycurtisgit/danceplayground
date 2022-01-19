@@ -71,7 +71,7 @@
               >
             </li>
           </ul>
-          <form class="d-flex">
+          <div class="d-flex">
             <input
               class="form-control me-2"
               type="search"
@@ -81,7 +81,7 @@
             <button class="btn btn-outline-success" type="submit">
               Search
             </button>
-          </form>
+          </div>
         </div>
       </div>
     </nav>
@@ -95,6 +95,7 @@
       />
       <Login2 v-if="page == 'Login2'" />
       <SignUp v-if="page == 'SignUp'" />
+      <Home v-if="page == 'Home'" v-on:welcome-user="onWelcomeUser" />
       <router-view v-if="page == 'Login'" />
     </div>
     <!--endofPages-->
@@ -106,6 +107,7 @@ import DanceClasses from "@/components/DanceClasses";
 import AddClasses from "@/components/AddClasses";
 import Login2 from "@/components/Login2";
 import SignUp from "@/components/SignUp";
+import Home from "@/components/Home";
 
 export default {
   name: "App",
@@ -122,6 +124,7 @@ export default {
     DanceClasses,
     AddClasses,
     SignUp,
+    Home,
   },
   methods: {
     gotoDanceClasses: function () {
@@ -138,6 +141,9 @@ export default {
     },
     onNewRecipeCreated: function () {
       this.page = "DanceClasses";
+    },
+    onWelcomeUser: function () {
+      this.page = "Home";
     },
   },
 };

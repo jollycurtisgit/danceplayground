@@ -52,6 +52,7 @@
 
 <script>
 import axios from "axios";
+const API = "http://localhost:3000/";
 
 export default {
   name: "Login",
@@ -65,13 +66,23 @@ export default {
     gotoSignUp: function () {
       this.$router.push("SignUp");
     },
+    //async manageSubmit() {
+    //  const response = await axios.post("", {
+    //    email: this.email,
+    //   password: this.password,
+    // });
+    // console.log(response);
+    //localStorage.setItem("token", response.data.token);
+    //swal("Welcome!", "You are now inside your account!", "success");
+    //this.$router.push("Home");
+    //},
     async manageSubmit() {
-      const response = await axios.post("", {
+      const response = await axios.post(API, {
         email: this.email,
         password: this.password,
       });
       console.log(response);
-      localStorage.setItem("token", response.data.token);
+      this.$emit("welcome-user");
       swal("Welcome!", "You are now inside your account!", "success");
       this.$router.push("Home");
     },
