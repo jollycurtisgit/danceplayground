@@ -55,7 +55,7 @@ export default {
       console.log(response.data);
     },
     async classList() {
-      const response = await axios.get("http://localhost:3000/classes");
+      const response = await axios.get("http://localhost:3000/AddClasses");
       this.classes = response.data;
       console.log(response.data);
     },

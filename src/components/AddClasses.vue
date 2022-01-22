@@ -40,7 +40,7 @@ export default {
   },
   methods: {
     async addNew() {
-      const response = await axios.post("/add.class", {
+      const response = await axios.post("/AddClasses", {
         name: this.name,
         location: this.location,
         schedule: this.schedule,

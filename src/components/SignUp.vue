@@ -92,7 +92,7 @@ export default {
       this.$router.push("Login2");
     },
     async handleSubmit() {
-      const response = await axios.post("members", {
+      const response = await axios.post("//", {
         fName: this.fName,
         lName: this.lName,
         email: this.email,

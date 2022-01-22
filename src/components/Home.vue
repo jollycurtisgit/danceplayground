@@ -77,8 +77,11 @@
         >Settings</a
       >
     </div>
-    <div v-for="n in Name" v-bind:key="n.accountNum">
+    <div id="Greetings" v-for="n in Name" v-bind:key="n._id">
       <h3 v-if="Name">Hello, {{ n.email }}</h3>
+      <button v-on:click="LogOut" class="btn btn-outline-primary">
+        Log Out
+      </button>
       <h3 v-if="!Name">Hello You are not logged in!</h3>
     </div>
     <div class="tab-content" id="v-pills-tabContent">
@@ -88,7 +91,7 @@
         role="tabpanel"
         aria-labelledby="v-pills-home-tab"
       >
-        ...
+        <p>Lorem Lorem Lorem</p>
       </div>
       <div
         class="tab-pane fade"
@@ -96,7 +99,7 @@
         role="tabpanel"
         aria-labelledby="v-pills-profile-tab"
       >
-        ...
+        <p>Lorem Lorem Lorem</p>
       </div>
       <div
         class="tab-pane fade"
@@ -104,7 +107,7 @@
         role="tabpanel"
         aria-labelledby="v-pills-messages-tab"
       >
-        ...
+        <p>Lorem Lorem Lorem</p>
       </div>
       <div
         class="tab-pane fade"
@@ -112,7 +115,7 @@
         role="tabpanel"
         aria-labelledby="v-pills-settings-tab"
       >
-        ...
+        <p>Lorem Lorem Lorem</p>
       </div>
     </div>
   </div>
@@ -129,10 +132,15 @@ export default {
     };
   },
   created: async function () {
-    const response = await axios.get("http://localhost:3000");
+    const response = await axios.get("http://localhost:3000/Home", {
+      headers: {
+        Authorization: "Bearer" + localStorage.getItem("token"),
+      },
+    });
     this.Name = response.data;
-    console.log(response.data);
+    //console.log(response.data);
   },
+  methods: {},
 };
 </script>
 
@@ -144,5 +152,13 @@ export default {
   height: 900px;
   left: 0;
   position: fixed;
+}
+
+#Greetings {
+  background-color: white;
+  width: 400px;
+  height: 300px;
+  margin-left: 780px;
+  margin-top: 50px;
 }
 </style>

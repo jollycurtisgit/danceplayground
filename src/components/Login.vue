@@ -46,6 +46,29 @@
 
       <!--end of checkbox-->
     </form>
+
+    <!--this is the other part-->
+    <div id="Display">
+      <div
+        class="card"
+        style="width: 18rem"
+        v-for="id in classes"
+        v-bind:key="id"
+      >
+        <!--img src="..." class="card-img-top" alt="..."-->
+        <div class="card-body">
+          <h5 class="card-title">{{ id.name }}</h5>
+          <p class="card-text">
+            Location: {{ id.location }}
+            <br />
+            Schedule: {{ id.schedule }}
+            <br />
+            Price per session: {{ id.price }}
+          </p>
+          <a href="#" class="btn btn-primary">Enroll</a>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -60,28 +83,27 @@ export default {
     return {
       email: "",
       password: "",
+      classes: "",
+      members: "",
     };
+  },
+  created: {
+    async function() {
+      const response = await axios.get("http://localhost:3000/");
+      this.classes = response.data;
+    },
   },
   methods: {
     gotoSignUp: function () {
       this.$router.push("SignUp");
     },
-    //async manageSubmit() {
-    //  const response = await axios.post("", {
-    //    email: this.email,
-    //   password: this.password,
-    // });
-    // console.log(response);
-    //localStorage.setItem("token", response.data.token);
-    //swal("Welcome!", "You are now inside your account!", "success");
-    //this.$router.push("Home");
-    //},
     async manageSubmit() {
       const response = await axios.post(API, {
         email: this.email,
         password: this.password,
       });
       console.log(response);
+      localStorage.setItem("token", response.data.token);
       this.$emit("welcome-user");
       swal("Welcome!", "You are now inside your account!", "success");
       this.$router.push("Home");
@@ -112,6 +134,16 @@ export default {
   padding: 40px 50px 80px 50px;
   margin-left: 780px;
   margin-top: 50px;
+}
+
+.card {
+  background-color: gray;
+}
+
+#Display {
+  background-color: white;
+  width: 600px;
+  height: 470px;
 }
 
 /* for tablet */
