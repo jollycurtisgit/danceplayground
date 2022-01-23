@@ -70,20 +70,20 @@
         class="nav-link"
         id="v-pills-settings-tab"
         data-toggle="pill"
+        v-on:click="LogOut"
         href="#v-pills-settings"
         role="tab"
         aria-controls="v-pills-settings"
         aria-selected="false"
-        >Settings</a
+        >Log Out</a
       >
     </div>
-    <div id="Greetings" v-for="n in Name" v-bind:key="n._id">
-      <h3 v-if="Name">Hello, {{ n.email }}</h3>
-      <button v-on:click="LogOut" class="btn btn-outline-primary">
-        Log Out
-      </button>
-      <h3 v-if="!Name">Hello You are not logged in!</h3>
+    <div id="Greetings">
+      <h3 v-if="user">Hello data, {{ user }}</h3>
+      <button class="btn btn-outline-primary">Log Out</button>
+      <h3 v-if="!user">Hello You are not logged in!</h3>
     </div>
+
     <div class="tab-content" id="v-pills-tabContent">
       <div
         class="tab-pane fade show active"
@@ -125,22 +125,32 @@
 import axios from "axios";
 export default {
   name: "Home",
+  props: ["User"],
   data() {
     return {
       Name: [],
       Ako: [],
+      user: [],
     };
   },
   created: async function () {
-    const response = await axios.get("http://localhost:3000/Home", {
+    const response = await axios.get("http://localhost:3000/home", {
       headers: {
         Authorization: "Bearer" + localStorage.getItem("token"),
       },
+      //this.Name = response.data;
+      //this.user = response.data
+      //}
     });
-    this.Name = response.data;
-    //console.log(response.data);
+    this.user = response.data;
+    console.log(response.data);
   },
-  methods: {},
+  methods: {
+    LogOut() {
+      localStorage.removeItem("token");
+      this.$router.push("/");
+    },
+  },
 };
 </script>
 
@@ -156,7 +166,7 @@ export default {
 
 #Greetings {
   background-color: white;
-  width: 400px;
+  width: 4000px;
   height: 300px;
   margin-left: 780px;
   margin-top: 50px;

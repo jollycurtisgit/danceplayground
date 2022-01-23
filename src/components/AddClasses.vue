@@ -47,7 +47,14 @@ export default {
         price: this.price,
       });
       console.log(response);
+      alert("hoy!");
+      swal(
+        "Great!",
+        "Thank you for making the community a healthier place!",
+        "success"
+      );
       this.$emit("new-class-created");
+      this.$router.push("DanceClasses");
     },
   },
 };

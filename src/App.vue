@@ -1,4 +1,4 @@
-<template>
+  <template>
   <div id="app">
     <!---Nav-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -88,11 +88,11 @@
     <!--end of Nav-->
     <div class="container-sm">
       <!--pages-->
-      <DanceClasses v-if="page == 'DanceClasses'" />
-      <AddClasses
-        v-if="page == 'AddClasses'"
+      <DanceClasses
+        v-if="page == 'DanceClasses'"
         v-on:new-class-created="onNewRecipeCreated"
       />
+      <AddClasses v-if="page == 'AddClasses'" />
       <Login2 v-if="page == 'Login2'" />
       <SignUp v-if="page == 'SignUp'" />
       <Home v-if="page == 'Home'" v-on:welcome-user="onWelcomeUser" />

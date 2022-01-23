@@ -88,11 +88,8 @@ export default {
     };
   },
   methods: {
-    gotoSignUp: function () {
-      this.$router.push("Login2");
-    },
     async handleSubmit() {
-      const response = await axios.post("//", {
+      const response = await axios.post("/SignUp", {
         fName: this.fName,
         lName: this.lName,
         email: this.email,
