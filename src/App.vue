@@ -114,9 +114,6 @@ import UpdateClass from "@/components/UpdateClass";
 //import ClassDisplay from "@/components/ClassDisplay";
 export default {
   name: "App",
-  componentDidMount: function () {
-    console.log("App has just been rendered for the first time.");
-  },
   data: function () {
     return {
       page: "Login",

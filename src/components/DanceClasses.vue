@@ -1,4 +1,4 @@
-  <template>
+<template>
   <div>
     <h1>All Classes</h1>
     <button @click="showMembers">Show Members</button>
@@ -31,7 +31,6 @@
 <script>
 import axios from "axios";
 //import ClassCard from "@/components/ClassCard";
-
 export default {
   name: "DanceClasses",
   data: function () {
@@ -40,17 +39,9 @@ export default {
       members: "",
     };
   },
-  created: {
-    async function() {
-      const response = await axios.get(
-        "https://r5j2p.sse.codesandbox.io/classes"
-      );
-      this.classes = response.data;
-    },
-  },
   methods: {
     async showMembers() {
-      const response = await axios.get("http://localhost:3000/members");
+      const response = await axios.get("http://localhost:3000");
       this.members = response.data;
       console.log(response.data);
     },
@@ -58,11 +49,6 @@ export default {
       const response = await axios.get("http://localhost:3000/AddClasses");
       this.classes = response.data;
       console.log(response.data);
-    },
-    async linkToImg() {
-      const response = await axios.get("http://localhost:3000/classes");
-      let image = response.data.link;
-      this.linkToImg = image;
     },
   },
 };
