@@ -88,11 +88,11 @@
     <!--end of Nav-->
     <div class="container-sm">
       <!--pages-->
-      <DanceClasses
-        v-if="page == 'DanceClasses'"
-        v-on:new-class-created="onNewRecipeCreated"
+      <DanceClasses v-if="page == 'DanceClasses'" />
+      <AddClasses
+        v-if="page == 'AddClasses'"
+        v-on:addClass="gotoDanceClasses"
       />
-      <AddClasses v-if="page == 'AddClasses'" />
       <Login2 v-if="page == 'Login2'" />
       <SignUp v-if="page == 'SignUp'" />
       <Home v-if="page == 'Home'" v-on:welcome-user="onWelcomeUser" />
@@ -145,9 +145,9 @@ export default {
     gotoLogIn: function () {
       this.page = "Login2";
     },
-    onNewRecipeCreated: function () {
-      this.page = "DanceClasses";
-    },
+    //onNewRecipeCreated: function () {
+    //  this.page = "DanceClasses";
+    //},
     onWelcomeUser: function () {
       this.page = "Home";
     },
