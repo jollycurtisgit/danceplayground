@@ -1,4 +1,4 @@
-  <template>
+<template>
   <div id="app">
     <!---Nav-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -112,7 +112,6 @@ import SignUp from "@/components/SignUp";
 import Home from "@/components/Home";
 import UpdateClass from "@/components/UpdateClass";
 //import ClassDisplay from "@/components/ClassDisplay";
-
 export default {
   name: "App",
   componentDidMount: function () {
