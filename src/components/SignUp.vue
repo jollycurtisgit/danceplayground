@@ -97,15 +97,19 @@ export default {
   },
   methods: {
     async handleSubmit() {
-      const response = await axios.post("/SignUp", {
-        fName: this.fName,
-        lName: this.lName,
-        email: this.email,
-        password: this.password,
-        password_confirm: this.password_confirm,
-      });
+      const response = await axios.post(
+        "https://3000-jollychua-danceplaygroun-e04onx31jnu.ws-us28.gitpod.io/Signup",
+        {
+          fName: this.fName,
+          lName: this.lName,
+          email: this.email,
+          password: this.password,
+          password_confirm: this.password_confirm,
+        }
+      );
       swal("Welcome!", "You may now login!", "success");
       this.$router.push("Login2");
+      console.log(response);
     },
   },
 };

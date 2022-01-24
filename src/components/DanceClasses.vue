@@ -42,7 +42,7 @@ export default {
   methods: {
     async showMembers() {
       const response = await axios.get(
-        "https://3000-jollychua-danceplaygroun-wnrgtq6k926.ws-us28.gitpod.io/home"
+        "https://3000-jollychua-danceplaygroun-e04onx31jnu.ws-us28.gitpod.io/home"
       );
       this.members = response.data;
       console.log(response.data);
