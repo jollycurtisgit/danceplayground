@@ -7,25 +7,13 @@
     >
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img
-            src="https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AAT4zBs.img?h=630&w=1119&m=6&q=60&o=f&l=f&x=512&y=308"
-            class="d-block w-100"
-            alt="..."
-          />
+          <img src="../assets/one.png" class="d-block w-100" alt="..." />
         </div>
         <div class="carousel-item">
-          <img
-            src="https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AAT4RK8.img?h=714&w=1075&m=6&q=60&o=f&l=f"
-            class="d-block w-100"
-            alt="..."
-          />
+          <img src="../assets/two.png" class="d-block w-100" alt="..." />
         </div>
         <div class="carousel-item">
-          <img
-            src="https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AAT4XD3.img?h=785&w=1075&m=6&q=60&o=f&l=f&x=348&y=354"
-            class="d-block w-100"
-            alt="..."
-          />
+          <img src="../assets/bg.png" class="d-block w-100" alt="..." />
         </div>
       </div>
       <button
@@ -58,11 +46,14 @@ export default {
 
 <style>
 #litaw {
-  background-color: red;
+  width: 1000px;
+  height: 900px;
 }
 
 #carouselExampleFade {
-  width: 300px;
+  width: 1000px;
+  height: 900px;
 }
 </style>
+
 

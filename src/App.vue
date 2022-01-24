@@ -87,7 +87,6 @@
     </nav>
     <!--end of Nav-->
     <div class="container-sm">
-      <Background />
       <!--pages-->
       <DanceClasses v-if="page == 'DanceClasses'" />
       <AddClasses
@@ -128,7 +127,6 @@ export default {
     SignUp,
     Home,
     UpdateClass,
-    Background,
     //ClassDisplay,
   },
   methods: {
@@ -183,5 +181,6 @@ body {
 }
 .container-sm {
   display: flex;
+  margin-left: 0px;
 }
 </style>
