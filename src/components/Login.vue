@@ -119,6 +119,7 @@ export default {
 <style scoped>
 #removeMargin {
   margin-left: 0px;
+  width: 1300px;
 }
 
 /* for desktop */
@@ -137,7 +138,7 @@ export default {
   width: 800px;
   height: 470px;
   padding: 40px 30px 80px 30px;
-  margin-left: 0px;
+  margin-left: 5px;
   margin-top: 50px;
 }
 .card {

@@ -54,6 +54,10 @@ export default {
   width: 1000px;
   height: 900px;
 }
+
+button {
+  margin: 0px;
+}
 </style>
 
 

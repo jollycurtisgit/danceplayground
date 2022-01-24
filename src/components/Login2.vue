@@ -1,52 +1,64 @@
 <template>
-  <div id="forAdvertisement">
-    <!---firstform--->
-    <form id="LoginForm" @submit.prevent="manageSubmit">
-      <div>
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label"
-            >Email address</label
-          >
-          <input
-            type="email"
-            class="form-control"
-            v-model="email"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
-          />
-          <div id="emailHelp" class="form-text">
-            We'll never share your email with anyone else.
+  <div id="removeMargin">
+    <div id="forAdvertisement">
+      <Background />
+      <!---firstform--->
+      <form id="LoginForm" @submit.prevent="manageSubmit">
+        <div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label"
+              >Email address</label
+            >
+            <input
+              type="email"
+              class="form-control"
+              v-model="email"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+            />
+            <div id="emailHelp" class="form-text">
+              We'll never share your email with anyone else.
+            </div>
           </div>
+          <!--password-->
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label"
+              >Password</label
+            >
+            <input
+              type="password"
+              class="form-control"
+              v-model="password"
+              id="exampleInputPassword1"
+            />
+          </div>
+          <div class="mb-3 form-check">
+            <input
+              type="checkbox"
+              class="form-check-input"
+              id="exampleCheck1"
+            />
+            <label class="form-check-label" for="exampleCheck1"
+              >Keep me signed in</label
+            >
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+          <br />
         </div>
-        <!--password-->
-        <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Password</label>
-          <input
-            type="password"
-            class="form-control"
-            v-model="password"
-            id="exampleInputPassword1"
-          />
-        </div>
-        <div class="mb-3 form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-          <label class="form-check-label" for="exampleCheck1"
-            >Keep me signed in</label
-          >
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-        <br />
-      </div>
-    </form>
+      </form>
+    </div>
   </div>
 </template>
 
 
 <script>
 import axios from "axios";
-
+import Background from "./Background.vue";
 export default {
   name: "Login2",
+  components: {
+    Background,
+  },
   data() {
     return {
       email: "",
@@ -69,27 +81,30 @@ export default {
 </script>
 
 <style scoped>
+#removeMargin {
+  margin-left: 0px;
+  width: 1300px;
+}
+
 /* for desktop */
 #forAdvertisement {
-  width: 1000px;
+  width: 1300px;
   height: 800px;
   margin-right: 0px;
-  margin-top: 0px;
-  background-position: 0px 30px;
-  background-repeat: no-repeat;
-  background-size: 900px 600px;
-  background-image: url("https://scontent.fcrk3-1.fna.fbcdn.net/v/t39.30808-6/272024971_3044864865752901_119031524630565305_n.jpg?_nc_cat=111&ccb=1-5&_nc_sid=0debeb&_nc_eui2=AeHrZurqUbaQo33UlGke2L3hZ6Ro36UdPjNnpGjfpR0-M1yLp2l0xJcO3sHuxrrEt7jXHFMNKOsgeoemFEThieKR&_nc_ohc=1Fp2H8JUw1UAX8hfEea&_nc_ht=scontent.fcrk3-1.fna&oh=00_AT8QoX-PjcZBAotv3il8LJ_7X8DtYQki-60eaXdLXyQJ0Q&oe=61EB134F");
+  margin-top: 50px;
+  margin-left: 0px;
+  display: flex;
 }
 
 #LoginForm {
   background-color: white;
   border: 2px solid yellow;
   border-radius: 5px;
-  width: 600px;
-  height: 400px;
-  padding: 40px 50px 80px 50px;
-  margin-left: 780px;
-  margin-top: 120px;
+  width: 800px;
+  height: 470px;
+  padding: 40px 30px 80px 30px;
+  margin-left: 5px;
+  margin-top: 50px;
 }
 
 /* for tablet */

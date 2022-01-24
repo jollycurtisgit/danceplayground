@@ -181,6 +181,8 @@ body {
 }
 .container-sm {
   display: flex;
+  width: 1300px;
   margin-left: 0px;
+  margin-right: 0px;
 }
 </style>
