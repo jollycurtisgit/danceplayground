@@ -75,7 +75,8 @@
 
 <script>
 import axios from "axios";
-const API = "http://localhost:3000/";
+const API =
+  "https://3000-jollychua-danceplaygroun-wnrgtq6k926.ws-us28.gitpod.io/";
 export default {
   name: "Login",
   data() {

@@ -87,6 +87,7 @@
     </nav>
     <!--end of Nav-->
     <div class="container-sm">
+      <Background />
       <!--pages-->
       <DanceClasses v-if="page == 'DanceClasses'" />
       <AddClasses
@@ -111,6 +112,7 @@ import Login2 from "@/components/Login2";
 import SignUp from "@/components/SignUp";
 import Home from "@/components/Home";
 import UpdateClass from "@/components/UpdateClass";
+import Background from "@/components/Background";
 //import ClassDisplay from "@/components/ClassDisplay";
 export default {
   name: "App",
@@ -126,6 +128,7 @@ export default {
     SignUp,
     Home,
     UpdateClass,
+    Background,
     //ClassDisplay,
   },
   methods: {
@@ -147,9 +150,14 @@ export default {
     onWelcomeUser: function () {
       this.page = "Home";
     },
+    Ana: function () {
+      $(".carousel").carousel({ interval: 7000 });
+    },
   },
 };
 </script>
+
+
 
 <style>
 body {

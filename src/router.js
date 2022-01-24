@@ -7,6 +7,7 @@ import Home from "./components/Home.vue";
 import AddClasses from "./components/AddClasses.vue";
 import UpdateClass from "./components/UpdateClass.vue";
 import DanceClasses from "./components/DanceClasses.vue";
+import Background from "./components/Background.vue";
 
 Vue.use(Router);
 
@@ -19,6 +20,7 @@ export default new Router({
     { path: "/Home", component: Home },
     { path: "/AddClasses", component: AddClasses },
     { path: "/UpdateClass", component: UpdateClass },
-    { path: "/DanceClasses", component: DanceClasses }
+    { path: "/DanceClasses", component: DanceClasses },
+    { path: "/Background", component: Background }
   ]
 });

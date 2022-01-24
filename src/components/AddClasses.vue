@@ -40,12 +40,15 @@ export default {
   },
   methods: {
     async addNew() {
-      const response = await axios.post("/AddClasses", {
-        name: this.name,
-        location: this.location,
-        schedule: this.schedule,
-        price: this.price,
-      });
+      const response = await axios.post(
+        "https://3000-jollychua-danceplaygroun-wnrgtq6k926.ws-us28.gitpod.io/AddClasses",
+        {
+          name: this.name,
+          location: this.location,
+          schedule: this.schedule,
+          price: this.price,
+        }
+      );
       console.log(response);
       //alert("hoy!");
       swal(

@@ -41,12 +41,16 @@ export default {
   },
   methods: {
     async showMembers() {
-      const response = await axios.get("http://localhost:3000");
+      const response = await axios.get(
+        "https://3000-jollychua-danceplaygroun-wnrgtq6k926.ws-us28.gitpod.io/home"
+      );
       this.members = response.data;
       console.log(response.data);
     },
     async classList() {
-      const response = await axios.get("http://localhost:3000/AddClasses");
+      const response = await axios.get(
+        "https://3000-jollychua-danceplaygroun-wnrgtq6k926.ws-us28.gitpod.io/AddClasses"
+      );
       this.classes = response.data;
       console.log(response.data);
     },
