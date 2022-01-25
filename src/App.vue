@@ -111,7 +111,7 @@ import Login2 from "@/components/Login2";
 import SignUp from "@/components/SignUp";
 import Home from "@/components/Home";
 import UpdateClass from "@/components/UpdateClass";
-import Background from "@/components/Background";
+
 //import ClassDisplay from "@/components/ClassDisplay";
 export default {
   name: "App",

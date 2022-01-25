@@ -98,7 +98,7 @@ export default {
   methods: {
     async handleSubmit() {
       const response = await axios.post(
-        "https://3000-jollychua-danceplaygroun-e04onx31jnu.ws-us28.gitpod.io/Signup",
+        "http://localhost:3000/AddClasses/Signup",
         {
           fName: this.fName,
           lName: this.lName,

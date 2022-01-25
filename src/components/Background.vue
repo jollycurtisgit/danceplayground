@@ -47,12 +47,12 @@ export default {
 <style>
 #litaw {
   width: 1000px;
-  height: 900px;
+  height: 500px;
 }
 
 #carouselExampleFade {
   width: 1000px;
-  height: 900px;
+  height: 500px;
 }
 
 button {

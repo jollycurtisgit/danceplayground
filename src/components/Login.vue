@@ -51,28 +51,7 @@
         <!--end of checkbox-->
       </form>
 
-      <!--this is the other part-->
-    </div>
-    <div id="Display">
-      <div
-        class="card"
-        style="width: 18rem"
-        v-for="id in classes"
-        v-bind:key="id"
-      >
-        <!--img src="..." class="card-img-top" alt="..."-->
-        <div class="card-body">
-          <h5 class="card-title">{{ id.name }}</h5>
-          <p class="card-text">
-            Location: {{ id.location }}
-            <br />
-            Schedule: {{ id.schedule }}
-            <br />
-            Price per session: {{ id.price }}
-          </p>
-          <a href="#" class="btn btn-primary">Enroll</a>
-        </div>
-      </div>
+      <DisplayClasses />
     </div>
   </div>
 </template>
@@ -81,12 +60,14 @@
 <script>
 import axios from "axios";
 import Background from "./Background.vue";
-const API =
-  "https://3000-jollychua-danceplaygroun-wnrgtq6k926.ws-us28.gitpod.io/";
+import DisplayClasses from "./DisplayClases.vue";
+
+const API = "http://localhost:3000";
 export default {
   name: "Login",
   components: {
     Background,
+    DisplayClasses,
   },
   data() {
     return {
@@ -120,14 +101,15 @@ export default {
 #removeMargin {
   margin-left: 0px;
   width: 1300px;
+  margin-top: 10px;
 }
 
 /* for desktop */
 #forAdvertisement {
   width: 1300px;
-  height: 800px;
+  height: 500px;
   margin-right: 0px;
-  margin-top: 50px;
+  margin-top: 0.2px;
   margin-left: 0px;
   display: flex;
 }
@@ -141,14 +123,7 @@ export default {
   margin-left: 5px;
   margin-top: 50px;
 }
-.card {
-  background-color: gray;
-}
-#Display {
-  background-color: white;
-  width: 600px;
-  height: 470px;
-}
+
 /* for tablet */
 @media screen and (max-width: 992px) {
   #LoginForm {
