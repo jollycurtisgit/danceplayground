@@ -50,9 +50,8 @@
 
         <!--end of checkbox-->
       </form>
-
-      <DisplayClasses />
     </div>
+    <DisplayClasses />
   </div>
 </template>
 
@@ -60,7 +59,7 @@
 <script>
 import axios from "axios";
 import Background from "./Background.vue";
-import DisplayClasses from "./DisplayClases.vue";
+import DisplayClasses from "./DisplayClasses.vue";
 
 const API = "http://localhost:3000";
 export default {
@@ -100,8 +99,8 @@ export default {
 <style scoped>
 #removeMargin {
   margin-left: 0px;
-  width: 1300px;
-  margin-top: 10px;
+  width: 1500px;
+  margin-top: 9px;
 }
 
 /* for desktop */

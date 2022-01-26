@@ -6,6 +6,8 @@
       v-for="id in classes"
       v-bind:key="id"
     >
+      <img :src="id.link" />
+
       <!--img src="..." class="card-img-top" alt="..."-->
       <div class="card-body">
         <h5 class="card-title">{{ id.name }}</h5>
@@ -16,25 +18,40 @@
           <br />
           Price per session: {{ id.price }}
         </p>
-        <a href="#" class="btn btn-primary">Enroll</a>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import axios from "axios";
 export default {
   name: "DisplayClasses",
+  data: function () {
+    return {
+      classes: "",
+      image: "",
+    };
+  },
+  async created() {
+    const response = await axios.get("http://localhost:3000/AddClasses");
+    this.classes = response.data;
+    this.image = response.data.link;
+    console.log("classList");
+  },
 };
 </script>
 
 <style scoped>
 .card {
-  background-color: gray;
+  background-color: yellow;
+  border-radius: 5px;
+  height: 150px;
 }
 #Display {
   background-color: white;
-  width: 600px;
+  width: 1500px;
   height: 470px;
+  display: flex;
 }
 </style>

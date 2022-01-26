@@ -181,7 +181,7 @@ body {
 }
 .container-sm {
   display: flex;
-  width: 1300px;
+  width: 1500px;
   margin-left: 0px;
   margin-right: 0px;
 }
