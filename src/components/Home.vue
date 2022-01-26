@@ -1,50 +1,29 @@
 <template>
-  <div>
-    <div v-if="user" class="Greetings">
-      <div v-for="u in user" v-bind:key="u">
-        <h3>Hello, {{ u.email }}</h3>
-        <button class="btn btn-outline-primary">Log Out</button>
-        <!--Hheeeyy revieww!!-->
-      </div>
-    </div>
-    <!--Hheeeyy revieww!!-->
-    <div v-if="!user" class="Greetings">
-      <div v-for="u in classes" v-bind:key="u">
-        <h3>Hello You are not logged in!</h3>
-      </div>
+  <div class="Greetings">
+    <LoggedIn v-if="page == 'LoggedIn'" />
+    <LoggedOut v-if="page == 'LoggedOut'" />
+
+    <div v-for="u in user" v-bind:key="u">
+      <h3>Hello You are not logged in!</h3>
     </div>
   </div>
 </template>
 
 <script>
-import axios from "axios";
+import LoggedIn from "./LoggedIn.vue";
+//import LoggedOut from "./LoggedOut.vue";
+
 export default {
   name: "Home",
   props: ["User"],
   data() {
     return {
-      Name: [],
-      Ako: [],
-      user: [],
+      page: "LoggedIn",
     };
   },
-  created: async function () {
-    const response = await axios.get("http://localhost:3000/home", {
-      headers: {
-        Authorization: "Bearer" + localStorage.getItem("token"),
-      },
-      //this.Name = response.data;
-      //this.user = response.data
-      //}
-    });
-    this.user = response.data;
-    console.log(response.data);
-  },
-  methods: {
-    LogOut() {
-      localStorage.removeItem("token");
-      this.$router.push("/");
-    },
+  components: {
+    LoggedIn,
+    // LoggedOut,
   },
 };
 </script>

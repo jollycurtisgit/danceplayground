@@ -81,6 +81,7 @@
 <script>
 import axios from "axios";
 import Background from "./Background.vue";
+const API = "https://herokudanceplaygroundapi.herokuapp.com/";
 export default {
   name: "SignUp",
   components: {
@@ -97,7 +98,7 @@ export default {
   },
   methods: {
     async handleSubmit() {
-      const response = await axios.post("http://localhost:3000/SignUp", {
+      const response = await axios.post(API + "SignUp", {
         fName: this.fName,
         lName: this.lName,
         email: this.email,

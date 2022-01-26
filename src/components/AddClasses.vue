@@ -37,6 +37,7 @@
 
 <script>
 import axios from "axios";
+const API = "https://herokudanceplaygroundapi.herokuapp.com/";
 export default {
   name: "AddClasses",
   data: function () {
@@ -50,7 +51,7 @@ export default {
   },
   methods: {
     async addNew() {
-      const response = await axios.post("http://localhost:3000/AddClasses", {
+      const response = await axios.post(API + "AddClasses", {
         name: this.name,
         location: this.location,
         schedule: this.schedule,

@@ -61,7 +61,7 @@ import axios from "axios";
 import Background from "./Background.vue";
 import DisplayClasses from "./DisplayClasses.vue";
 
-const API = "http://localhost:3000";
+const API = "https://herokudanceplaygroundapi.herokuapp.com/";
 export default {
   name: "Login",
   components: {
@@ -90,7 +90,7 @@ export default {
       localStorage.setItem("token", response.data.token);
       this.$emit("welcome-user");
       swal("Welcome!", "You are now inside your account!", "success");
-      this.$router.push("Home");
+      //this.$router.push("Home");
     },
   },
 };
