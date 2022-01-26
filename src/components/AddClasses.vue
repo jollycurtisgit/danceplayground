@@ -1,6 +1,6 @@
 <template>
   <div id="forBG">
-    <h1>Add Recipe</h1>
+    <h1>Add a Class</h1>
     <div id="AddClassForm">
       <div>
         <label class="form-label">Dance Name</label>
@@ -17,6 +17,15 @@
       <div class="mb-3">
         <label class="form-label">Price per Session:</label>
         <input type="text" v-model="price" class="form-control" />
+      </div>
+      <div>
+        <label class="form-label">Image Link</label>
+        <input
+          type="text"
+          v-model="link"
+          class="form-control"
+          placeholder="Please place a link/url of an image you want to add"
+        />
       </div>
 
       <button type="submit" class="btn btn-primary" v-on:click="addNew">
@@ -36,6 +45,7 @@ export default {
       location: "",
       schedule: "",
       price: "",
+      link: "",
     };
   },
   methods: {
@@ -45,6 +55,7 @@ export default {
         location: this.location,
         schedule: this.schedule,
         price: this.price,
+        link: this.link,
       });
       console.log(response);
       //alert("hoy!");

@@ -47,6 +47,10 @@ export default {
   background-color: yellow;
   border-radius: 5px;
   height: 150px;
+  margin: 7px;
+}
+.card-body {
+  background-color: yellow;
 }
 #Display {
   background-color: white;

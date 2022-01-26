@@ -78,11 +78,15 @@
         >Log Out</a
       >
     </div>
-    <div id="Greetings">
-      <h3 v-if="user">Hello data, {{ user }}</h3>
+    <div v-if="user" class="Greetings">
+      <h3>Hello data, {{ user }}</h3>
       <button class="btn btn-outline-primary">Log Out</button>
       <!--Hheeeyy revieww!!-->
       <h3 v-if="!user">Hello You are not logged in!</h3>
+    </div>
+    <div v-if="!user" class="Greetings">
+      <!--Hheeeyy revieww!!-->
+      <h3>Hello You are not logged in!</h3>
     </div>
 
     <div class="tab-content" id="v-pills-tabContent">
@@ -165,7 +169,7 @@ export default {
   position: fixed;
 }
 
-#Greetings {
+.Greetings {
   background-color: white;
   width: 4000px;
   height: 300px;

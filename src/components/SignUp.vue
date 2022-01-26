@@ -97,16 +97,13 @@ export default {
   },
   methods: {
     async handleSubmit() {
-      const response = await axios.post(
-        "http://localhost:3000/AddClasses/Signup",
-        {
-          fName: this.fName,
-          lName: this.lName,
-          email: this.email,
-          password: this.password,
-          password_confirm: this.password_confirm,
-        }
-      );
+      const response = await axios.post("http://localhost:3000/SignUp", {
+        fName: this.fName,
+        lName: this.lName,
+        email: this.email,
+        password: this.password,
+        password_confirm: this.password_confirm,
+      });
       swal("Welcome!", "You may now login!", "success");
       this.$router.push("Login2");
       console.log(response);

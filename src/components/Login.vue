@@ -105,8 +105,8 @@ export default {
 
 /* for desktop */
 #forAdvertisement {
-  width: 1300px;
-  height: 500px;
+  width: 1500px;
+  height: 600px;
   margin-right: 0px;
   margin-top: 0.2px;
   margin-left: 0px;

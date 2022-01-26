@@ -54,6 +54,7 @@
 <script>
 import axios from "axios";
 import Background from "./Background.vue";
+const API = "http://localhost:3000";
 export default {
   name: "Login2",
   components: {
@@ -67,7 +68,7 @@ export default {
   },
   methods: {
     async manageSubmit() {
-      const response = await axios.post("", {
+      const response = await axios.post(API, {
         email: this.email,
         password: this.password,
       });
