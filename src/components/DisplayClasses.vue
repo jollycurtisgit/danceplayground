@@ -25,6 +25,7 @@
 
 <script>
 import axios from "axios";
+const API = "https://herokudanceplaygroundapi.herokuapp.com/";
 export default {
   name: "DisplayClasses",
   data: function () {
@@ -34,7 +35,7 @@ export default {
     };
   },
   async created() {
-    const response = await axios.get("http://localhost:3000/AddClasses");
+    const response = await axios.get(API + "AddClasses");
     this.classes = response.data;
     this.image = response.data.link;
     console.log("classList");

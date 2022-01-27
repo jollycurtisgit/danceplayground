@@ -95,10 +95,10 @@
       />
       <Login2 v-if="page == 'Login2'" />
       <SignUp v-if="page == 'SignUp'" />
-      <Home v-if="page == 'Home'" v-on:welcome-user="onWelcomeUser" />
+      <Home v-if="page == 'Home'" />
       <UpdateClass v-if="page == 'UpdateClass'" />
       <!--ClassDisplay /-->
-      <router-view v-if="page == 'Login'" />
+      <router-view v-if="page == 'Login'" v-on:welcome-user="onWelcomeUser" />
     </div>
     <!--endofPages-->
   </div>

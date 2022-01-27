@@ -12,7 +12,7 @@
 <script>
 import LoggedIn from "./LoggedIn.vue";
 //import LoggedOut from "./LoggedOut.vue";
-
+//hindi sya pwedeng data() return page: loggedIn kasi nga may pa token effect ka diba, paano if walang token?
 export default {
   name: "Home",
   props: ["User"],

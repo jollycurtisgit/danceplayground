@@ -30,6 +30,7 @@
 
 <script>
 import axios from "axios";
+const API = "https://herokudanceplaygroundapi.herokuapp.com/";
 //import ClassCard from "@/components/ClassCard";
 export default {
   name: "DanceClasses",
@@ -41,12 +42,12 @@ export default {
   },
   methods: {
     async showMembers() {
-      const response = await axios.get("http://localhost:3000/home");
+      const response = await axios.get(API + "home");
       this.members = response.data;
       console.log(response.data);
     },
     async classList() {
-      const response = await axios.get("http://localhost:3000/AddClasses");
+      const response = await axios.get(API + "AddClasses");
       this.classes = response.data;
       console.log(response.data);
     },
