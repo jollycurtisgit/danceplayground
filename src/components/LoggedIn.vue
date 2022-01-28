@@ -4,10 +4,7 @@
             <Nav_Home />
             <div id ="container">
                 <h3>Hello, you are logged in as: {{me.email}}</h3>
-                  <div v-for="_id in user" v-bind:key="_id">
-                      <h3>Hello, you are logged in as:{{ _id.email }}</h3>
-                      <button class="btn btn-outline-primary">Log Out</button>
-                  </div>
+                  
             </div>  
          </div>
 
@@ -17,7 +14,7 @@
             </div>
             <br>
             <br>
-         <h3>Please wait... unless you did not logged in</h3></div>
+         <h3>Please wait... unless you did not log in</h3></div>
   </div>
 </template>
 

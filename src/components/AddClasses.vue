@@ -129,11 +129,6 @@
   </div>
 </template>
 
-
-methods: {
-     
-    },
-
 <script>
 import axios from "axios";
 const API = "https://herokudanceplaygroundapi.herokuapp.com/";
@@ -176,8 +171,11 @@ export default {
       },
       Home() {
         this.$router.push("/Home")
-      }
-  },
+      },
+      DanceClasses () {
+        this.$router.push("/DanceClasses")
+      },
+    },  
 };
 </script>
 

@@ -33,6 +33,7 @@
       href=""
       role="tab"
       aria-controls=""
+       v-on:click="DanceClasses"
       aria-selected="false"
       >Classes</a
     >
@@ -96,14 +97,19 @@
 export default {
   name: "Nav_Home",
   methods: {
-      gotoAddClasses: function () {
-        this.page = "AddClasses";
+      gotoAddClasses () {
         this.$router.push("/AddClasses")
       },
       LogOut() {
         localStorage.removeItem("token");
         this.$router.push("/");
-      }
+      },
+      Home() {
+        this.$router.push("/Home")
+      },
+      DanceClasses () {
+        this.$router.push("/DanceClasses")
+      },
     },
 };
 </script>
