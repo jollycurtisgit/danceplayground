@@ -1,17 +1,12 @@
 <template>
-  <div class="Greetings">
+<div class="Home">
     <LoggedIn v-if="page == 'LoggedIn'" />
-    <LoggedOut v-if="page == 'LoggedOut'" />
-
-    <div v-for="u in user" v-bind:key="u">
-      <h3>Hello You are not logged in!</h3>
-    </div>
-  </div>
+</div>
 </template>
 
 <script>
 import LoggedIn from "./LoggedIn.vue";
-//import LoggedOut from "./LoggedOut.vue";
+
 //hindi sya pwedeng data() return page: loggedIn kasi nga may pa token effect ka diba, paano if walang token?
 export default {
   name: "Home",
@@ -22,27 +17,27 @@ export default {
     };
   },
   components: {
-    LoggedIn,
-    // LoggedOut,
+    LoggedIn
   },
 };
 </script>
 
 
 <style scoped>
-#v-pills-tab {
+/*
+.Home {
   background-color: white;
-  width: 400px;
+  width: 600px;
   height: 900px;
-  left: 0;
-  position: fixed;
+  margin-top: 4px;
 }
 
-.Greetings {
-  background-color: white;
-  width: 4000px;
-  height: 300px;
-  margin-left: 780px;
-  margin-top: 50px;
+*/
+
+
+.spinner-border{
+  margin-top: 20px;
+  margin-left: 600px;
 }
+
 </style>

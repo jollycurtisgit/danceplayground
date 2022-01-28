@@ -32,11 +32,6 @@
               <a class="nav-link" href="#">Members</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" v-on:click="gotoAddClasses" href="#"
-                >Add Classes</a
-              >
-            </li>
-            <li class="nav-item">
               <a class="nav-link" v-on:click="gotoSignUp" href="#"
                 >Not a member?</a
               >
@@ -89,10 +84,6 @@
     <div class="container-sm">
       <!--pages-->
       <DanceClasses v-if="page == 'DanceClasses'" />
-      <AddClasses
-        v-if="page == 'AddClasses'"
-        v-on:addClass="gotoDanceClasses"
-      />
       <Login2 v-if="page == 'Login2'" />
       <SignUp v-if="page == 'SignUp'" />
       <Home v-if="page == 'Home'" />
@@ -106,7 +97,6 @@
 
 <script>
 import DanceClasses from "@/components/DanceClasses";
-import AddClasses from "@/components/AddClasses";
 import Login2 from "@/components/Login2";
 import SignUp from "@/components/SignUp";
 import Home from "@/components/Home";
@@ -123,7 +113,6 @@ export default {
   components: {
     Login2,
     DanceClasses,
-    AddClasses,
     SignUp,
     Home,
     UpdateClass,
@@ -132,9 +121,6 @@ export default {
   methods: {
     gotoDanceClasses: function () {
       this.page = "DanceClasses";
-    },
-    gotoAddClasses: function () {
-      this.page = "AddClasses";
     },
     gotoSignUp: function () {
       this.page = "SignUp";
@@ -147,9 +133,6 @@ export default {
     //},
     onWelcomeUser: function () {
       this.page = "Home";
-    },
-    Ana: function () {
-      $(".carousel").carousel({ interval: 7000 });
     },
   },
 };
@@ -181,6 +164,7 @@ body {
 }
 .container-sm {
   display: flex;
+  height: 900px;
   width: 1500px;
   margin-left: 0px;
   margin-right: 0px;

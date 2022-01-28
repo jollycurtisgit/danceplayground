@@ -1,22 +1,29 @@
 <template>
   <div>
-  <h3>{{me.email}}</h3>
-    <!--h3 v-if="user">Hello {{user.email}}</h3-->
-    <!--h3 v-if="!user">You are not logged in</h3-->
-            <div v-if="user">
-              <div v-for="_id in user" v-bind:key="_id">
-                <h3>Hello, you are logged in as:{{ _id.email }}</h3>
-                <button class="btn btn-outline-primary">Log Out</button>
-                <!--Hheeeyy revieww!!-->
-              </div>
+        <div v-if="user" id="LoggedIn">
+            <Nav_Home />
+            <div id ="container">
+                <h3>Hello, you are logged in as: {{me.email}}</h3>
+                  <div v-for="_id in user" v-bind:key="_id">
+                      <h3>Hello, you are logged in as:{{ _id.email }}</h3>
+                      <button class="btn btn-outline-primary">Log Out</button>
+                  </div>
             </div>  
+         </div>
 
-            <div v-if="!user"><h3>You are not logged in</h3></div>
+         <div v-if="!user" id="LoggedIn">
+            <div class="spinner-border text-warning" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <br>
+            <br>
+         <h3>Please wait... unless you did not logged in</h3></div>
   </div>
 </template>
 
 <script>
 import axios from "axios";
+import Nav_Home from "./Nav_Home.vue";
 const API = "https://herokudanceplaygroundapi.herokuapp.com/";
 export default {
   name: "LoggedIn",
@@ -25,6 +32,9 @@ export default {
       user: null,
       me: null
     };
+  },
+  components: {
+      Nav_Home
   },
   created: async function () {
     const response = await axios.get(API + "home", {
@@ -50,4 +60,15 @@ export default {
 
 
 <style scoped>
+#LoggedIn {
+  margin-top: 0px;
+  display: flex;
+  width: 1500px;
+}
+
+#container{
+  margin-top: 20px;
+  margin-left: 600px;
+  background-color: orange;
+}
 </style>
