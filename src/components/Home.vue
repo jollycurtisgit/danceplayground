@@ -1,7 +1,8 @@
 <template>
-<div class="Home">
+  <div class="Home">
     <LoggedIn v-if="page == 'LoggedIn'" />
-</div>
+    <DanceClasses v-if="page == 'Login'" v-on:welcome-user="onWelcomeUser" />
+  </div>
 </template>
 
 <script>
@@ -17,27 +18,22 @@ export default {
     };
   },
   components: {
-    LoggedIn
+    LoggedIn,
   },
 };
 </script>
 
 
 <style scoped>
-/*
 .Home {
-  background-color: white;
+  background-color: green;
   width: 600px;
   height: 900px;
   margin-top: 4px;
 }
 
-*/
-
-
-.spinner-border{
+.spinner-border {
   margin-top: 20px;
   margin-left: 600px;
 }
-
 </style>

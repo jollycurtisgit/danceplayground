@@ -8,10 +8,7 @@
     </div>
 
     <div v-if="!user" id="Waiting">
-      <h3>
-        Please wait (Retrieving from API)... We have something good instore for
-        you
-      </h3>
+      <h3>Ooops! You are unauthorized!</h3>
       <br />
       <br />
       <div class="spinner-border text-warning" role="status">

@@ -97,10 +97,15 @@
       <h1>All Classes</h1>
       <button v-on:click="View1Method">List View</button>
       <button v-on:click="View2Method">Large Icons View</button>
+
       <!--Second Set-->
       <div class="card" style="width: 18rem" v-if="page == 'View_2'">
         <div id="flex-box">
-          <div class="card-body" v-for="id in classes" v-bind:key="id">
+          <div
+            class="card-body"
+            v-for="id in classesLimitDisplay"
+            v-bind:key="id"
+          >
             <img :src="id.link" />
             <h5 class="card-title">{{ id.name }}</h5>
             <p class="card-text">
@@ -110,7 +115,8 @@
               <br />
               Price per session: {{ id.price }}
             </p>
-            <a href="#" class="btn btn-primary" v-on:click="Enroll">Enroll</a>
+            <a href="#" class="btn btn-primary" v-on:click="Update">Update</a>
+            <a href="#" class="btn btn-danger" v-on:click="Delete">Delete</a>
           </div>
         </div>
       </div>
@@ -134,8 +140,13 @@
                 <td class="list--item">{{ id.schedule }}</td>
                 <td class="list-grou-item">{{ id.price }}</td>
                 <td class="list-grou-item">
-                  <a href="#" class="btn btn-primary" v-on:click="Enroll"
-                    >Enroll</a
+                  <a href="#" class="btn btn-primary" v-on:click="Update"
+                    >Update</a
+                  >
+                </td>
+                <td class="list-grou-item">
+                  <a href="#" class="btn btn-danger" v-on:click="Delete"
+                    >Delete</a
                   >
                 </td>
               </tr>
@@ -144,6 +155,18 @@
         </div>
       </div>
       <!--End of First Set-->
+      <!-- First Set Loading-->
+      <div v-if="page == '!View_1'" id="Waiting">
+        <h3>
+          Please wait (Retrieving from API)... We have something good instore
+          for you
+        </h3>
+        <br />
+        <br />
+        <div class="spinner-border text-warning" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -157,13 +180,14 @@ export default {
   data: function () {
     return {
       classes: "",
+      classesLimitDisplay: "",
       page: "View_1",
     };
   },
   async created() {
     const response = await axios.get(API + "AddClasses");
     this.classes = response.data;
-    console.log(response.data);
+    this.classesLimitDisplay = response.data.slice(0, 3);
     console.log("created async is here");
   },
   methods: {
@@ -188,50 +212,46 @@ export default {
 </script>
 
 <style>
-img {
-  border-radius: 20px;
-  object-fit: fill;
-  width: 200px;
-  height: 200px;
-}
-
+/*Table*/
 .table {
   border: 3px, black;
 }
-/*Table*/
+
 #MainList {
   background-color: yellow;
 }
 
-#flex-box {
-  display: flex;
-  background-color: red;
-  width: 900px;
-  height: 600px;
-}
 #DanceClassForm {
   background-color: white;
   border: 2px solid yellow;
   border-radius: 5px;
-  width: 900px;
+  width: 1010px;
   height: 600px;
   padding: 40px 50px 80px 50px;
-  margin-left: 450px;
+  margin-left: 300px;
   margin-top: 20px;
-  margin-right: 30px;
+  margin-right: 10px;
   margin-bottom: 30px;
 }
 
 #v-pills-tab {
   background-color: white;
-  width: 400px;
+  width: 230px;
   height: 900px;
   left: 0;
   position: fixed;
   margin-top: 0px;
 }
+
+#flex-box {
+  display: flex;
+  background-color: violet;
+  width: 700px;
+  height: 600px;
+}
+
 .card {
-  background-color: yellow;
+  background-color: red;
   border-radius: 20px;
   height: 150px;
   margin: 7px;
@@ -241,5 +261,20 @@ img {
 }
 .card-body {
   background-color: yellow;
+  width: 180px;
+  height: 350px;
+  margin: 15px;
+}
+
+img {
+  border-radius: 20px;
+  object-fit: fill;
+  width: 150px;
+  height: 150px;
+}
+
+#Waiting {
+  margin-top: 200px;
+  background-color: white;
 }
 </style>

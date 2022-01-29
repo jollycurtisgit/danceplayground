@@ -1,6 +1,6 @@
 <template>
   <!--Navbar-->
-    <div
+  <div
     class="nav flex-column nav-pills"
     id="v-pills-tab"
     role="tablist"
@@ -33,7 +33,7 @@
       href=""
       role="tab"
       aria-controls=""
-       v-on:click="DanceClasses"
+      v-on:click="DanceClasses"
       aria-selected="false"
       >Classes</a
     >
@@ -47,7 +47,7 @@
       aria-selected="false"
       >Enrolled Classes</a
     >
-     <a
+    <a
       class="nav-link"
       id="v-pills-messages-tab"
       data-toggle="pill"
@@ -97,27 +97,27 @@
 export default {
   name: "Nav_Home",
   methods: {
-      gotoAddClasses () {
-        this.$router.push("/AddClasses")
-      },
-      LogOut() {
-        localStorage.removeItem("token");
-        this.$router.push("/");
-      },
-      Home() {
-        this.$router.push("/Home")
-      },
-      DanceClasses () {
-        this.$router.push("/DanceClasses")
-      },
+    gotoAddClasses() {
+      this.$router.push("/AddClasses");
     },
+    LogOut() {
+      localStorage.removeItem("token");
+      this.$router.push("/");
+    },
+    Home() {
+      this.$router.push("/Home");
+    },
+    DanceClasses() {
+      this.$router.push("/DanceClasses");
+    },
+  },
 };
 </script>
 
 <style>
 #v-pills-tab {
   background-color: white;
-  width: 400px;
+  width: 230px;
   height: 900px;
   left: 0;
   position: fixed;

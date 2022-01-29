@@ -2,130 +2,130 @@
   <div id="AddClass">
     <!--Navbar-->
     <div
-    class="nav flex-column nav-pills"
-    id="v-pills-tab"
-    role="tablist"
-    aria-orientation="vertical"
-  >
-    <a
-      class="nav-link"
-      id="v-pills-home-tab"
-      data-toggle="pill"
-      href="#v-pills-home"
-      role="tab"
-      aria-controls="v-pills-home"
-      aria-selected="true"
-      v-on:click="Home"
-      >Home</a
+      class="nav flex-column nav-pills"
+      id="v-pills-tab"
+      role="tablist"
+      aria-orientation="vertical"
     >
-    <a
-      class="nav-link"
-      id="v-pills-profile-tab"
-      data-toggle="pill"
-      href="#v-pills-profile"
-      role="tab"
-      aria-controls="v-pills-profile"
-      aria-selected="false"
-      >Profile</a
-    >
-    <a
-      class="nav-link"
-      id="v-pills-messages-tab"
-      data-toggle="pill"
-      href="#v-pills-messages"
-      role="tab"
-      aria-controls="v-pills-messages"
-      aria-selected="false"
-      >Classes</a
-    >
-    <a
-      class="nav-link"
-      id="v-pills-messages-tab"
-      data-toggle="pill"
-      href="#v-pills-messages"
-      role="tab"
-      aria-controls="v-pills-messages"
-      aria-selected="false"
-      >Enrolled Classes</a
-    >
-     <a
-      class="nav-link active"
-      id="v-pills-messages-tab"
-      data-toggle="pill"
-      href="#v-pills-messages"
-      role="tab"
-      aria-controls="v-pills-messages"
-      aria-selected="false"
-      v-on:click="gotoAddClasses"
-      >Add Classes</a
-    >
-    <a
-      class="nav-link"
-      id="v-pills-messages-tab"
-      data-toggle="pill"
-      href="#v-pills-messages"
-      role="tab"
-      aria-controls="v-pills-messages"
-      aria-selected="false"
-      >Friends</a
-    >
-    <a
-      class="nav-link"
-      id="v-pills-messages-tab"
-      data-toggle="pill"
-      href="#v-pills-messages"
-      role="tab"
-      aria-controls="v-pills-messages"
-      aria-selected="false"
-      >Directions</a
-    >
-    <a
-      class="nav-link"
-      id="v-pills-settings-tab"
-      data-toggle="pill"
-      v-on:click="LogOut"
-      href="#v-pills-settings"
-      role="tab"
-      aria-controls="v-pills-settings"
-      aria-selected="false"
-      >Log Out</a
-    >
-  </div>
-  <!--End of Navbar-->
-    <div id="forBG">
-    <h1>Add a Class</h1>
-    <div id="AddClassForm">
-      <div>
-        <label class="form-label">Dance Name</label>
-        <input type="text" v-model="name" class="form-control" />
-      </div>
-      <div>
-        <label class="form-label">Location</label>
-        <input type="text" v-model="location" class="form-control" />
-      </div>
-      <div>
-        <label class="form-label">Schedule</label>
-        <input type="text" v-model="schedule" class="form-control" />
-      </div>
-      <div class="mb-3">
-        <label class="form-label">Price per Session:</label>
-        <input type="text" v-model="price" class="form-control" />
-      </div>
-      <div>
-        <label class="form-label">Image Link</label>
-        <input
-          type="text"
-          v-model="link"
-          class="form-control"
-          placeholder="Please place a link/url of an image you want to add"
-        />
-      </div>
-
-      <button type="submit" class="btn btn-primary" v-on:click="addNew">
-        Add New
-      </button>
+      <a
+        class="nav-link"
+        id="v-pills-home-tab"
+        data-toggle="pill"
+        href="#v-pills-home"
+        role="tab"
+        aria-controls="v-pills-home"
+        aria-selected="true"
+        v-on:click="Home"
+        >Home</a
+      >
+      <a
+        class="nav-link"
+        id="v-pills-profile-tab"
+        data-toggle="pill"
+        href="#v-pills-profile"
+        role="tab"
+        aria-controls="v-pills-profile"
+        aria-selected="false"
+        >Profile</a
+      >
+      <a
+        class="nav-link"
+        id="v-pills-messages-tab"
+        data-toggle="pill"
+        href="#v-pills-messages"
+        role="tab"
+        aria-controls="v-pills-messages"
+        aria-selected="false"
+        >Classes</a
+      >
+      <a
+        class="nav-link"
+        id="v-pills-messages-tab"
+        data-toggle="pill"
+        href="#v-pills-messages"
+        role="tab"
+        aria-controls="v-pills-messages"
+        aria-selected="false"
+        >Enrolled Classes</a
+      >
+      <a
+        class="nav-link active"
+        id="v-pills-messages-tab"
+        data-toggle="pill"
+        href="#v-pills-messages"
+        role="tab"
+        aria-controls="v-pills-messages"
+        aria-selected="false"
+        v-on:click="gotoAddClasses"
+        >Add Classes</a
+      >
+      <a
+        class="nav-link"
+        id="v-pills-messages-tab"
+        data-toggle="pill"
+        href="#v-pills-messages"
+        role="tab"
+        aria-controls="v-pills-messages"
+        aria-selected="false"
+        >Friends</a
+      >
+      <a
+        class="nav-link"
+        id="v-pills-messages-tab"
+        data-toggle="pill"
+        href="#v-pills-messages"
+        role="tab"
+        aria-controls="v-pills-messages"
+        aria-selected="false"
+        >Directions</a
+      >
+      <a
+        class="nav-link"
+        id="v-pills-settings-tab"
+        data-toggle="pill"
+        v-on:click="LogOut"
+        href="#v-pills-settings"
+        role="tab"
+        aria-controls="v-pills-settings"
+        aria-selected="false"
+        >Log Out</a
+      >
     </div>
-  </div>
+    <!--End of Navbar-->
+    <div id="forBG">
+      <h1>Add a Class</h1>
+      <div id="AddClassForm">
+        <div>
+          <label class="form-label">Dance Name</label>
+          <input type="text" v-model="name" class="form-control" />
+        </div>
+        <div>
+          <label class="form-label">Location</label>
+          <input type="text" v-model="location" class="form-control" />
+        </div>
+        <div>
+          <label class="form-label">Schedule</label>
+          <input type="text" v-model="schedule" class="form-control" />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Price per Session:</label>
+          <input type="text" v-model="price" class="form-control" />
+        </div>
+        <div>
+          <label class="form-label">Image Link</label>
+          <input
+            type="text"
+            v-model="link"
+            class="form-control"
+            placeholder="Please place a link/url of an image you want to add"
+          />
+        </div>
+
+        <button type="submit" class="btn btn-primary" v-on:click="addNew">
+          Add New
+        </button>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -162,20 +162,20 @@ export default {
       this.$emit("addClass");
       //this.$router.push("DanceClasses");
     },
-     gotoAddClasses () {
-        this.$router.push("/AddClasses")
-      },
-      LogOut() {
-        localStorage.removeItem("token");
-        this.$router.push("/");
-      },
-      Home() {
-        this.$router.push("/Home")
-      },
-      DanceClasses () {
-        this.$router.push("/DanceClasses")
-      },
-    },  
+    gotoAddClasses() {
+      this.$router.push("/AddClasses");
+    },
+    LogOut() {
+      localStorage.removeItem("token");
+      this.$router.push("/");
+    },
+    Home() {
+      this.$router.push("/Home");
+    },
+    DanceClasses() {
+      this.$router.push("/DanceClasses");
+    },
+  },
 };
 </script>
 
@@ -196,7 +196,7 @@ export default {
 
 #v-pills-tab {
   background-color: white;
-  width: 400px;
+  width: 230px;
   height: 900px;
   left: 0;
   position: fixed;

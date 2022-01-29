@@ -97,8 +97,6 @@ export default {
 </script>
 
 <style scoped>
-
-
 #removeMargin {
   margin-left: 0px;
   width: 1500px;
@@ -107,7 +105,7 @@ export default {
 
 /* for desktop */
 #forAdvertisement {
-  width: 1500px;
+  width: 1300px;
   height: 600px;
   margin-right: 0px;
   margin-top: 0.2px;
@@ -118,10 +116,10 @@ export default {
   background-color: white;
   border: 2px solid yellow;
   border-radius: 5px;
-  width: 800px;
+  width: 600px;
   height: 470px;
   padding: 40px 30px 80px 30px;
-  margin-left: 5px;
+  margin-left: 0px;
   margin-top: 50px;
 }
 
