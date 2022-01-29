@@ -1,5 +1,21 @@
 <template>
-  <div id="Display">
+  <div>
+    <!--Search bar-->
+    <div id="search">
+        <div class="d-flex">
+            <input
+              class="form-control.2 me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="button btn-outline-success" type="submit">
+              Search
+            </button>
+          </div>
+    </div>
+    <!--End of search bar-->
+    <div id="Display">
     <div
       class="card"
       style="width: 18rem"
@@ -19,6 +35,7 @@
           Price per session: {{ id.price }}
         </p>
       </div>
+    </div>
     </div>
   </div>
 </template>
@@ -40,10 +57,27 @@ export default {
     this.image = response.data.link;
     console.log("classList");
   },
+  methods: {
+
+  }
 };
 </script>
 
 <style scoped>
+#search {
+  display:flex;
+  width:1500px;
+  height:50px;
+  background-color:orange;
+}
+
+.form-control.2 {
+    margin:10px,10px,10px,10px;
+},
+.button{
+margin:10px,10px,10px,10px;
+}
+
 .card {
   background-color: yellow;
   border-radius: 5px;
@@ -58,5 +92,10 @@ export default {
   width: 1500px;
   height: 470px;
   display: flex;
+}
+
+img{
+  width: 190px;
+  height: 200px;
 }
 </style>

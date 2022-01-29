@@ -1,20 +1,20 @@
 <template>
   <div>
-        <div v-if="user" id="LoggedIn">
-            <Nav_Home />
-            <div id ="container">
-                <h3>Hello, you are logged in as: {{me.email}}</h3>
-                  
-            </div>  
-         </div>
+    <div v-if="user" id="LoggedIn">
+      <Nav_Home />
+      <div id="container">
+        <h3>Hello, you are logged in as: {{ me.email }}</h3>
+      </div>
+    </div>
 
-         <div v-if="!user" id="LoggedIn">
-            <div class="spinner-border text-warning" role="status">
-                <span class="visually-hidden">Loading...</span>
-            </div>
-            <br>
-            <br>
-         <h3>Please wait... unless you did not log in</h3></div>
+    <div v-if="!user" id="LoggedIn">
+      <div class="spinner-border text-warning" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <br />
+      <br />
+      <h3>Please wait (Retrieving from API)... unless you did not log in</h3>
+    </div>
   </div>
 </template>
 
@@ -27,11 +27,11 @@ export default {
   data() {
     return {
       user: null,
-      me: null
+      me: null,
     };
   },
   components: {
-      Nav_Home
+    Nav_Home,
   },
   created: async function () {
     const response = await axios.get(API + "home", {
@@ -43,7 +43,7 @@ export default {
       //}
     });
     this.user = response.data;
-    this.me = response.data[response.data.length - 1]
+    this.me = response.data[response.data.length - 1];
     console.log(response.data[response.data.length - 1]);
   },
   methods: {
@@ -57,13 +57,17 @@ export default {
 
 
 <style scoped>
+h3 {
+  margin-top: 200px;
+}
+
 #LoggedIn {
   margin-top: 0px;
   display: flex;
   width: 1500px;
 }
 
-#container{
+#container {
   margin-top: 20px;
   margin-left: 600px;
   background-color: orange;

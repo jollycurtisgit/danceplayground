@@ -97,6 +97,8 @@ export default {
 </script>
 
 <style scoped>
+
+
 #removeMargin {
   margin-left: 0px;
   width: 1500px;

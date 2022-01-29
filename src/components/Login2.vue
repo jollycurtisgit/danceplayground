@@ -47,6 +47,7 @@
         </div>
       </form>
     </div>
+     <DisplayClasses />
   </div>
 </template>
 
