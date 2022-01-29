@@ -7,13 +7,16 @@
       </div>
     </div>
 
-    <div v-if="!user" id="LoggedIn">
+    <div v-if="!user" id="Waiting">
+      <h3>
+        Please wait (Retrieving from API)... We have something good instore for
+        you
+      </h3>
+      <br />
+      <br />
       <div class="spinner-border text-warning" role="status">
         <span class="visually-hidden">Loading...</span>
       </div>
-      <br />
-      <br />
-      <h3>Please wait (Retrieving from API)... unless you did not log in</h3>
     </div>
   </div>
 </template>
@@ -57,8 +60,9 @@ export default {
 
 
 <style scoped>
-h3 {
+#Waiting {
   margin-top: 200px;
+  background-color: white;
 }
 
 #LoggedIn {

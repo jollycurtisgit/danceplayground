@@ -95,39 +95,53 @@
 
     <div id="DanceClassForm">
       <h1>All Classes</h1>
-      <button v-on:click="View1Method">View 1</button>
-      <button v-on:click="View2Method">View 2</button>
+      <button v-on:click="View1Method">List View</button>
+      <button v-on:click="View2Method">Large Icons View</button>
       <!--Second Set-->
-      <div
-        class="card"
-        style="width: 18rem"
-        v-for="id in classes"
-        v-bind:key="id"
-        v-if="page == 'View_2'"
-      >
-        <div class="card-body">
-          <h5 class="card-title">{{ id.name }}</h5>
-          <p class="card-text">
-            Location: {{ id.location }}
-            <br />
-            Schedule: {{ id.schedule }}
-            <br />
-            Price per session: {{ id.price }}
-          </p>
-          <a href="#" class="btn btn-primary" v-on:click="Enroll">Enroll</a>
+      <div class="card" style="width: 18rem" v-if="page == 'View_2'">
+        <div id="flex-box">
+          <div class="card-body" v-for="id in classes" v-bind:key="id">
+            <img :src="id.link" />
+            <h5 class="card-title">{{ id.name }}</h5>
+            <p class="card-text">
+              Location: {{ id.location }}
+              <br />
+              Schedule: {{ id.schedule }}
+              <br />
+              Price per session: {{ id.price }}
+            </p>
+            <a href="#" class="btn btn-primary" v-on:click="Enroll">Enroll</a>
+          </div>
         </div>
       </div>
       <!--First Set-->
-      <div v-for="id in classes" v-bind:key="id" v-if="page == 'View_1'">
-        <ul class="list-group list-group-horizontal">
-          <li class="list-group-item">{{ id.name }}</li>
-          <li class="list-group-item">{{ id.location }}</li>
-          <li class="list-group-item">{{ id.schedule }}</li>
-          <li class="list-group-item">{{ id.price }}</li>
-          <li class="list-group-item">
-            <a href="#" class="btn btn-primary" v-on:click="Enroll">Enroll</a>
-          </li>
-        </ul>
+      <div v-if="page == 'View_1'">
+        <div>
+          <table class="table">
+            <thead id="MainList">
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Location</th>
+                <th scope="col">Schedule</th>
+                <th scope="col">Price</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody v-for="id in classes" v-bind:key="id">
+              <tr>
+                <th scope="row">{{ id.name }}</th>
+                <td class="list-grou-item">{{ id.location }}</td>
+                <td class="list--item">{{ id.schedule }}</td>
+                <td class="list-grou-item">{{ id.price }}</td>
+                <td class="list-grou-item">
+                  <a href="#" class="btn btn-primary" v-on:click="Enroll"
+                    >Enroll</a
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
       <!--End of First Set-->
     </div>
@@ -174,6 +188,27 @@ export default {
 </script>
 
 <style>
+img {
+  border-radius: 20px;
+  object-fit: fill;
+  width: 200px;
+  height: 200px;
+}
+
+.table {
+  border: 3px, black;
+}
+/*Table*/
+#MainList {
+  background-color: yellow;
+}
+
+#flex-box {
+  display: flex;
+  background-color: red;
+  width: 900px;
+  height: 600px;
+}
 #DanceClassForm {
   background-color: white;
   border: 2px solid yellow;
@@ -197,10 +232,12 @@ export default {
 }
 .card {
   background-color: yellow;
-  border-radius: 5px;
+  border-radius: 20px;
   height: 150px;
   margin: 7px;
+  /*object-fit: fill;*/
   display: flex;
+  /*flex: 1;*/
 }
 .card-body {
   background-color: yellow;
