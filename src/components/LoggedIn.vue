@@ -104,15 +104,17 @@
       <!--End of Navbar-->
       <!--Start of Display-->
       <!--A.1.II-->
+      <div class="container">
+        <h3>Hello, you are logged in as: {{ me.email }}</h3>
+      </div>
+      <!--A.1.III-->
       <div class="tab-content" id="v-pills-tabContent">
-        <!--A.1.II.1-->
+        <!--A.1.III.1-->
         <div
           class="tab-pane fade show active"
           id="v-pills-home"
           aria-labelledby="v-pills-home-tab"
-        >
-          ...bjvjvjhcvhjcjcjchjcjhcjhcfjhcjc
-        </div>
+        ></div>
 
         <!--A.1.II.2-->
         <div
@@ -131,14 +133,6 @@
         >
           <DanceClasses v-if="page == 'DanceClasses'" />
         </div>
-
-        <!--A.1.II.3-->
-        <DanceClasses
-          v-if="page == 'DanceClasses'"
-          class="tab-pane fade"
-          id="v-pills-classes"
-          aria-labelledby="v-pills-classes"
-        />
 
         <!--A.1.II.4-->
         <div
@@ -177,16 +171,11 @@
         </div>
       </div>
       <!---End of Display--->
-
-      <!--A.1.III-->
-      <div id="container">
-        <h3>Hello, you are logged in as: {{ me.email }}</h3>
-      </div>
     </div>
     <!--End Of LoggedIn Div-->
 
     <!--A.2-->
-    <div v-if="!user" id="Waiting">
+    <div v-if="!user" class="container">
       <h3>Ooops! You are unauthorized!</h3>
       <br />
       <br />
@@ -260,19 +249,18 @@ export default {
 
 
 <style scoped>
-#Waiting {
-  margin-top: 200px;
-  background-color: white;
-}
 #LoggedIn {
   margin-top: 0px;
   display: flex;
   width: 1500px;
 }
-#container {
+.container {
+  background-color: white;
+  border: 2px solid yellow;
+  border-radius: 5px;
   margin-top: 20px;
-  margin-left: 600px;
-  background-color: orange;
+  margin-left: 250px;
+  max-height: 50px;
 }
 #v-pills-tab {
   background-color: white;
