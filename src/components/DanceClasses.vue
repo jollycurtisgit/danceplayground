@@ -2,8 +2,61 @@
   <div>
     <div id="DanceClassForm">
       <h1>All Classes</h1>
-      <button v-on:click="View1Method">List View</button>
-      <button v-on:click="View2Method">Large Icons View</button>
+      <button v-on:click="View1Method" class="btn btn-outline-primary">
+        List View
+      </button>
+      <button v-on:click="View2Method" class="btn btn-outline-primary">
+        Large Icons View
+      </button>
+
+      <!--First Set-->
+      <div v-if="page == 'View_1'">
+        <div>
+          <table class="table">
+            <thead id="MainList">
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Location</th>
+                <th scope="col">Schedule</th>
+                <th scope="col">Price</th>
+                <th scope="col">Actions</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody v-for="id in classes" v-bind:key="id">
+              <tr>
+                <th scope="row">{{ id.name }}</th>
+                <td class="list-grou-item">{{ id.location }}</td>
+                <td class="list--item">{{ id.schedule }}</td>
+                <td class="list-grou-item">{{ id.price }}</td>
+                <td class="list-grou-item">
+                  <a href="#" class="btn btn-primary" v-on:click="goToUpdate"
+                    >Update</a
+                  >
+                </td>
+                <td class="list-grou-item">
+                  <a href="#" class="btn btn-danger" v-on:click="Delete"
+                    >Delete</a
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!--End of First Set-->
+      <!-- First Set Loading-->
+      <div v-if="page == '!View_1'" id="Waiting">
+        <h3>
+          Please wait (Retrieving from API)... We have something good instore
+          for you
+        </h3>
+        <br />
+        <br />
+        <div class="spinner-border text-warning" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
 
       <!--Second Set-->
       <div class="card" v-if="page == 'View_2'">
@@ -42,65 +95,27 @@
               <br />
               Price per session: {{ id.price }}
             </p>
-            <a href="#" class="btn btn-primary" v-on:click="Update">Update</a>
+            <a href="#" class="btn btn-primary" v-on:click="goToUpdate"
+              >Update</a
+            >
             <a href="#" class="btn btn-danger" v-on:click="Delete">Delete</a>
           </div>
         </div>
       </div>
-      <!--First Set-->
-      <div v-if="page == 'View_1'">
-        <div>
-          <table class="table">
-            <thead id="MainList">
-              <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Location</th>
-                <th scope="col">Schedule</th>
-                <th scope="col">Price</th>
-                <th scope="col">Actions</th>
-              </tr>
-            </thead>
-            <tbody v-for="id in classes" v-bind:key="id">
-              <tr>
-                <th scope="row">{{ id.name }}</th>
-                <td class="list-grou-item">{{ id.location }}</td>
-                <td class="list--item">{{ id.schedule }}</td>
-                <td class="list-grou-item">{{ id.price }}</td>
-                <td class="list-grou-item">
-                  <a href="#" class="btn btn-primary" v-on:click="Update"
-                    >Update</a
-                  >
-                </td>
-                <td class="list-grou-item">
-                  <a href="#" class="btn btn-danger" v-on:click="Delete"
-                    >Delete</a
-                  >
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+
+      <!--Third Set: Edit One Class-->
+      <div v-if="page == 'UpdateArea'">
+        <AddClasses />
       </div>
-      <!--End of First Set-->
-      <!-- First Set Loading-->
-      <div v-if="page == '!View_1'" id="Waiting">
-        <h3>
-          Please wait (Retrieving from API)... We have something good instore
-          for you
-        </h3>
-        <br />
-        <br />
-        <div class="spinner-border text-warning" role="status">
-          <span class="visually-hidden">Loading...</span>
-        </div>
-      </div>
+      <!--end of dance class form div-->
     </div>
+    <!--end of dance class form div-->
   </div>
 </template>
 
 <script>
 import axios from "axios";
-import Nav_Home from "./Nav_Home.vue";
+import AddClasses from "./AddClasses.vue";
 const API = "https://herokudanceplaygroundapi.herokuapp.com/";
 //import ClassCard from "@/components/ClassCard";
 export default {
@@ -112,7 +127,9 @@ export default {
       page: "View_1",
     };
   },
-  components: {},
+  components: {
+    AddClasses,
+  },
   async created() {
     const response = await axios.get(API + "AddClasses");
     this.classes = response.data;
@@ -122,6 +139,9 @@ export default {
     console.log("created async is here");
   },
   methods: {
+    goToUpdate() {
+      this.page = "UpdateArea";
+    },
     gotoAddClasses() {
       this.$router.push("/AddClasses");
     },
