@@ -7,6 +7,7 @@
 
 <script>
 import LoggedIn from "./LoggedIn.vue";
+import Nav_Home from "./Nav_Home.vue";
 
 //hindi sya pwedeng data() return page: loggedIn kasi nga may pa token effect ka diba, paano if walang token?
 export default {
@@ -19,6 +20,7 @@ export default {
   },
   components: {
     LoggedIn,
+    Nav_Home,
   },
 };
 </script>

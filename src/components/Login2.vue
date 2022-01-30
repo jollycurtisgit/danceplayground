@@ -47,7 +47,7 @@
         </div>
       </form>
     </div>
-     <DisplayClasses />
+    <DisplayClasses />
   </div>
 </template>
 
@@ -75,9 +75,9 @@ export default {
       });
       console.log(response);
       localStorage.setItem("token", response.data.token);
-      this.$emit("welcome-user");
+      /*this.$emit("welcome-user");*/
       swal("Welcome!", "You are now inside your account!", "success");
-      //this.$router.push("Home");
+      this.$router.push("LoggedIn");
     },
   },
 };

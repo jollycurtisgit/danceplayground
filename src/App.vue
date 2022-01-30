@@ -86,7 +86,7 @@
       <DanceClasses v-if="page == 'DanceClasses'" />
       <Login2 v-if="page == 'Login2'" />
       <SignUp v-if="page == 'SignUp'" />
-      <Home v-if="page == 'Home'" />
+      <LoggedIn v-if="page == 'LoggedIn'" />
       <UpdateClass v-if="page == 'UpdateClass'" />
       <!--ClassDisplay /-->
       <router-view v-if="page == 'Login'" v-on:welcome-user="onWelcomeUser" />
@@ -99,7 +99,7 @@
 import DanceClasses from "@/components/DanceClasses";
 import Login2 from "@/components/Login2";
 import SignUp from "@/components/SignUp";
-import Home from "@/components/Home";
+import LoggedIn from "@/components/LoggedIn";
 import UpdateClass from "@/components/UpdateClass";
 
 //import ClassDisplay from "@/components/ClassDisplay";
@@ -114,9 +114,9 @@ export default {
     Login2,
     DanceClasses,
     SignUp,
-    Home,
     UpdateClass,
     //ClassDisplay,
+    LoggedIn,
   },
   methods: {
     gotoDanceClasses: function () {
@@ -132,7 +132,7 @@ export default {
     //  this.page = "DanceClasses";
     //},
     onWelcomeUser: function () {
-      this.page = "Home";
+      this.page = "LoggedIn";
     },
   },
 };

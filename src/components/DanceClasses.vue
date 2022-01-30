@@ -1,105 +1,32 @@
 <template>
   <div>
-    <!--Navbar-->
-    <div
-      class="nav flex-column nav-pills"
-      id="v-pills-tab"
-      role="tablist"
-      aria-orientation="vertical"
-    >
-      <a
-        class="nav-link"
-        id="v-pills-home-tab"
-        data-toggle="pill"
-        href="#v-pills-home"
-        role="tab"
-        aria-controls="v-pills-home"
-        aria-selected="true"
-        v-on:click="Home"
-        >Home</a
-      >
-      <a
-        class="nav-link"
-        id="v-pills-profile-tab"
-        data-toggle="pill"
-        href="#v-pills-profile"
-        role="tab"
-        aria-controls="v-pills-profile"
-        aria-selected="false"
-        >Profile</a
-      >
-      <a
-        class="nav-link active"
-        id="v-pills-messages-tab"
-        data-toggle="pill"
-        href="#v-pills-messages"
-        role="tab"
-        aria-controls="v-pills-messages"
-        aria-selected="false"
-        >Classes</a
-      >
-      <a
-        class="nav-link"
-        id="v-pills-messages-tab"
-        data-toggle="pill"
-        href="#v-pills-messages"
-        role="tab"
-        aria-controls="v-pills-messages"
-        aria-selected="false"
-        >Enrolled Classes</a
-      >
-      <a
-        class="nav-link"
-        id="v-pills-messages-tab"
-        data-toggle="pill"
-        href="#v-pills-messages"
-        role="tab"
-        aria-controls="v-pills-messages"
-        aria-selected="false"
-        v-on:click="gotoAddClasses"
-        >Add Classes</a
-      >
-      <a
-        class="nav-link"
-        id="v-pills-messages-tab"
-        data-toggle="pill"
-        href="#v-pills-messages"
-        role="tab"
-        aria-controls="v-pills-messages"
-        aria-selected="false"
-        >Friends</a
-      >
-      <a
-        class="nav-link"
-        id="v-pills-messages-tab"
-        data-toggle="pill"
-        href="#v-pills-messages"
-        role="tab"
-        aria-controls="v-pills-messages"
-        aria-selected="false"
-        >Directions</a
-      >
-      <a
-        class="nav-link"
-        id="v-pills-settings-tab"
-        data-toggle="pill"
-        v-on:click="LogOut"
-        href="#v-pills-settings"
-        role="tab"
-        aria-controls="v-pills-settings"
-        aria-selected="false"
-        >Log Out</a
-      >
-    </div>
-    <!--End of Navbar-->
-
     <div id="DanceClassForm">
       <h1>All Classes</h1>
       <button v-on:click="View1Method">List View</button>
       <button v-on:click="View2Method">Large Icons View</button>
 
       <!--Second Set-->
-      <div class="card" style="width: 18rem" v-if="page == 'View_2'">
+      <div class="card" v-if="page == 'View_2'">
+        <!--Button Test Set-->
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleFade"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleFade"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+        <!--Button Test Set-->
         <div id="flex-box">
           <div
             class="card-body"
@@ -173,6 +100,7 @@
 
 <script>
 import axios from "axios";
+import Nav_Home from "./Nav_Home.vue";
 const API = "https://herokudanceplaygroundapi.herokuapp.com/";
 //import ClassCard from "@/components/ClassCard";
 export default {
@@ -184,10 +112,13 @@ export default {
       page: "View_1",
     };
   },
+  components: {},
   async created() {
     const response = await axios.get(API + "AddClasses");
     this.classes = response.data;
-    this.classesLimitDisplay = response.data.slice(0, 3);
+    this.classesLimitDisplay = response.data;
+    /* Never Delete*/
+    /*     this.classesLimitDisplay = response.data.slice(0, 3);  */
     console.log("created async is here");
   },
   methods: {
@@ -226,12 +157,12 @@ export default {
   border: 2px solid yellow;
   border-radius: 5px;
   width: 1010px;
-  height: 600px;
+  height: 8000px;
   padding: 40px 50px 80px 50px;
   margin-left: 300px;
   margin-top: 20px;
   margin-right: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 0px;
 }
 
 #v-pills-tab {
@@ -245,15 +176,15 @@ export default {
 
 #flex-box {
   display: flex;
-  background-color: violet;
+  background-color: green;
   width: 700px;
-  height: 600px;
+  height: 8000px;
 }
 
 .card {
   background-color: red;
   border-radius: 20px;
-  height: 150px;
+  height: 800px;
   margin: 7px;
   /*object-fit: fill;*/
   display: flex;
@@ -276,5 +207,15 @@ img {
 #Waiting {
   margin-top: 200px;
   background-color: white;
+}
+
+.carousel-control-prev {
+  background-color: black;
+  border: green;
+}
+
+.carousel-control-next {
+  background-color: black;
+  border: green;
 }
 </style>
