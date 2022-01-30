@@ -1,33 +1,24 @@
 <template>
-  <div class="Home">
-    <LoggedIn v-if="page == 'LoggedIn'" />
-    <DanceClasses v-if="page == 'Login'" v-on:welcome-user="onWelcomeUser" />
-  </div>
+  <div class="masterList"></div>
 </template>
 
 <script>
-import LoggedIn from "./LoggedIn.vue";
-import Nav_Home from "./Nav_Home.vue";
-
 //hindi sya pwedeng data() return page: loggedIn kasi nga may pa token effect ka diba, paano if walang token?
 export default {
-  name: "Home",
+  name: "MasterList",
   props: ["User"],
   data() {
     return {
       page: "LoggedIn",
     };
   },
-  components: {
-    LoggedIn,
-    Nav_Home,
-  },
+  components: {},
 };
 </script>
 
 
 <style scoped>
-.Home {
+.masterList {
   background-color: green;
   width: 600px;
   height: 900px;

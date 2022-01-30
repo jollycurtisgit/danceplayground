@@ -77,7 +77,8 @@ export default {
       localStorage.setItem("token", response.data.token);
       /*this.$emit("welcome-user");*/
       swal("Welcome!", "You are now inside your account!", "success");
-      this.$router.push("LoggedIn");
+      /*this.$router.push("LoggedIn");*/
+      this.$emit("welcome-user");
     },
   },
 };

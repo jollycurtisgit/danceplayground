@@ -84,7 +84,7 @@
     <div class="container-sm">
       <!--pages-->
       <DanceClasses v-if="page == 'DanceClasses'" />
-      <Login2 v-if="page == 'Login2'" />
+      <Login2 v-if="page == 'Login2'" v-on:welcome-user="onWelcomeUser" />
       <SignUp v-if="page == 'SignUp'" />
       <LoggedIn v-if="page == 'LoggedIn'" />
       <UpdateClass v-if="page == 'UpdateClass'" />

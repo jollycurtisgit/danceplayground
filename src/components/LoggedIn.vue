@@ -1,47 +1,50 @@
 <template>
+  <!--A-->
   <div>
+    <!--A.1-->
     <div v-if="user" id="LoggedIn">
+      <!--A.1.I-->
       <div
         class="nav flex-column nav-pills"
         id="v-pills-tab"
         role="tablist"
         aria-orientation="vertical"
       >
+        <!--A.1.I.1-->
         <a
           class="nav-link active"
           id="v-pills-home-tab"
           data-bs-toggle="pill"
           data-bs-target="#v-pills-home"
           type="button"
-          role="tab"
           aria-controls="v-pills-home"
           aria-selected="true"
           >Home</a
         >
+        <!--A.1.I.2-->
         <a
           class="nav-link"
           id="v-pills-profile-tab"
           data-bs-toggle="pill"
           data-bs-target="#v-pills-profile"
           type="button"
-          role="tab"
           aria-controls="v-pills-profile"
           aria-selected="false"
           >Profile</a
         >
+        <!--A.1.I.3-->
         <a
           class="nav-link"
           id="v-pills-classes-tab"
           data-bs-toggle="pill"
           data-bs-target="#v-pills-classes"
           type="button"
-          role="tab"
           aria-controls="v-pills-classes"
           v-on:click="gotoDanceClasses"
           aria-selected="false"
           >Classes</a
         >
-
+        <!--A.1.I.4-->
         <a
           class="nav-link"
           id="v-pills-eClasses-tab"
@@ -53,6 +56,7 @@
           aria-selected="false"
           >Enrolled Classes</a
         >
+        <!--A.1.I.5-->
         <a
           class="nav-link"
           id="v-pills-aClasses-tab"
@@ -64,99 +68,124 @@
           v-on:click="gotoAddClasses"
           >Add Classes</a
         >
+        <!--A.1.I.6-->
         <a
           class="nav-link"
-          id="v-pills-friends-tab"
+          id="v-pills-mList-tab"
           data-bs-toggle="pill"
-          data-bs-target="#v-pills-friends"
+          data-bs-target="#v-pills-mList"
           type="button"
-          role="tab"
-          aria-controls="v-pills-friends"
+          aria-controls="v-pills-mList"
           aria-selected="false"
-          >Friends</a
+          v-on:click="gotoMasterList"
+          >Master List</a
         >
+        <!--A.1.I.7-->
         <a
           class="nav-link"
           id="v-pills-messages-taaaaaaaab"
           data-bs-toggle="pill"
-          href=""
-          role="tab"
+          data-bs-target="#v-pills-friends"
           aria-controls=""
           aria-selected="false"
           >Directions</a
         >
+        <!--A.1.I.8-->
         <a
           class="nav-link"
           id="v-pills-settttings-taaaaab"
           data-bs-toggle="pill"
           v-on:click="LogOut"
-          href=""
-          role="tab"
           aria-controls=""
           aria-selected="false"
           >Log Out</a
         >
       </div>
       <!--End of Navbar-->
+      <!--Start of Display-->
+      <!--A.1.II-->
       <div class="tab-content" id="v-pills-tabContent">
+        <!--A.1.II.1-->
         <div
           class="tab-pane fade show active"
           id="v-pills-home"
-          role="tabpanel"
           aria-labelledby="v-pills-home-tab"
         >
           ...bjvjvjhcvhjcjcjchjcjhcjhcfjhcjc
         </div>
+
+        <!--A.1.II.2-->
         <div
           class="tab-pane fade"
           id="v-pills-profile"
-          role="tabpanel"
           aria-labelledby="v-pills-profile-tab"
         >
           ...bjvjvjhcvhjcjcjchjcjhcjhcfjhcjc...bjvjvjhcvhjcjcjchjcjhcjhcfjhcjc...bjvjvjhcvhjcjcjchjcjhcjhcfjhcjc...bjvjvjhcvhjcjcjchjcjhcjhcfjhcjc...bjvjvjhcvhjcjcjchjcjhcjhcfjhcjc
         </div>
-        <!--div class="tab-pane fade" id="v-pills-classes" .bjvjvjhcvhjcjcjchjcjhcjhcfjhcjc...bjvjvjhcvhjcjcjchjcjhcj </div>-->
 
+        <!--A.1.II.3-->
+        <div
+          class="tab-pane fade"
+          id="v-pills-classes"
+          aria-labelledby="v-pills-classes"
+        >
+          <DanceClasses v-if="page == 'DanceClasses'" />
+        </div>
+
+        <!--A.1.II.3-->
         <DanceClasses
           v-if="page == 'DanceClasses'"
           class="tab-pane fade"
           id="v-pills-classes"
-          role="tabpanel"
-          aria-labelledby="v-pills-aClasses-tab"
+          aria-labelledby="v-pills-classes"
         />
 
+        <!--A.1.II.4-->
         <div
           class="tab-pane fade"
           id="v-pills-eClasses"
-          role="tabpanel"
           aria-labelledby="v-pills-eClasses-tab"
         >
           ...
         </div>
+
+        <!--A.1.II.5-->
         <div
           class="tab-pane fade"
           id="v-pills-aClasses"
-          role="tabpanel"
           aria-labelledby="v-pills-aClasses-tab"
         >
-          ...
+          <AddClasses v-if="page == 'AddClasses'" />
         </div>
+
+        <!--A.1.II.6-->
+        <div
+          class="tab-pane fade"
+          id="v-pills-mList"
+          aria-labelledby="v-pills-mList-tab"
+        >
+          <MasterList v-if="page == 'MasterList'" />
+        </div>
+
+        <!--A.1.II.7-->
         <div
           class="tab-pane fade"
           id="v-pills-friends"
-          role="tabpanel"
           aria-labelledby="v-pills-friends-tab"
         >
           ...
         </div>
       </div>
-      <!---End of Nav--->
+      <!---End of Display--->
+
+      <!--A.1.III-->
       <div id="container">
         <h3>Hello, you are logged in as: {{ me.email }}</h3>
-        <DanceClasses v-if="page == 'DanceClasses'" />
       </div>
     </div>
-    <!--End Of LoggedIn-->
+    <!--End Of LoggedIn Div-->
+
+    <!--A.2-->
     <div v-if="!user" id="Waiting">
       <h3>Ooops! You are unauthorized!</h3>
       <br />
@@ -165,6 +194,7 @@
         <span class="visually-hidden">Loading...</span>
       </div>
     </div>
+    <!--End of A.2-->
   </div>
 </template>
 
@@ -172,8 +202,7 @@
 import axios from "axios";
 import DanceClasses from "./DanceClasses.vue";
 import AddClasses from "./AddClasses.vue";
-
-//import Nav_Home from "./Nav_Home.vue";
+import MasterList from "./MasterList.vue";
 const API = "https://herokudanceplaygroundapi.herokuapp.com/";
 export default {
   name: "LoggedIn",
@@ -181,11 +210,13 @@ export default {
     return {
       user: null,
       me: null,
+      page: "",
     };
   },
   components: {
     DanceClasses,
     AddClasses,
+    MasterList,
   },
   created: async function () {
     const response = await axios.get(API + "home", {
@@ -203,11 +234,11 @@ export default {
   methods: {
     gotoAddClasses() {
       /*this.$router.push("/AddClasses");*/
-      this.page = "DanceClasses";
+      this.page = "AddClasses";
     },
     LogOut() {
       localStorage.removeItem("token");
-      this.$router.push("/");
+      this.$router.push("/Login2");
     },
     Home() {
       this.$router.push("/Home");
@@ -220,6 +251,9 @@ export default {
       alert("Napindot mo ang DanceClasses");
       this.page = "DanceClasses";
     },
+    gotoMasterList() {
+      this.page = "MasterList";
+    },
   },
 };
 </script>
@@ -230,19 +264,16 @@ export default {
   margin-top: 200px;
   background-color: white;
 }
-
 #LoggedIn {
   margin-top: 0px;
   display: flex;
   width: 1500px;
 }
-
 #container {
   margin-top: 20px;
   margin-left: 600px;
   background-color: orange;
 }
-
 #v-pills-tab {
   background-color: white;
   width: 230px;
@@ -250,10 +281,4 @@ export default {
   left: 0;
   position: fixed;
 }
-
-#v-pills-classes {
-  background-color: red;
-  width: 9000px;
-  height: 9000px;
-}
-</style>
+</style> 
