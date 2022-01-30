@@ -1,7 +1,6 @@
 <template>
   <div>
     <div id="DanceClassForm">
-      <h1>All Classes</h1>
       <button v-on:click="View1Method" class="btn btn-outline-primary">
         List View
       </button>
@@ -60,27 +59,7 @@
 
       <!--Second Set-->
       <div class="card" v-if="page == 'View_2'">
-        <!--Button Test Set-->
-        <button
-          class="carousel-control-prev"
-          type="button"
-          data-bs-target="#carouselExampleFade"
-          data-bs-slide="prev"
-        >
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button
-          class="carousel-control-next"
-          type="button"
-          data-bs-target="#carouselExampleFade"
-          data-bs-slide="next"
-        >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-        <!--Button Test Set-->
-        <div id="flex-box">
+        <div class="flex-container">
           <div
             class="card-body"
             v-for="id in classesLimitDisplay"
@@ -104,7 +83,7 @@
       </div>
 
       <!--Third Set: Edit One Class-->
-      <div v-if="page == 'UpdateArea'">
+      <div id="updateArea" v-if="page == 'UpdateArea'">
         <AddClasses />
       </div>
       <!--end of dance class form div-->
@@ -185,6 +164,11 @@ export default {
   margin-bottom: 0px;
 }
 
+#updateArea {
+  background-color: red;
+  margin-left: 0px;
+}
+
 #v-pills-tab {
   background-color: white;
   width: 230px;
@@ -194,27 +178,31 @@ export default {
   margin-top: 0px;
 }
 
-#flex-box {
-  display: flex;
-  background-color: green;
-  width: 700px;
-  height: 8000px;
-}
-
 .card {
-  background-color: red;
+  background-color: orange;
   border-radius: 20px;
-  height: 800px;
+  height: 8000px;
   margin: 7px;
   /*object-fit: fill;*/
   display: flex;
   /*flex: 1;*/
 }
+
+.flex-container {
+  display: flex;
+  background-color: green;
+  width: 900px;
+  height: 700px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .card-body {
   background-color: yellow;
-  width: 180px;
-  height: 350px;
-  margin: 15px;
+  max-width: 200px;
+  max-height: 370px;
+  margin: 10px;
+  font-size: 14px;
 }
 
 img {
@@ -227,15 +215,5 @@ img {
 #Waiting {
   margin-top: 200px;
   background-color: white;
-}
-
-.carousel-control-prev {
-  background-color: black;
-  border: green;
-}
-
-.carousel-control-next {
-  background-color: black;
-  border: green;
 }
 </style>

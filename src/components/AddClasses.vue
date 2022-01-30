@@ -1,44 +1,49 @@
 <template>
-  <div id="AddClass">
-    <div id="forBG">
-      <h1>Add a Class</h1>
-      <div id="AddClassForm">
-        <div>
-          <label class="form-label">Dance Name</label>
-          <input type="text" v-model="name" class="form-control" />
-        </div>
-        <div>
-          <label class="form-label">Location</label>
-          <input type="text" v-model="location" class="form-control" />
-        </div>
-        <div>
-          <label class="form-label">Schedule</label>
-          <input type="text" v-model="schedule" class="form-control" />
-        </div>
-        <div class="mb-3">
-          <label class="form-label">Price per Session:</label>
-          <input type="text" v-model="price" class="form-control" />
-        </div>
-        <div>
-          <label class="form-label">Image Link</label>
-          <input
-            type="text"
-            v-model="link"
-            class="form-control"
-            placeholder="Please place a link/url of an image you want to add"
-          />
-        </div>
+  <div>
+    <div id="AddClass">
+      <div id="forBG">
+        <h1>Add a Class</h1>
+        <div id="AddClassForm">
+          <div>
+            <label class="form-label">Dance Name</label>
+            <input type="text" v-model="name" class="form-control" />
+          </div>
+          <div>
+            <label class="form-label">Location</label>
+            <input type="text" v-model="location" class="form-control" />
+          </div>
+          <div>
+            <label class="form-label">Schedule</label>
+            <input type="text" v-model="schedule" class="form-control" />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Price per Session:</label>
+            <input type="text" v-model="price" class="form-control" />
+          </div>
+          <div>
+            <label class="form-label">Image Link</label>
+            <input
+              type="text"
+              v-model="link"
+              class="form-control"
+              placeholder="Please place a link/url of an image you want to add"
+            />
+          </div>
 
-        <button type="submit" class="btn btn-primary" v-on:click="addNew">
-          Add New
-        </button>
+          <button type="submit" class="btn btn-primary" v-on:click="addNew">
+            Add New
+          </button>
+        </div>
       </div>
     </div>
+    <!--one cell at a time-->
+    <RecycleCard />
   </div>
 </template>
 
 <script>
 import axios from "axios";
+import RecycleCard from "./RecycleCard.vue";
 const API = "https://herokudanceplaygroundapi.herokuapp.com/";
 export default {
   name: "AddClasses",
@@ -50,6 +55,9 @@ export default {
       price: "",
       link: "",
     };
+  },
+  components: {
+    RecycleCard,
   },
   methods: {
     async addNew() {
@@ -107,7 +115,7 @@ export default {
   width: 230px;
   height: 900px;
   left: 0;
-  position: fixed;
+  postion: fixed;
   margin-top: 0px;
 }
 
@@ -115,10 +123,10 @@ export default {
   background-color: white;
   border: 2px solid yellow;
   border-radius: 5px;
-  width: 600px;
+  width: 400px;
   height: 470px;
   padding: 40px 50px 80px 50px;
-  margin-left: 780px;
+  margin-left: 60px;
   margin-top: 50px;
 }
 
