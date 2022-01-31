@@ -83,13 +83,20 @@
     <!--end of Nav-->
     <div class="container-sm">
       <!--pages-->
-      <DanceClasses v-if="page == 'DanceClasses'" />
-      <Login2 v-if="page == 'Login2'" v-on:welcome-user="onWelcomeUser" />
-      <SignUp v-if="page == 'SignUp'" />
-      <LoggedIn v-if="page == 'LoggedIn'" />
-      <UpdateClass v-if="page == 'UpdateClass'" />
       <!--ClassDisplay /-->
       <router-view v-if="page == 'Login'" v-on:welcome-user="onWelcomeUser" />
+      <Login2 v-if="page == 'Login2'" v-on:welcome-user="onWelcomeUser" />
+      <DanceClasses
+        v-if="page == 'DanceClasses'"
+        v-on:update-class-function="updateClassFunction"
+      />
+
+      <SignUp v-if="page == 'SignUp'" />
+      <LoggedIn v-if="page == 'LoggedIn'" />
+      <UpdateClass
+        v-if="page == 'UpdateClass'"
+        v-bind:classId="classBeingEdited"
+      />
     </div>
     <!--endofPages-->
   </div>
@@ -108,6 +115,7 @@ export default {
   data: function () {
     return {
       page: "Login",
+      classBeingEdited: "",
     };
   },
   components: {
@@ -129,10 +137,20 @@ export default {
       this.page = "Login2";
     },
     //onNewRecipeCreated: function () {
-    //  this.page = "DanceClasses";
+    //  this.page = "Da nceClasses";
     //},
     onWelcomeUser: function () {
       this.page = "LoggedIn";
+    },
+    updateClassFunction: function (classId) {
+      //this function aims to send the classId to my UpdateClass.vue
+      this.page = "UpdateClass";
+      this.recipeBeingEdited = classId;
+    },
+    onEditClass: function (classId) {
+      this.page = "edit";
+      this.status = "";
+      this.classBeingEdited = classId;
     },
   },
 };

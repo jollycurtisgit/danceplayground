@@ -135,7 +135,7 @@ export default {
       //to diplay the update area component
       this.page = "UpdateArea";
       //send the classId to the form
-      $emit("update-class-event", classId);
+      this.$emit("update-class-function", classId);
     },
     View1Method() {
       this.page = "View_1";

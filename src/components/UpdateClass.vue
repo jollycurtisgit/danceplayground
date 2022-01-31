@@ -28,11 +28,7 @@
         />
       </div>
 
-      <button
-        type="submit"
-        class="btn btn-primary"
-        v-on:click="updateClassFunction"
-      >
+      <button type="submit" class="btn btn-primary" v-on:click="processUpdate">
         Add New
       </button>
     </div>
@@ -41,19 +37,22 @@
 
 <script>
 import axios from "axios";
+
 const API = "https://herokudanceplaygroundapi.herokuapp.com/";
 export default {
   name: "UpdateClass",
+  props: ["classId"],
   data: function () {
     return {
+      id: "",
       name: "",
       location: "",
       schedule: "",
       price: "",
+      link: "",
       classBeingEdited: "",
     };
   },
-  props: ["classId"],
   created: async function () {
     let response = await axios.get(API + "class/" + this.classId);
     this.name = response.data.name;
@@ -62,20 +61,30 @@ export default {
     this.schedule = response.data.schedule;
     this.link = response.data.link;
   },
+
   methods: {
-    async updateClassFunction(classId) {
-      const response = await axios.post(API + "AddClasses" + this.classId {
+    // async updateClassFunction(classId) {
+    //  const response = await axios.post(API + "AddClasses" + this.classId {
+    //   name: this.name,
+    //  location: this.location,
+    //  schedule: this.schedule,
+    // price: this.price,
+    // });
+    // console.log(response);
+    //this.$emit("new-class-created");
+    //},
+    processUpdate: async function () {
+      let response = await axios.patch(API + "class/" + this.classId, {
         name: this.name,
         location: this.location,
-        schedule: this.schedule,
         price: this.price,
+        schedule: this.schedule,
+        link: this.link,
       });
-      console.log(response);
-      this.$emit("new-class-created");
-    },
-    editRecipe: function (classId) {
-      this.page = "edit";
+      this.page = "UpdateArea";
       this.recipeBeingEdited = { classId };
+      //this function should be done from here
+      this.$emit("classes-updated");
     },
   },
 };
