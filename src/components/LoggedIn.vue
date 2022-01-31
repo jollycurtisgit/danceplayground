@@ -219,6 +219,7 @@ export default {
     DanceClasses,
     AddClasses,
     MasterList,
+    UpdateClass,
   },
   created: async function () {
     const response = await axios.get(API + "home", {
@@ -248,11 +249,11 @@ export default {
     gotoDanceClasses: function () {
       this.page = "DanceClasses";
     },
-    DanceClasses() {
+    /*DanceClasses() {
       /* this.$router.push("/DanceClasses");*/
-      alert("Napindot mo ang DanceClasses");
-      this.page = "DanceClasses";
-    },
+    // alert("Napindot mo ang DanceClasses");
+    //this.page = "DanceClasses";*/
+    //},
     gotoMasterList() {
       this.page = "MasterList";
     },
@@ -260,8 +261,8 @@ export default {
       this.page = "edit";
       this.recipeBeingEdited = { classId };
     },
-    UpdateClasses: function () {
-      this.page = "UpdateClass";
+    gotoUpdateClasses: function () {
+      this.page = "UpdateClasses";
     },
   },
 };

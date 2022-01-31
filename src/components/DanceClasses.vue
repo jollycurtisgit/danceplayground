@@ -134,7 +134,7 @@ export default {
     goToUpdate: function (classId) {
       //to diplay the update area component
       this.page = "UpdateArea";
-      //
+      //send the classId to the form
       $emit("update-class-event", classId);
     },
     View1Method() {

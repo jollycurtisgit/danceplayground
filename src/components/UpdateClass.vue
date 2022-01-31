@@ -28,7 +28,11 @@
         />
       </div>
 
-      <button type="submit" class="btn btn-primary" v-on:click="addNew">
+      <button
+        type="submit"
+        class="btn btn-primary"
+        v-on:click="updateClassFunction"
+      >
         Add New
       </button>
     </div>
@@ -59,8 +63,8 @@ export default {
     this.link = response.data.link;
   },
   methods: {
-    async addNew() {
-      const response = await axios.post("/AddClasses", {
+    async updateClassFunction(classId) {
+      const response = await axios.post(API + "AddClasses" + this.classId {
         name: this.name,
         location: this.location,
         schedule: this.schedule,
