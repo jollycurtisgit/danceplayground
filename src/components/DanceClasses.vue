@@ -7,6 +7,9 @@
       <button v-on:click="View2Method" class="btn btn-outline-primary">
         Large Icons View
       </button>
+      <button v-on:click="goToAddClass" class="btn btn-outline-primary">
+        +
+      </button>
 
       <!--First Set-->
       <div v-if="page == 'View_1'">
@@ -29,7 +32,10 @@
                 <td class="list--item">{{ id.schedule }}</td>
                 <td class="list-grou-item">{{ id.price }}</td>
                 <td class="list-grou-item">
-                  <a href="#" class="btn btn-primary" v-on:click="goToUpdate"
+                  <a
+                    href="#"
+                    class="btn btn-primary"
+                    v-on:click="goToUpdate(id._id)"
                     >Update</a
                   >
                 </td>
@@ -74,7 +80,7 @@
               <br />
               Price per session: {{ id.price }}
             </p>
-            <a href="#" class="btn btn-primary" v-on:click="goToUpdate"
+            <a href="#" class="btn btn-primary" v-on:click="goToUpdate(id._id)"
               >Update</a
             >
             <a href="#" class="btn btn-danger" v-on:click="onDelete">Delete</a>
@@ -82,9 +88,14 @@
         </div>
       </div>
 
-      <!--Third Set: Edit One Class-->
-      <div id="updateArea" v-if="page == 'UpdateArea'">
+      <!--Third Set: Add One Class-->
+      <div id="addArea" v-if="page == 'AddArea'">
         <AddClasses />
+      </div>
+
+      <!--Fourth Set: Edit One Class-->
+      <div id="updateArea" v-if="page == 'UpdateArea'">
+        <UpdateClass v-on:update-class-event="editClassFunction" />
       </div>
       <!--end of dance class form div-->
     </div>
@@ -95,6 +106,7 @@
 <script>
 import axios from "axios";
 import AddClasses from "./AddClasses.vue";
+import UpdateClass from "./UpdateClass.vue";
 const API = "https://herokudanceplaygroundapi.herokuapp.com/";
 //import ClassCard from "@/components/ClassCard";
 export default {
@@ -108,6 +120,7 @@ export default {
   },
   components: {
     AddClasses,
+    UpdateClass,
   },
   async created() {
     const response = await axios.get(API + "AddClasses");
@@ -118,8 +131,11 @@ export default {
     console.log("created async is here");
   },
   methods: {
-    goToUpdate() {
+    goToUpdate: function (classId) {
+      //to diplay the update area component
       this.page = "UpdateArea";
+      //
+      $emit("update-class-event", classId);
     },
     View1Method() {
       this.page = "View_1";
@@ -127,15 +143,27 @@ export default {
     View2Method() {
       this.page = "View_2";
     },
+    goToAddClass() {
+      this.page = "AddArea";
+    },
     async onDelete() {
       const response = await axios.delete(API + "delete.class/:id");
       console.log(response);
       console.log("onDelete");
 
-      //Please review the codes below: (for non db VUE DELETE crud)
+      //Please review the codes below: (for no db VUE DELETE crud)
       //find the index of task to delete
       //find the index of task which id matches the id of the task that we want to delete
       // let indexTodelete = this.classes.findIndex( t = t.id === classToDelete.id)
+      //        alternatively:
+      //         let indextoDelete= -1;
+      //        for (let i =0; i < this.tasks.lenghth; i++) {
+      //          if (this.tasks[i].id === taskToDelete.id) {
+      //          indexToDelete = i;
+      //           break;
+      //         }
+      //               }
+
       // this.task.splice(indexTodelete, 1);
     },
   },
@@ -198,11 +226,14 @@ export default {
 }
 
 .card-body {
-  background-color: yellow;
+  background-color: indigo;
   max-width: 200px;
   max-height: 370px;
   margin: 10px;
   font-size: 14px;
+  color: white;
+  border-radius: 10px;
+  border-color: yellow;
 }
 
 img {

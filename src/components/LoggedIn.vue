@@ -71,6 +71,18 @@
         <!--A.1.I.6-->
         <a
           class="nav-link"
+          id="v-pills-uClasses-tab"
+          data-bs-toggle="pill"
+          href="#v-pills-uClasses"
+          role="tab"
+          aria-controls="v-pills-uClasses"
+          aria-selected="false"
+          v-on:click="gotoUpdateClasses"
+          >Update a Class</a
+        >
+        <!--A.1.I.7-->
+        <a
+          class="nav-link"
           id="v-pills-mList-tab"
           data-bs-toggle="pill"
           data-bs-target="#v-pills-mList"
@@ -137,10 +149,10 @@
         <!--A.1.II.4-->
         <div
           class="tab-pane fade"
-          id="v-pills-eClasses"
-          aria-labelledby="v-pills-eClasses-tab"
+          id="v-pills-uClasses"
+          aria-labelledby="v-pills-uClasses-tab"
         >
-          ...
+          <UpdateClass v-if="page == 'UpdateClasses'" />
         </div>
 
         <!--A.1.II.5-->
@@ -191,6 +203,7 @@
 import axios from "axios";
 import DanceClasses from "./DanceClasses.vue";
 import AddClasses from "./AddClasses.vue";
+import UpdateClass from "./UpdateClass.vue";
 import MasterList from "./MasterList.vue";
 const API = "https://herokudanceplaygroundapi.herokuapp.com/";
 export default {
@@ -242,6 +255,13 @@ export default {
     },
     gotoMasterList() {
       this.page = "MasterList";
+    },
+    editRecipe: function () {
+      this.page = "edit";
+      this.recipeBeingEdited = { classId };
+    },
+    UpdateClasses: function () {
+      this.page = "UpdateClass";
     },
   },
 };

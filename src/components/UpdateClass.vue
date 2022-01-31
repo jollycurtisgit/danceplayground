@@ -1,7 +1,7 @@
 <template>
   <div id="forBG">
     <h1>Update Recipe</h1>
-    <div id="AddClassForm">
+    <div id="EditClassForm">
       <div>
         <label class="form-label">Dance Name</label>
         <input type="text" v-model="name" class="form-control" />
@@ -18,6 +18,15 @@
         <label class="form-label">Price per Session:</label>
         <input type="text" v-model="price" class="form-control" />
       </div>
+      <div>
+        <label class="form-label">Image Link</label>
+        <input
+          type="text"
+          v-model="link"
+          class="form-control"
+          placeholder="Please place a link/url of an image you want to add"
+        />
+      </div>
 
       <button type="submit" class="btn btn-primary" v-on:click="addNew">
         Add New
@@ -28,6 +37,7 @@
 
 <script>
 import axios from "axios";
+const API = "https://herokudanceplaygroundapi.herokuapp.com/";
 export default {
   name: "UpdateClass",
   data: function () {
@@ -36,7 +46,17 @@ export default {
       location: "",
       schedule: "",
       price: "",
+      classBeingEdited: "",
     };
+  },
+  props: ["classId"],
+  created: async function () {
+    let response = await axios.get(API + "class/" + this.classId);
+    this.name = response.data.name;
+    this.location = response.data.location;
+    this.price = response.data.price;
+    this.schedule = response.data.schedule;
+    this.link = response.data.link;
   },
   methods: {
     async addNew() {
@@ -48,6 +68,10 @@ export default {
       });
       console.log(response);
       this.$emit("new-class-created");
+    },
+    editRecipe: function (classId) {
+      this.page = "edit";
+      this.recipeBeingEdited = { classId };
     },
   },
 };
