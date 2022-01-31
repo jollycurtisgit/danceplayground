@@ -115,7 +115,7 @@ export default {
   width: 230px;
   height: 900px;
   left: 0;
-  postion: fixed;
+  position: fixed;
   margin-top: 0px;
 }
 

@@ -62,9 +62,9 @@
           <div class="col-12">
             <div class="form-check">
               <input class="form-check-input" type="checkbox" id="gridCheck" />
-              <label class="form-check-label" for="gridCheck">
+              <a class="form-check-label" for="gridCheck" v-on:click="terms">
                 Agree to terms and condition
-              </label>
+              </a>
             </div>
           </div>
           <hr />
@@ -108,6 +108,13 @@ export default {
       swal("Welcome!", "You may now login!", "success");
       this.$router.push("Login2");
       console.log(response);
+    },
+    terms() {
+      swal(
+        "Before you start:",
+        "please make sure all the info you enter here are all fake ;)",
+        "info"
+      );
     },
   },
 };

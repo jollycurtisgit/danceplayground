@@ -121,16 +121,6 @@ export default {
     goToUpdate() {
       this.page = "UpdateArea";
     },
-    gotoAddClasses() {
-      this.$router.push("/AddClasses");
-    },
-    LogOut() {
-      localStorage.removeItem("token");
-      this.$router.push("/");
-    },
-    Home() {
-      this.$router.push("/Home");
-    },
     View1Method() {
       this.page = "View_1";
     },
@@ -158,7 +148,6 @@ export default {
   width: 1010px;
   height: 8000px;
   padding: 40px 50px 80px 50px;
-  margin-left: 300px;
   margin-top: 20px;
   margin-right: 10px;
   margin-bottom: 0px;

@@ -164,7 +164,7 @@ export default {
     },
     LogOut() {
       localStorage.removeItem("token");
-      this.$router.push("/");
+      this.$router.push("Login2");
     },
     Home() {
       this.$router.push("/Home");

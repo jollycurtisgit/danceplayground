@@ -251,15 +251,15 @@ export default {
 <style scoped>
 #LoggedIn {
   margin-top: 0px;
-  display: flex;
-  width: 1500px;
+  margin-left: 300px;
+  width: 900px;
+  background-color: gray;
 }
 .container {
   background-color: white;
   border: 2px solid yellow;
   border-radius: 5px;
   margin-top: 20px;
-  margin-left: 250px;
   max-height: 50px;
 }
 #v-pills-tab {
