@@ -162,13 +162,6 @@ export default {
     gotoAddClasses() {
       this.$router.push("/AddClasses");
     },
-    LogOut() {
-      localStorage.removeItem("token");
-      this.$router.push("Login2");
-    },
-    Home() {
-      this.$router.push("/Home");
-    },
     DanceClasses() {
       this.$router.push("/DanceClasses");
     },

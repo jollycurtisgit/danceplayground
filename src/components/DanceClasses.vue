@@ -34,7 +34,7 @@
                   >
                 </td>
                 <td class="list-grou-item">
-                  <a href="#" class="btn btn-danger" v-on:click="Delete"
+                  <a href="#" class="btn btn-danger" v-on:click="onDelete"
                     >Delete</a
                   >
                 </td>
@@ -77,7 +77,7 @@
             <a href="#" class="btn btn-primary" v-on:click="goToUpdate"
               >Update</a
             >
-            <a href="#" class="btn btn-danger" v-on:click="Delete">Delete</a>
+            <a href="#" class="btn btn-danger" v-on:click="onDelete">Delete</a>
           </div>
         </div>
       </div>
@@ -126,6 +126,17 @@ export default {
     },
     View2Method() {
       this.page = "View_2";
+    },
+    async onDelete() {
+      const response = await axios.delete(API + "delete.class/:id");
+      console.log(response);
+      console.log("onDelete");
+
+      //Please review the codes below: (for non db VUE DELETE crud)
+      //find the index of task to delete
+      //find the index of task which id matches the id of the task that we want to delete
+      // let indexTodelete = this.classes.findIndex( t = t.id === classToDelete.id)
+      // this.task.splice(indexTodelete, 1);
     },
   },
 };
@@ -199,6 +210,10 @@ img {
   object-fit: fill;
   width: 150px;
   height: 150px;
+}
+
+button {
+  margin-right: 10px;
 }
 
 #Waiting {
