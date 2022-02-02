@@ -107,7 +107,7 @@
 import axios from "axios";
 import AddClasses from "./AddClasses.vue";
 import UpdateClass from "./UpdateClass.vue";
-const API = "https://herokudanceplaygroundapi.herokuapp.com/";
+const API = "https://danceplaygroundcomplicated.herokuapp.com/";
 //import ClassCard from "@/components/ClassCard";
 export default {
   name: "DanceClasses",
@@ -118,6 +118,7 @@ export default {
       page: "View_1",
     };
   },
+  props: ["classId"],
   components: {
     AddClasses,
     UpdateClass,
@@ -132,7 +133,6 @@ export default {
   },
   methods: {
     goToUpdate: function (classId) {
-      alert("this will go to updateclass: " + classId);
       //to diplay the update area component
       //send the classId to the form
       this.$emit("update-class-function", classId);

@@ -186,9 +186,11 @@
         </div>
       </div>
       <!---End of Display--->
+      <DanceClasses v-if="page == 'DanceClasses'" />
       <UpdateClass
         v-if="page == 'UpdateClasses'"
         v-bind:classId="classBeingEdited"
+        v-on:class-updated="updatedClassFunctionFromUpdateClassVue"
       />
     </div>
     <!--End Of LoggedIn Div-->
@@ -212,7 +214,7 @@ import DanceClasses from "./DanceClasses.vue";
 import AddClasses from "./AddClasses.vue";
 import UpdateClass from "./UpdateClass.vue";
 import MasterList from "./MasterList.vue";
-const API = "https://herokudanceplaygroundapi.herokuapp.com/";
+const API = "https://danceplaygroundcomplicated.herokuapp.com/";
 export default {
   name: "LoggedIn",
   data() {
@@ -243,10 +245,12 @@ export default {
     console.log(response.data[response.data.length - 1]);
   },
   methods: {
+    //Just a button from my Nav
     gotoAddClasses() {
       /*this.$router.push("/AddClasses");*/
       this.page = "AddClasses";
     },
+    //Just a button from my Nav
     LogOut() {
       localStorage.removeItem("token");
       this.$router.push("/Login2");
@@ -254,6 +258,7 @@ export default {
     Home() {
       this.$router.push("/Home");
     },
+    //Just a button from my Nav
     gotoDanceClasses: function () {
       this.page = "DanceClasses";
     },
@@ -262,25 +267,25 @@ export default {
     // alert("Napindot mo ang DanceClasses");
     //this.page = "DanceClasses";*/
     //},
+    //Just a button from my Nav
     gotoMasterList() {
       this.page = "MasterList";
     },
-    editRecipe: function () {
-      this.page = "edit";
-      this.recipeBeingEdited = { classId };
-    },
+    //Just a button from my Nav
     gotoUpdateClasses: function () {
       this.page = "UpdateClasses";
     },
+    //This displays the update a class front end and bring a copy of the class id after an update a class button was clicked
     updateClassFunction: function (classId) {
-      console.log(classId);
       //this function aims to send the classId to my UpdateClass.vue
       this.classBeingEdited = classId;
-      alert(this.classBeingEdited);
-      alert("this will go to updateclass: " + classId + "Horrraaaayyy!");
+      //this transfers the view to UpdateClass.vue
       this.page = "UpdateClasses";
       //this.$router.push("/UpdateClass");
-      alert(this.classBeingEdited);
+    },
+    //This displays the classes list after submiting the edit a class function
+    updatedClassFunctionFromUpdateClassVue: function () {
+      this.page = "DanceClasses";
     },
   },
 };

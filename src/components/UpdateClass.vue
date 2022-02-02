@@ -28,8 +28,8 @@
         />
       </div>
 
-      <button type="submit" class="btn btn-primary" v-on:click="processUpdate">
-        Add New
+      <button type="submit" class="btn btn-primary" v-on:click="classUpdate">
+        Update
       </button>
     </div>
   </div>
@@ -38,7 +38,7 @@
 <script>
 import axios from "axios";
 
-const API = "https://herokudanceplaygroundapi.herokuapp.com/";
+const API = "https://danceplaygroundcomplicated.herokuapp.com/";
 export default {
   name: "UpdateClass",
   props: ["classId"],
@@ -60,7 +60,7 @@ export default {
     this.price = response.data.price;
     this.schedule = response.data.schedule;
     this.link = response.data.link;
-    alert("This is found in UpdateClass" + this.classId);
+    // alert("This is found in UpdateClass" + this.classId);
   },
 
   methods: {
@@ -74,18 +74,22 @@ export default {
     // console.log(response);
     //this.$emit("new-class-created");
     //},
-    processUpdate: async function () {
-      let response = await axios.patch(API + "class/" + this.classId, {
+    classUpdate: async function () {
+      await axios.put(API + "class/" + this.classId, {
         name: this.name,
         location: this.location,
         price: this.price,
         schedule: this.schedule,
         link: this.link,
       });
-      this.page = "UpdateArea";
-      this.classBeingEdited = { classId };
+      alert("We are now here in class Update");
+      swal(
+        "Great!",
+        "Thank you for keeping us updated with your classes!",
+        "success"
+      );
       //this function should be done from here
-      this.$emit("classes-updated");
+      this.$emit("class-updated");
     },
   },
 };
