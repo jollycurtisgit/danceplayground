@@ -143,9 +143,11 @@ export default {
       this.page = "LoggedIn";
     },
     updateClassFunction: function (classId) {
+      console.log(classId);
       //this function aims to send the classId to my UpdateClass.vue
+      this.classBeingEdited = classId;
+      alert("this will go to updateclass: " + classId + "Horrraaaayyy!");
       this.page = "UpdateClass";
-      this.recipeBeingEdited = classId;
     },
     onEditClass: function (classId) {
       this.page = "edit";

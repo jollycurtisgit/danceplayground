@@ -60,6 +60,7 @@ export default {
     this.price = response.data.price;
     this.schedule = response.data.schedule;
     this.link = response.data.link;
+    alert("This is found in UpdateClass" + this.classId);
   },
 
   methods: {
@@ -82,7 +83,7 @@ export default {
         link: this.link,
       });
       this.page = "UpdateArea";
-      this.recipeBeingEdited = { classId };
+      this.classBeingEdited = { classId };
       //this function should be done from here
       this.$emit("classes-updated");
     },

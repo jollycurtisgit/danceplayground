@@ -143,7 +143,10 @@
           id="v-pills-classes"
           aria-labelledby="v-pills-classes"
         >
-          <DanceClasses v-if="page == 'DanceClasses'" />
+          <DanceClasses
+            v-if="page == 'DanceClasses'"
+            v-on:update-class-function="updateClassFunction"
+          />
         </div>
 
         <!--A.1.II.4-->
@@ -183,6 +186,10 @@
         </div>
       </div>
       <!---End of Display--->
+      <UpdateClass
+        v-if="page == 'UpdateClasses'"
+        v-bind:classId="classBeingEdited"
+      />
     </div>
     <!--End Of LoggedIn Div-->
 
@@ -213,6 +220,7 @@ export default {
       user: null,
       me: null,
       page: "",
+      classBeingEdited: "",
     };
   },
   components: {
@@ -263,6 +271,16 @@ export default {
     },
     gotoUpdateClasses: function () {
       this.page = "UpdateClasses";
+    },
+    updateClassFunction: function (classId) {
+      console.log(classId);
+      //this function aims to send the classId to my UpdateClass.vue
+      this.classBeingEdited = classId;
+      alert(this.classBeingEdited);
+      alert("this will go to updateclass: " + classId + "Horrraaaayyy!");
+      this.page = "UpdateClasses";
+      //this.$router.push("/UpdateClass");
+      alert(this.classBeingEdited);
     },
   },
 };

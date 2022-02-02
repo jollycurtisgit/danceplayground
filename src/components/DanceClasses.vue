@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div id="DanceClassForm">
+    <div id="DanceClassForm" v-for="id in classesLimitDisplay" v-bind:key="id">
       <button v-on:click="View1Method" class="btn btn-outline-primary">
         List View
       </button>
@@ -89,7 +89,7 @@
       </div>
 
       <!--Third Set: Add One Class-->
-      <div id="addArea" v-if="page == 'AddArea'">
+      <div id="addArea" v-if="page == 'AddArea'" v-bind:key="id">
         <AddClasses />
       </div>
 
@@ -132,10 +132,11 @@ export default {
   },
   methods: {
     goToUpdate: function (classId) {
+      alert("this will go to updateclass: " + classId);
       //to diplay the update area component
-      this.page = "UpdateArea";
       //send the classId to the form
       this.$emit("update-class-function", classId);
+      //this.page = "UpdateArea";
     },
     View1Method() {
       this.page = "View_1";
