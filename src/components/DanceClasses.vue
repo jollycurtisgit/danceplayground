@@ -107,7 +107,8 @@
 import axios from "axios";
 import AddClasses from "./AddClasses.vue";
 import UpdateClass from "./UpdateClass.vue";
-const API = "https://danceplaygroundcomplicated.herokuapp.com/";
+const API =
+  "https://3000-jollychua-danceplaygroun-f549nqucx4c.ws-us30.gitpod.io/";
 //import ClassCard from "@/components/ClassCard";
 export default {
   name: "DanceClasses",

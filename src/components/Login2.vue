@@ -56,7 +56,8 @@
 import axios from "axios";
 import Background from "./Background.vue";
 import DisplayClasses from "./DisplayClasses.vue";
-const API = "https://danceplaygroundcomplicated.herokuapp.com/";
+const API =
+  "https://3000-jollychua-danceplaygroun-f549nqucx4c.ws-us30.gitpod.io/";
 export default {
   name: "Login2",
   components: {

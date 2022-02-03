@@ -45,7 +45,8 @@
 
 <script>
 import axios from "axios";
-const API = "https://danceplaygroundcomplicated.herokuapp.com/";
+const API =
+  "https://3000-jollychua-danceplaygroun-f549nqucx4c.ws-us30.gitpod.io/";
 export default {
   name: "DisplayClasses",
   data: function () {

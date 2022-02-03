@@ -186,7 +186,7 @@
         </div>
       </div>
       <!---End of Display--->
-      <DanceClasses v-if="page == 'DanceClasses'" />
+      <!--DanceClasses v-if="page == 'DanceClasses'" /--->
       <UpdateClass
         v-if="page == 'UpdateClasses'"
         v-bind:classId="classBeingEdited"
@@ -214,7 +214,8 @@ import DanceClasses from "./DanceClasses.vue";
 import AddClasses from "./AddClasses.vue";
 import UpdateClass from "./UpdateClass.vue";
 import MasterList from "./MasterList.vue";
-const API = "https://danceplaygroundcomplicated.herokuapp.com/";
+const API =
+  "https://3000-jollychua-danceplaygroun-f549nqucx4c.ws-us30.gitpod.io/s";
 export default {
   name: "LoggedIn",
   data() {
@@ -282,6 +283,7 @@ export default {
       //this transfers the view to UpdateClass.vue
       this.page = "UpdateClasses";
       //this.$router.push("/UpdateClass");
+      alert(classBeingEdited + " We are now in the LoggedIn Vue");
     },
     //This displays the classes list after submiting the edit a class function
     updatedClassFunctionFromUpdateClassVue: function () {

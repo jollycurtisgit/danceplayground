@@ -38,7 +38,8 @@
 <script>
 import axios from "axios";
 
-const API = "https://danceplaygroundcomplicated.herokuapp.com/";
+const API =
+  "https://3000-jollychua-danceplaygroun-f549nqucx4c.ws-us30.gitpod.io/";
 export default {
   name: "UpdateClass",
   props: ["classId"],
@@ -60,7 +61,7 @@ export default {
     this.price = response.data.price;
     this.schedule = response.data.schedule;
     this.link = response.data.link;
-    // alert("This is found in UpdateClass" + this.classId);
+    alert("This is found in UpdateClass" + this.classId);
   },
 
   methods: {
@@ -75,7 +76,7 @@ export default {
     //this.$emit("new-class-created");
     //},
     classUpdate: async function () {
-      await axios.put(API + "class/" + this.classId, {
+      let response = await axios.patch(API + "class/" + this.classId, {
         name: this.name,
         location: this.location,
         price: this.price,
@@ -83,6 +84,7 @@ export default {
         link: this.link,
       });
       alert("We are now here in class Update");
+      alert(response + "this is from patch API yow!");
       swal(
         "Great!",
         "Thank you for keeping us updated with your classes!",
