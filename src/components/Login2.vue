@@ -56,7 +56,6 @@
 import axios from "axios";
 import Background from "./Background.vue";
 import DisplayClasses from "./DisplayClasses.vue";
-import swal from "sweetalert2/dist/sweetalert2.js";
 const API =
   "https://3000-jollychua-danceplaygroun-5sfkoly4hn4.ws-us30.gitpod.io/";
 export default {
@@ -93,7 +92,6 @@ export default {
   margin-left: 0px;
   width: 1300px;
 }
-
 /* for desktop */
 #forAdvertisement {
   width: 1300px;
@@ -103,7 +101,6 @@ export default {
   margin-left: 0px;
   display: flex;
 }
-
 #LoginForm {
   background-color: white;
   border: 2px solid yellow;
@@ -114,7 +111,6 @@ export default {
   margin-left: 5px;
   margin-top: 50px;
 }
-
 /* for tablet */
 @media screen and (max-width: 992px) {
   #LoginForm {
@@ -131,7 +127,6 @@ export default {
     background: none;
   }
 }
-
 /* for celpphone */
 @media screen and (max-width: 600px) {
   #LoginForm {

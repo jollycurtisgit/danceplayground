@@ -60,7 +60,6 @@
 import axios from "axios";
 import Background from "./Background.vue";
 import DisplayClasses from "./DisplayClasses.vue";
-import swal from "sweetalert2/dist/sweetalert2.js";
 const API =
   "https://3000-jollychua-danceplaygroun-5sfkoly4hn4.ws-us30.gitpod.io/";
 export default {
@@ -77,7 +76,6 @@ export default {
       members: "",
     };
   },
-
   methods: {
     gotoSignUp: function () {
       this.$router.push("SignUp");
@@ -87,7 +85,7 @@ export default {
         email: this.email,
         password: this.password,
       });
-      alert(response);
+      console.log(response);
       localStorage.setItem("token", response.data.token);
       swal("Welcome!", "You are now inside your account!", "success");
       /*this.$router.push("LoggedIn");*/
@@ -103,7 +101,6 @@ export default {
   width: 1500px;
   margin-top: 9px;
 }
-
 /* for desktop */
 #forAdvertisement {
   width: 1300px;
@@ -123,7 +120,6 @@ export default {
   margin-left: 0px;
   margin-top: 50px;
 }
-
 /* for tablet */
 @media screen and (max-width: 992px) {
   #LoginForm {
