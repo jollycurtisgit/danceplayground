@@ -74,16 +74,16 @@ export default {
     //this.$emit("new-class-created");
     //},
     processUpdate: async function () {
-      let response = await axios.patch(API + "class/" + this.classId, {
+      await axios.patch(API + "class/" + this.classId, {
         name: this.name,
         location: this.location,
         price: this.price,
         schedule: this.schedule,
         link: this.link,
       });
-      this.page = "UpdateArea";
-      this.classBeingEdited = { classId };
+      //this.classBeingEdited = { classId };
       //this function should be done from here
+      swal("Awesome!", "Thank you for keeping us updated!", "success");
       this.$emit("classes-updated");
     },
   },

@@ -182,6 +182,7 @@
       <UpdateClass
         v-if="page == 'UpdateClasses'"
         v-bind:classId="classBeingEdited"
+        v:on:classes-updated="goBackToClasses"
       />
     </div>
     <!--End Of LoggedIn Div-->
@@ -274,6 +275,9 @@ export default {
       this.page = "UpdateClasses";
       //this.$router.push("/UpdateClass");
       alert(this.classBeingEdited);
+    },
+    goBackToClasses: function () {
+      this.page = "DanceClasses";
     },
   },
 };
