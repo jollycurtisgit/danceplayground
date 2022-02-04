@@ -60,9 +60,9 @@
 import axios from "axios";
 import Background from "./Background.vue";
 import DisplayClasses from "./DisplayClasses.vue";
-import swal from 'sweetalert2/dist/sweetalert2.js'
+import swal from "sweetalert2/dist/sweetalert2.js";
 const API =
-  "https://3000-jollychua-danceplaygroun-c2k75kskilv.ws-us30.gitpod.io/";
+  "https://3000-jollychua-danceplaygroun-5sfkoly4hn4.ws-us30.gitpod.io/";
 export default {
   name: "Login",
   components: {
@@ -87,7 +87,7 @@ export default {
         email: this.email,
         password: this.password,
       });
-      console.log(response);
+      alert(response);
       localStorage.setItem("token", response.data.token);
       swal("Welcome!", "You are now inside your account!", "success");
       /*this.$router.push("LoggedIn");*/

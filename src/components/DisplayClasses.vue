@@ -42,7 +42,8 @@
 </template>
 <script>
 import axios from "axios";
-const API = "https://3000-jollychua-danceplaygroun-c2k75kskilv.ws-us30.gitpod.io/";
+const API =
+  "https://3000-jollychua-danceplaygroun-5sfkoly4hn4.ws-us30.gitpod.io/";
 export default {
   name: "DisplayClasses",
   data: function () {

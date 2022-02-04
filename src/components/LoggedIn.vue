@@ -207,7 +207,7 @@ import UpdateClass from "./UpdateClass.vue";
 import MasterList from "./MasterList.vue";
 
 const API =
-  "https://3000-jollychua-danceplaygroun-c2k75kskilv.ws-us30.gitpod.io/";
+  "https://3000-jollychua-danceplaygroun-5sfkoly4hn4.ws-us30.gitpod.io/";
 export default {
   name: "LoggedIn",
   data() {

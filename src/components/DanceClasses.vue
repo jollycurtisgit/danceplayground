@@ -156,8 +156,9 @@ export default {
         API + "delete.class/" + this.classBeingEdited_forDelete
       );
       this.classBeingEdited_forDelete = classId;
-      console.log(response);
-      console.log("onDelete");
+      alert(response);
+      alert(this.classBeingEdited_forDelete);
+
       //Please review the codes below: (for no db VUE DELETE crud)
       //find the index of task to delete
       //find the index of task which id matches the id of the task that we want to delete
