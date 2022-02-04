@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import swal from "sweetalert";
 import router from "./router";
 import "./axios";
-import Swal from 'sweetalert2/dist/sweetalert2.js'
+
 
 import 'sweetalert2/src/sweetalert2.scss'
 

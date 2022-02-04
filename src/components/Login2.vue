@@ -56,6 +56,7 @@
 import axios from "axios";
 import Background from "./Background.vue";
 import DisplayClasses from "./DisplayClasses.vue";
+import swal from 'sweetalert2/dist/sweetalert2.js'
 const API =
   "https://3000-jollychua-danceplaygroun-c2k75kskilv.ws-us30.gitpod.io/";
 export default {

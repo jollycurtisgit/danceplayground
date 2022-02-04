@@ -7,7 +7,6 @@
           <input class="form-control me-2" type="text" placeholder="Search" />
           <button class="btn btn-primary" type="button">Search</button>
         </form>
-
         <input
           class="form-control.2 me-2"
           type="search"
@@ -26,7 +25,6 @@
         v-bind:key="id"
       >
         <img :src="id.link" />
-
         <!--img src="..." class="card-img-top" alt="..."-->
         <div class="card-body">
           <h5 class="card-title">{{ id.name }}</h5>
@@ -42,11 +40,9 @@
     </div>
   </div>
 </template>
-
 <script>
 import axios from "axios";
-const API =
-  "https://3000-jollychua-danceplaygroun-c2k75kskilv.ws-us30.gitpod.io/";
+const API = "https://3000-jollychua-danceplaygroun-c2k75kskilv.ws-us30.gitpod.io/";
 export default {
   name: "DisplayClasses",
   data: function () {
@@ -76,7 +72,7 @@ export default {
 .form-control.2 {
   margin: 10px, 10px, 10px, 10px;
 }
-,
+
 .button {
   margin: 10px, 10px, 10px, 10px;
 }

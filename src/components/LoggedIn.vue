@@ -205,6 +205,7 @@ import DanceClasses from "./DanceClasses.vue";
 import AddClasses from "./AddClasses.vue";
 import UpdateClass from "./UpdateClass.vue";
 import MasterList from "./MasterList.vue";
+
 const API =
   "https://3000-jollychua-danceplaygroun-c2k75kskilv.ws-us30.gitpod.io/";
 export default {
@@ -258,10 +259,6 @@ export default {
     //},
     gotoMasterList() {
       this.page = "MasterList";
-    },
-    editRecipe: function () {
-      this.page = "edit";
-      this.recipeBeingEdited = { classId };
     },
     gotoUpdateClasses: function () {
       this.page = "UpdateClasses";
