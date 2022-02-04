@@ -39,7 +39,10 @@
                   >
                 </td>
                 <td class="list-grou-item">
-                  <a href="#" class="btn btn-danger" v-on:click="onDelete"
+                  <a
+                    href="#"
+                    class="btn btn-danger"
+                    v-on:click="deleteClass(id._id)"
                     >Delete</a
                   >
                 </td>
@@ -81,7 +84,9 @@
             <a href="#" class="btn btn-primary" v-on:click="goToUpdate(id._id)"
               >Update</a
             >
-            <a href="#" class="btn btn-danger" v-on:click="onDelete">Delete</a>
+            <a href="#" class="btn btn-danger" v-on:click="deleteClass(id._id)"
+              >Delete</a
+            >
           </div>
         </div>
       </div>
@@ -105,7 +110,7 @@ import axios from "axios";
 import AddClasses from "./AddClasses.vue";
 import UpdateClass from "./UpdateClass.vue";
 const API =
-  "https://3000-jollychua-danceplaygroun-c2k75kskilv.ws-us30.gitpod.io/";
+  "https://3000-jollychua-danceplaygroun-5sfkoly4hn4.ws-us30.gitpod.io/";
 //import ClassCard from "@/components/ClassCard";
 export default {
   name: "DanceClasses",
@@ -114,6 +119,7 @@ export default {
       classes: "",
       classesLimitDisplay: "",
       page: "View_1",
+      classBeingEdited_forDelete: "",
     };
   },
   components: {
@@ -145,8 +151,11 @@ export default {
     goToAddClass() {
       this.page = "AddArea";
     },
-    async onDelete() {
-      const response = await axios.delete(API + "delete.class/:id");
+    async deleteClass(classId) {
+      const response = await axios.delete(
+        API + "delete.class/" + this.classBeingEdited_forDelete
+      );
+      this.classBeingEdited_forDelete = classId;
       console.log(response);
       console.log("onDelete");
       //Please review the codes below: (for no db VUE DELETE crud)
