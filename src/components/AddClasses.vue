@@ -44,7 +44,8 @@
 <script>
 import axios from "axios";
 import RecycleCard from "./RecycleCard.vue";
-const API = "https://danceplaygroundcomplicated.herokuapp.com/";
+const API =
+  "https://3000-jollychua-danceplaygroun-c2k75kskilv.ws-us30.gitpod.io/";
 export default {
   name: "AddClasses",
   data: function () {

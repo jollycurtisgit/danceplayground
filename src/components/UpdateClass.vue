@@ -27,19 +27,16 @@
           placeholder="Please place a link/url of an image you want to add"
         />
       </div>
-
-      <button type="submit" class="btn btn-primary" v-on:click="classUpdate">
-        Update
+      <button type="submit" class="btn btn-primary" v-on:click="processUpdate">
+        Add New
       </button>
     </div>
   </div>
 </template>
-
 <script>
 import axios from "axios";
-
 const API =
-  "https://3000-jollychua-danceplaygroun-f549nqucx4c.ws-us30.gitpod.io/";
+  "https://3000-jollychua-danceplaygroun-c2k75kskilv.ws-us30.gitpod.io/";
 export default {
   name: "UpdateClass",
   props: ["classId"],
@@ -61,9 +58,10 @@ export default {
     this.price = response.data.price;
     this.schedule = response.data.schedule;
     this.link = response.data.link;
-    alert("This is found in UpdateClass" + this.classId);
+    alert("Nasa UpdateClass na ako: " + this.classId);
+    alert(response);
+    console.log(response.data + "UpdateClass na to ah");
   },
-
   methods: {
     // async updateClassFunction(classId) {
     //  const response = await axios.post(API + "AddClasses" + this.classId {
@@ -75,7 +73,7 @@ export default {
     // console.log(response);
     //this.$emit("new-class-created");
     //},
-    classUpdate: async function () {
+    processUpdate: async function () {
       let response = await axios.patch(API + "class/" + this.classId, {
         name: this.name,
         location: this.location,
@@ -83,20 +81,14 @@ export default {
         schedule: this.schedule,
         link: this.link,
       });
-      alert("We are now here in class Update");
-      alert(response + "this is from patch API yow!");
-      swal(
-        "Great!",
-        "Thank you for keeping us updated with your classes!",
-        "success"
-      );
+      this.page = "UpdateArea";
+      this.classBeingEdited = { classId };
       //this function should be done from here
-      this.$emit("class-updated");
+      this.$emit("classes-updated");
     },
   },
 };
 </script>
-
 <style scoped>
 /* for desktop */
 #forBG {
@@ -107,7 +99,6 @@ export default {
   background-position: 0px 30px;
   background-repeat: no-repeat;
 }
-
 #AddClassForm {
   background-color: white;
   border: 2px solid yellow;
@@ -118,7 +109,6 @@ export default {
   margin-right: 780px;
   margin-top: 50px;
 }
-
 /* for tablet */
 @media screen and (max-width: 992px) {
   #AddClassForm {
@@ -135,7 +125,6 @@ export default {
     background: none;
   }
 }
-
 /* for celpphone */
 @media screen and (max-width: 600px) {
   #AddClassForm {

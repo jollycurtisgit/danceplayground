@@ -127,7 +127,6 @@
           id="v-pills-home"
           aria-labelledby="v-pills-home-tab"
         ></div>
-
         <!--A.1.II.2-->
         <div
           class="tab-pane fade"
@@ -136,7 +135,6 @@
         >
           ...bjvjvjhcvhjcjcjchjcjhcjhcfjhcjc...bjvjvjhcvhjcjcjchjcjhcjhcfjhcjc...bjvjvjhcvhjcjcjchjcjhcjhcfjhcjc...bjvjvjhcvhjcjcjchjcjhcjhcfjhcjc...bjvjvjhcvhjcjcjchjcjhcjhcfjhcjc
         </div>
-
         <!--A.1.II.3-->
         <div
           class="tab-pane fade"
@@ -154,10 +152,7 @@
           class="tab-pane fade"
           id="v-pills-uClasses"
           aria-labelledby="v-pills-uClasses-tab"
-        >
-          <UpdateClass v-if="page == 'UpdateClasses'" />
-        </div>
-
+        ></div>
         <!--A.1.II.5-->
         <div
           class="tab-pane fade"
@@ -166,7 +161,6 @@
         >
           <AddClasses v-if="page == 'AddClasses'" />
         </div>
-
         <!--A.1.II.6-->
         <div
           class="tab-pane fade"
@@ -175,7 +169,6 @@
         >
           <MasterList v-if="page == 'MasterList'" />
         </div>
-
         <!--A.1.II.7-->
         <div
           class="tab-pane fade"
@@ -186,11 +179,9 @@
         </div>
       </div>
       <!---End of Display--->
-      <!--DanceClasses v-if="page == 'DanceClasses'" /--->
       <UpdateClass
         v-if="page == 'UpdateClasses'"
         v-bind:classId="classBeingEdited"
-        v-on:class-updated="updatedClassFunctionFromUpdateClassVue"
       />
     </div>
     <!--End Of LoggedIn Div-->
@@ -207,7 +198,6 @@
     <!--End of A.2-->
   </div>
 </template>
-
 <script>
 import axios from "axios";
 import DanceClasses from "./DanceClasses.vue";
@@ -215,7 +205,7 @@ import AddClasses from "./AddClasses.vue";
 import UpdateClass from "./UpdateClass.vue";
 import MasterList from "./MasterList.vue";
 const API =
-  "https://3000-jollychua-danceplaygroun-f549nqucx4c.ws-us30.gitpod.io/s";
+  "https://3000-jollychua-danceplaygroun-c2k75kskilv.ws-us30.gitpod.io/";
 export default {
   name: "LoggedIn",
   data() {
@@ -246,12 +236,10 @@ export default {
     console.log(response.data[response.data.length - 1]);
   },
   methods: {
-    //Just a button from my Nav
     gotoAddClasses() {
       /*this.$router.push("/AddClasses");*/
       this.page = "AddClasses";
     },
-    //Just a button from my Nav
     LogOut() {
       localStorage.removeItem("token");
       this.$router.push("/Login2");
@@ -259,7 +247,6 @@ export default {
     Home() {
       this.$router.push("/Home");
     },
-    //Just a button from my Nav
     gotoDanceClasses: function () {
       this.page = "DanceClasses";
     },
@@ -268,32 +255,29 @@ export default {
     // alert("Napindot mo ang DanceClasses");
     //this.page = "DanceClasses";*/
     //},
-    //Just a button from my Nav
     gotoMasterList() {
       this.page = "MasterList";
     },
-    //Just a button from my Nav
+    editRecipe: function () {
+      this.page = "edit";
+      this.recipeBeingEdited = { classId };
+    },
     gotoUpdateClasses: function () {
       this.page = "UpdateClasses";
     },
-    //This displays the update a class front end and bring a copy of the class id after an update a class button was clicked
     updateClassFunction: function (classId) {
+      console.log(classId);
       //this function aims to send the classId to my UpdateClass.vue
       this.classBeingEdited = classId;
-      //this transfers the view to UpdateClass.vue
+      alert(this.classBeingEdited);
+      alert("this will go to updateclass: " + classId + "Horrraaaayyy!");
       this.page = "UpdateClasses";
       //this.$router.push("/UpdateClass");
-      alert(classBeingEdited + " We are now in the LoggedIn Vue");
-    },
-    //This displays the classes list after submiting the edit a class function
-    updatedClassFunctionFromUpdateClassVue: function () {
-      this.page = "DanceClasses";
+      alert(this.classBeingEdited);
     },
   },
 };
 </script>
-
-
 <style scoped>
 #LoggedIn {
   margin-top: 0px;

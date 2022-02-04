@@ -81,7 +81,8 @@
 <script>
 import axios from "axios";
 import Background from "./Background.vue";
-const API = "https://herokudanceplaygroundapi.herokuapp.com/";
+const API =
+  "https://3000-jollychua-danceplaygroun-c2k75kskilv.ws-us30.gitpod.io/";
 export default {
   name: "SignUp",
   components: {

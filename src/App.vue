@@ -1,9 +1,7 @@
 <template>
-  <!--Main-->
   <div id="app">
-    <!---A:Nav-->
+    <!---Nav-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <!--A.1-->
       <div class="container-fluid">
         <a class="navbar-brand" v-on:click="gotoLogIn" href="#"
           >Dance Playground</a
@@ -19,7 +17,6 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <!--A.1.1-->
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
@@ -69,7 +66,6 @@
               >
             </li>
           </ul>
-          <!--A.1.1.1-->
           <div class="d-flex">
             <input
               class="form-control me-2"
@@ -81,15 +77,13 @@
               Search
             </button>
           </div>
-          <!--End of A.1.1.1-->
         </div>
-        <!--End of A.1.1-->
       </div>
-      <!--End of A.1-->
     </nav>
-    <!--end of A:Nav-->
-    <!--These are pages:-->
+    <!--end of Nav-->
     <div class="container-sm">
+      <!--pages-->
+      <!--ClassDisplay /-->
       <router-view v-if="page == 'Login'" v-on:welcome-user="onWelcomeUser" />
       <Login2 v-if="page == 'Login2'" v-on:welcome-user="onWelcomeUser" />
       <DanceClasses
@@ -98,19 +92,20 @@
       />
       <SignUp v-if="page == 'SignUp'" />
       <LoggedIn v-if="page == 'LoggedIn'" />
-      <UpdateClass v-if="page == 'UpdateClass'" />
+      <UpdateClass
+        v-if="page == 'UpdateClass'"
+        v-bind:classId="classBeingEdited"
+      />
     </div>
     <!--endofPages-->
   </div>
 </template>
-
 <script>
 import DanceClasses from "@/components/DanceClasses";
 import Login2 from "@/components/Login2";
 import SignUp from "@/components/SignUp";
 import LoggedIn from "@/components/LoggedIn";
 import UpdateClass from "@/components/UpdateClass";
-
 //import ClassDisplay from "@/components/ClassDisplay";
 export default {
   name: "App",
@@ -159,9 +154,6 @@ export default {
   },
 };
 </script>
-
-
-
 <style>
 body {
   background-color: blueviolet;

@@ -10,7 +10,6 @@
       <button v-on:click="goToAddClass" class="btn btn-outline-primary">
         +
       </button>
-
       <!--First Set-->
       <div v-if="page == 'View_1'">
         <div>
@@ -62,7 +61,6 @@
           <span class="visually-hidden">Loading...</span>
         </div>
       </div>
-
       <!--Second Set-->
       <div class="card" v-if="page == 'View_2'">
         <div class="flex-container">
@@ -102,13 +100,12 @@
     <!--end of dance class form div-->
   </div>
 </template>
-
 <script>
 import axios from "axios";
 import AddClasses from "./AddClasses.vue";
 import UpdateClass from "./UpdateClass.vue";
 const API =
-  "https://3000-jollychua-danceplaygroun-f549nqucx4c.ws-us30.gitpod.io/";
+  "https://3000-jollychua-danceplaygroun-c2k75kskilv.ws-us30.gitpod.io/";
 //import ClassCard from "@/components/ClassCard";
 export default {
   name: "DanceClasses",
@@ -119,7 +116,6 @@ export default {
       page: "View_1",
     };
   },
-  props: ["classId"],
   components: {
     AddClasses,
     UpdateClass,
@@ -134,6 +130,7 @@ export default {
   },
   methods: {
     goToUpdate: function (classId) {
+      alert("this will go to updateclass: " + classId);
       //to diplay the update area component
       //send the classId to the form
       this.$emit("update-class-function", classId);
@@ -152,7 +149,6 @@ export default {
       const response = await axios.delete(API + "delete.class/:id");
       console.log(response);
       console.log("onDelete");
-
       //Please review the codes below: (for no db VUE DELETE crud)
       //find the index of task to delete
       //find the index of task which id matches the id of the task that we want to delete
@@ -165,23 +161,19 @@ export default {
       //           break;
       //         }
       //               }
-
       // this.task.splice(indexTodelete, 1);
     },
   },
 };
 </script>
-
 <style>
 /*Table*/
 .table {
   border: 3px, black;
 }
-
 #MainList {
   background-color: yellow;
 }
-
 #DanceClassForm {
   background-color: white;
   border: 2px solid yellow;
@@ -193,12 +185,10 @@ export default {
   margin-right: 10px;
   margin-bottom: 0px;
 }
-
 #updateArea {
   background-color: red;
   margin-left: 0px;
 }
-
 #v-pills-tab {
   background-color: white;
   width: 230px;
@@ -207,7 +197,6 @@ export default {
   position: fixed;
   margin-top: 0px;
 }
-
 .card {
   background-color: orange;
   border-radius: 20px;
@@ -217,7 +206,6 @@ export default {
   display: flex;
   /*flex: 1;*/
 }
-
 .flex-container {
   display: flex;
   background-color: green;
@@ -226,7 +214,6 @@ export default {
   display: flex;
   flex-wrap: wrap;
 }
-
 .card-body {
   background-color: indigo;
   max-width: 200px;
@@ -237,18 +224,15 @@ export default {
   border-radius: 10px;
   border-color: yellow;
 }
-
 img {
   border-radius: 20px;
   object-fit: fill;
   width: 150px;
   height: 150px;
 }
-
 button {
   margin-right: 10px;
 }
-
 #Waiting {
   margin-top: 200px;
   background-color: white;
