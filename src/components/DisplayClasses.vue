@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="DisplayClassesContainer">
     <!--Search bar-->
     <div id="search">
       <div class="d-flex">
@@ -18,12 +18,7 @@
     </div>
     <!--End of search bar-->
     <div id="Display">
-      <div
-        class="card"
-        style="width: 18rem"
-        v-for="id in classes"
-        v-bind:key="id"
-      >
+      <div class="card" v-for="id in classes" v-bind:key="id">
         <img :src="id.link" />
         <!--img src="..." class="card-img-top" alt="..."-->
         <div class="card-body">
@@ -63,11 +58,26 @@ export default {
 </script>
 
 <style scoped>
-#search {
+#DisplayClassesContainer {
   display: flex;
   width: 1500px;
-  height: 50px;
-  background-color: orange;
+  height: 1000px;
+  //background-color: orange;
+  flex-wrap: wrap;
+}
+
+#search {
+  background-color: green;
+  height: 150px;
+  margin: 0px;
+}
+
+#Display {
+  background-color: blue-violet;
+  width: 1500px;
+  height: 1000px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .form-control.2 {
@@ -79,23 +89,32 @@ export default {
 }
 
 .card {
-  background-color: yellow;
-  border-radius: 5px;
-  height: 150px;
+  background-color: white;
+  border-radius: 20px;
+  height: 340px;
+  width: 250px;
   margin: 7px;
+  left: 80px;
+  border: 5px;
+  border-color: yellow;
 }
 .card-body {
-  background-color: yellow;
-}
-#Display {
   background-color: white;
-  width: 1500px;
-  height: 470px;
-  display: flex;
+  width: 220px;
+  font-size: 14px;
+  border-radius: 20px;
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  color: indigo;
 }
 
 img {
-  width: 190px;
-  height: 200px;
+  width: 220px;
+  border-radius: 20px;
+  object-fit: fill;
+  height: 50%;
+  left: 12px;
+  position: absolute;
 }
 </style>

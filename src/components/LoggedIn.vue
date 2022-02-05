@@ -144,6 +144,7 @@
           <DanceClasses
             v-if="page == 'DanceClasses'"
             v-on:update-class-function="updateClassFunction"
+            v-on:delete-class-function="deleteClassFunction"
           />
         </div>
 
@@ -197,6 +198,10 @@
         v-if="page == 'AddClasses'"
         v-on:addClass="gotoDanceClasses"
       />
+      <DeleteClass
+        v-if="page == 'DeleteClass'"
+        v-bind:classId="classBeingDeleted"
+      />
     </div>
     <!--End Of LoggedIn Div-->
 
@@ -218,6 +223,7 @@ import DanceClasses from "./DanceClasses.vue";
 import AddClasses from "./AddClasses.vue";
 import UpdateClass from "./UpdateClass.vue";
 import MasterList from "./MasterList.vue";
+import DeleteClass from "./DeleteClass.vue";
 
 const API =
   "https://3000-jollychua-danceplaygroun-5sfkoly4hn4.ws-us30.gitpod.io/";
@@ -229,6 +235,7 @@ export default {
       me: null,
       page: "",
       classBeingEdited: "",
+      classBeingDeleted: "",
     };
   },
   components: {
@@ -236,6 +243,7 @@ export default {
     AddClasses,
     MasterList,
     UpdateClass,
+    DeleteClass,
   },
   created: async function () {
     const response = await axios.get(API + "home", {
@@ -287,6 +295,18 @@ export default {
       this.page = "UpdateClasses";
       //this.$router.push("/UpdateClass");
       alert(this.classBeingEdited);
+    },
+    deleteClassFunction: function (classId) {
+      console.log(classId);
+      //this function aims to send the classId to my UpdateClass.vue
+      this.classBeingDeleted = classId;
+      alert("pangalawa (andito pa delete):" + this.classBeingDeleted);
+      alert(
+        "pangatlo: this will go to updateclass: " + classId + "Horrraaaayyy!"
+      );
+      this.page = "DeleteClass";
+      //this.$router.push("/UpdateClass");
+      alert("pang apat" + this.classBeingDeleted);
     },
     goBackToClasses: function () {
       this.page = "DanceClasses";

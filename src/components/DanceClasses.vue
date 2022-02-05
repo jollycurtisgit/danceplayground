@@ -92,12 +92,8 @@
       </div>
 
       <!--Third Set: Add One Class-->
-      <div
-        id="addArea"
-        v-if="page == 'AddArea'"
-        v-bind:key="id"
-      >
-        <AddClasses v-on:addClass="gotoDanceClasses"/>
+      <div id="addArea" v-if="page == 'AddArea'" v-bind:key="id">
+        <AddClasses v-on:addClass="gotoDanceClasses" />
       </div>
 
       <!--Fourth Set: Edit One Class-->
@@ -158,27 +154,16 @@ export default {
     gotoDanceClasses: function () {
       this.page = "View_1";
     },
-    async deleteClass(classId) {
-      const response = await axios.delete(
-        API + "delete.class/" + this.classBeingEdited_forDelete
-      );
-      this.classBeingEdited_forDelete = classId;
-      alert(response);
-      alert(this.classBeingEdited_forDelete);
-
-      //Please review the codes below: (for no db VUE DELETE crud)
-      //find the index of task to delete
-      //find the index of task which id matches the id of the task that we want to delete
-      // let indexTodelete = this.classes.findIndex( t = t.id === classToDelete.id)
-      //        alternatively:
-      //         let indextoDelete= -1;
-      //        for (let i =0; i < this.tasks.lenghth; i++) {
-      //          if (this.tasks[i].id === taskToDelete.id) {
-      //          indexToDelete = i;
-      //           break;
-      //         }
-      //               }
-      // this.task.splice(indexTodelete, 1);
+    deleteClass: async function (classId) {
+       alert("Una: this will go to deleteclass pero punta muna LoggedIn: " + classId);
+      //to diplay the update area component
+      //send the classId to the form
+      this.$emit("delete-class-function", classId);
+     // let response = await axios.delete(API + "/deleteClass/" + classId);
+     // this.classBeingEdited_forDelete = classId;
+      //alert(response);
+      //alert(this.classBeingEdited_forDelete);
+     // alert(classId);
     },
   },
 };
