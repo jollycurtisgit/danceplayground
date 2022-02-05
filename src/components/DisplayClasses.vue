@@ -11,14 +11,14 @@
           class="form-control.2 me-2"
           type="search"
           placeholder="Search"
-          aria-label="Search"
+          v-model="wordSearch"
         />
         <button class="button btn-outline-success" type="submit">Search</button>
       </div>
     </div>
     <!--End of search bar-->
     <div id="Display">
-      <div class="card" v-for="id in classes" v-bind:key="id">
+      <div class="card" v-for="id in filteredClasses" v-bind:key="id">
         <img :src="id.link" />
         <!--img src="..." class="card-img-top" alt="..."-->
         <div class="card-body">
@@ -33,27 +33,36 @@
         </div>
       </div>
     </div>
+    <!--End of Display-->
   </div>
 </template>
 <script>
 import axios from "axios";
 const API =
-  "https://3000-jollychua-danceplaygroun-5sfkoly4hn4.ws-us30.gitpod.io/";
+  "https://3000-jollychua-danceplaygroun-jlpvcr18ayh.ws-us30.gitpod.io/";
 export default {
   name: "DisplayClasses",
   data: function () {
     return {
       classes: "",
       image: "",
+      wordSearch: "",
     };
   },
-  async created() {
+  created: async function () {
     const response = await axios.get(API + "AddClasses");
     this.classes = response.data;
     this.image = response.data.link;
     console.log("classList");
   },
-  methods: {},
+  computed: {
+    filteredClasses: function () {
+      let filtered = this.classes.filter((eachClasses) =>
+        eachClasses.name.toLowerCase().includes(this.wordSearch.toLowerCase())
+      );
+      return filtered;
+    },
+  },
 };
 </script>
 
@@ -62,7 +71,6 @@ export default {
   display: flex;
   width: 1500px;
   height: 1000px;
-  //background-color: orange;
   flex-wrap: wrap;
 }
 

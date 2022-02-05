@@ -110,7 +110,7 @@ import axios from "axios";
 import AddClasses from "./AddClasses.vue";
 import UpdateClass from "./UpdateClass.vue";
 const API =
-  "https://3000-jollychua-danceplaygroun-5sfkoly4hn4.ws-us30.gitpod.io/";
+  "https://3000-jollychua-danceplaygroun-jlpvcr18ayh.ws-us30.gitpod.io/";
 //import ClassCard from "@/components/ClassCard";
 export default {
   name: "DanceClasses",
@@ -155,15 +155,17 @@ export default {
       this.page = "View_1";
     },
     deleteClass: async function (classId) {
-       alert("Una: this will go to deleteclass pero punta muna LoggedIn: " + classId);
+      alert(
+        "Una: this will go to deleteclass pero punta muna LoggedIn: " + classId
+      );
       //to diplay the update area component
       //send the classId to the form
       this.$emit("delete-class-function", classId);
-     // let response = await axios.delete(API + "/deleteClass/" + classId);
-     // this.classBeingEdited_forDelete = classId;
+      // let response = await axios.delete(API + "/deleteClass/" + classId);
+      // this.classBeingEdited_forDelete = classId;
       //alert(response);
       //alert(this.classBeingEdited_forDelete);
-     // alert(classId);
+      // alert(classId);
     },
   },
 };

@@ -226,7 +226,7 @@ import MasterList from "./MasterList.vue";
 import DeleteClass from "./DeleteClass.vue";
 
 const API =
-  "https://3000-jollychua-danceplaygroun-5sfkoly4hn4.ws-us30.gitpod.io/";
+  "https://3000-jollychua-danceplaygroun-jlpvcr18ayh.ws-us30.gitpod.io/";
 export default {
   name: "LoggedIn",
   data() {
