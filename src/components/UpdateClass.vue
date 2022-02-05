@@ -1,6 +1,6 @@
 <template>
   <div id="forBG">
-    <h1>Update Recipe</h1>
+    <h1>Update a Class</h1>
     <div id="EditClassForm">
       <div>
         <label class="form-label">Dance Name</label>
@@ -28,14 +28,14 @@
         />
       </div>
       <button type="submit" class="btn btn-primary" v-on:click="processUpdate">
-        Add New
+        Update Now!
       </button>
     </div>
   </div>
 </template>
 <script>
 import axios from "axios";
-import swal from "sweetalert2/dist/sweetalert2.js";
+//import swal from "sweetalert2/dist/sweetalert2.js";
 const API =
   "https://3000-jollychua-danceplaygroun-5sfkoly4hn4.ws-us30.gitpod.io/";
 export default {
@@ -82,6 +82,7 @@ export default {
         schedule: this.schedule,
         link: this.link,
       });
+      alert("na edit na yan ahh  " + this.classId);
       //this.classBeingEdited = { classId };
       //this function should be done from here
       swal("Awesome!", "Thank you for keeping us updated!", "success");

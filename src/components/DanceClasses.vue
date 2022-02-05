@@ -92,7 +92,12 @@
       </div>
 
       <!--Third Set: Add One Class-->
-      <div id="addArea" v-if="page == 'AddArea'" v-bind:key="id">
+      <div
+        id="addArea"
+        v-if="page == 'AddArea'"
+        v-bind:key="id"
+        v-on:addClass="gotoDanceClasses"
+      >
         <AddClasses />
       </div>
 
@@ -136,7 +141,7 @@ export default {
   },
   methods: {
     goToUpdate: function (classId) {
-      alert("this will go to updateclass: " + classId);
+      alert("Una: this will go to updateclass: " + classId);
       //to diplay the update area component
       //send the classId to the form
       this.$emit("update-class-function", classId);
@@ -150,6 +155,9 @@ export default {
     },
     goToAddClass() {
       this.page = "AddArea";
+    },
+    gotoDanceClasses: function () {
+      this.page = "View_1";
     },
     async deleteClass(classId) {
       const response = await axios.delete(

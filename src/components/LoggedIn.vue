@@ -159,7 +159,10 @@
           id="v-pills-aClasses"
           aria-labelledby="v-pills-aClasses-tab"
         >
-          <AddClasses v-if="page == 'AddClasses'" />
+          <AddClasses
+            v-if="page == 'AddClasses'"
+            v-on:addClass="gotoDanceClasses"
+          />
         </div>
         <!--A.1.II.6-->
         <div
@@ -179,10 +182,20 @@
         </div>
       </div>
       <!---End of Display--->
+      <!--DanceClasses v-if="page == 'DanceClasses'" />
+      <!--Please double check v-on, codesandbox automatically edits it-->
       <UpdateClass
         v-if="page == 'UpdateClasses'"
         v-bind:classId="classBeingEdited"
-        v:on:classes-updated="goBackToClasses"
+        v-on:classes-updated="goBackToClasses"
+      />
+      <DanceClasses
+        v-if="page == 'DanceClasses'"
+        v-on:update-class-function="updateClassFunction"
+      />
+      <AddClasses
+        v-if="page == 'AddClasses'"
+        v-on:addClass="gotoDanceClasses"
       />
     </div>
     <!--End Of LoggedIn Div-->
@@ -267,8 +280,10 @@ export default {
       console.log(classId);
       //this function aims to send the classId to my UpdateClass.vue
       this.classBeingEdited = classId;
-      alert(this.classBeingEdited);
-      alert("this will go to updateclass: " + classId + "Horrraaaayyy!");
+      alert("pangalawa (andito pa):" + this.classBeingEdited);
+      alert(
+        "pangatlo: this will go to updateclass: " + classId + "Horrraaaayyy!"
+      );
       this.page = "UpdateClasses";
       //this.$router.push("/UpdateClass");
       alert(this.classBeingEdited);
