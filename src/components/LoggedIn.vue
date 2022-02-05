@@ -199,6 +199,7 @@
         v-on:addClass="gotoDanceClasses"
       />
       <DeleteClass
+        v-on:classes-deleted="gotoDanceClasses"
         v-if="page == 'DeleteClass'"
         v-bind:classId="classBeingDeleted"
       />

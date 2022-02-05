@@ -3,12 +3,8 @@
     <!--Search bar-->
     <div id="search">
       <div class="d-flex">
-        <form class="d-flex">
-          <input class="form-control me-2" type="text" placeholder="Search" />
-          <button class="btn btn-primary" type="button">Search</button>
-        </form>
         <input
-          class="form-control.2 me-2"
+          class="form-control me-2"
           type="search"
           placeholder="Search"
           v-model="wordSearch"
@@ -57,8 +53,17 @@ export default {
   },
   computed: {
     filteredClasses: function () {
-      let filtered = this.classes.filter((eachClasses) =>
-        eachClasses.name.toLowerCase().includes(this.wordSearch.toLowerCase())
+      let filtered = this.classes.filter(
+        (eachClasses) =>
+          eachClasses.name
+            .toLowerCase()
+            .includes(this.wordSearch.toLowerCase()) ||
+          eachClasses.location
+            .toLowerCase()
+            .includes(this.wordSearch.toLowerCase()) ||
+          eachClasses.schedule
+            .toLowerCase()
+            .includes(this.wordSearch.toLowerCase())
       );
       return filtered;
     },
@@ -76,7 +81,8 @@ export default {
 
 #search {
   background-color: green;
-  height: 150px;
+  width: 1000px;
+  height: 50px;
   margin: 0px;
 }
 

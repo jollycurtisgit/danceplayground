@@ -202,17 +202,12 @@ export default {
   margin-top: 0px;
 }
 .card {
-  background-color: orange;
-  border-radius: 20px;
   height: 8000px;
   margin: 7px;
-  /*object-fit: fill;*/
   display: flex;
-  /*flex: 1;*/
 }
 .flex-container {
   display: flex;
-  background-color: green;
   width: 900px;
   height: 700px;
   display: flex;
