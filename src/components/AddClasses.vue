@@ -77,6 +77,11 @@ export default {
         "Thank you for making the community a healthier place!",
         "success"
       );
+      swal(
+        "One more thing",
+        "Please be patient, it will take a while for your new class to appear",
+        "warning"
+      );
       this.$emit("addClass");
       //this.$router.push("DanceClasses");
     },

@@ -81,7 +81,7 @@
 <script>
 import axios from "axios";
 import Background from "./Background.vue";
-import swal from "sweetalert2/dist/sweetalert2.js";
+//import swal from "sweetalert2/dist/sweetalert2.js";
 const API =
   "https://3000-jollychua-danceplaygroun-5sfkoly4hn4.ws-us30.gitpod.io/";
 export default {
@@ -114,7 +114,7 @@ export default {
     terms() {
       swal(
         "Before you start:",
-        "please make sure all the info you enter here are all fake ;)",
+        "please be safe, do not place your real identity here ;)",
         "info"
       );
     },

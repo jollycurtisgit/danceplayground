@@ -96,9 +96,8 @@
         id="addArea"
         v-if="page == 'AddArea'"
         v-bind:key="id"
-        v-on:addClass="gotoDanceClasses"
       >
-        <AddClasses />
+        <AddClasses v-on:addClass="gotoDanceClasses"/>
       </div>
 
       <!--Fourth Set: Edit One Class-->
