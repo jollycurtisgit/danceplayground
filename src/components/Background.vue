@@ -46,16 +46,16 @@ export default {
 
 <style>
 #litaw {
-  width: 1000px;
+  width: 1200px;
   height: 500px;
 }
 
 #carouselExampleFade {
-  width: 1000px;
+  width: 1200px;
   height: 500px;
 }
 
-button {
+button .carousel-control-next {
   margin: 0px;
   border: 0px;
   padding: 0px;
@@ -65,6 +65,10 @@ button {
   margin: 0px;
   border: 0px;
   padding: 0px;
+}
+
+img {
+  z-index: -1;
 }
 </style>
 

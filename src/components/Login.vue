@@ -114,11 +114,14 @@ export default {
   background-color: white;
   border: 2px solid yellow;
   border-radius: 5px;
-  width: 600px;
+  width: 400px;
   height: 470px;
   padding: 40px 30px 80px 30px;
   margin-left: 0px;
   margin-top: 50px;
+  z-index: 1;
+  position: absolute;
+  left: 1100px;
 }
 /* for tablet */
 @media screen and (max-width: 992px) {

@@ -1,19 +1,13 @@
 <template>
-  <div id="DisplayClassesContainer">
-    <!--Search bar-->
-    <div id="search">
-      <div class="d-flex">
-        <input
-          class="form-control me-2"
-          type="search"
-          placeholder="Search"
-          v-model="wordSearch"
-        />
-        <button class="button btn-outline-success" type="submit">Search</button>
-      </div>
-    </div>
+  <div>
     <!--End of search bar-->
     <div id="Display">
+      <input
+        class="form-control me-2"
+        type="search"
+        placeholder="Please input a key-word, you may use schedule, location or simply the name of the class"
+        v-model="wordSearch"
+      />
       <div class="card" v-for="id in filteredClasses" v-bind:key="id">
         <img :src="id.link" />
         <!--img src="..." class="card-img-top" alt="..."-->
@@ -72,20 +66,6 @@ export default {
 </script>
 
 <style scoped>
-#DisplayClassesContainer {
-  display: flex;
-  width: 1500px;
-  height: 1000px;
-  flex-wrap: wrap;
-}
-
-#search {
-  background-color: green;
-  width: 1000px;
-  height: 50px;
-  margin: 0px;
-}
-
 #Display {
   background-color: blue-violet;
   width: 1500px;
