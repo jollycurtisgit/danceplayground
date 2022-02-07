@@ -59,6 +59,7 @@ button .carousel-control-next {
   margin: 0px;
   border: 0px;
   padding: 0px;
+  z-index: -3;
 }
 
 .carousel-control-next {

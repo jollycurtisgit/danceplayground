@@ -24,7 +24,7 @@
                 class="nav-link active"
                 v-on:click="gotoDanceClasses"
                 aria-current="page"
-                href="#"
+                href="#services"
                 >Classes</a
               >
             </li>
@@ -74,9 +74,10 @@
               aria-label="Search"
             />
             <button
-              class="btn btn-outline-success"
+              class="btn btn-outline-warning"
               v-on:click="Search"
               type="submit"
+              href="#services"
             >
               Search
             </button>
@@ -85,7 +86,7 @@
       </div>
     </nav>
     <!--end of Nav-->
-    <div class="container-sm">
+    <div class="container-sm" id="services">
       <!--pages-->
       <!--ClassDisplay /-->
       <router-view v-if="page == 'Login'" v-on:welcome-user="onWelcomeUser" />
@@ -100,9 +101,10 @@
         v-if="page == 'UpdateClass'"
         v-bind:classId="classBeingEdited"
       />
-      <DisplayClasses v-if="page == 'DisplayClasses'" />
+      <DisplayClasses v-if="page == 'DisplayClasses'" id="services" />
     </div>
     <!--endofPages-->
+    <div id="services"></div>
   </div>
 </template>
 <script>
@@ -168,6 +170,12 @@ export default {
 };
 </script>
 <style>
+.navbar {
+  width: 100%;
+  /*width: 1520px;*/
+  position: fixed;
+  z-index: 5;
+}
 body {
   background-color: blueviolet;
 }

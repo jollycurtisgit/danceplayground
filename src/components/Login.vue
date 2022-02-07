@@ -96,6 +96,14 @@ export default {
 </script>
 
 <style scoped>
+#miniNav {
+  background-color: indigo;
+  border: 2px solid yellow;
+  padding: 5px;
+  display: flex;
+  height: 50px;
+}
+
 #removeMargin {
   margin-left: 0px;
   width: 1500px;
@@ -106,7 +114,7 @@ export default {
   width: 1300px;
   height: 600px;
   margin-right: 0px;
-  margin-top: 0.2px;
+  margin-top: 3px;
   margin-left: 0px;
   display: flex;
 }

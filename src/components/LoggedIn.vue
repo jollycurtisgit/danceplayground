@@ -117,7 +117,9 @@
       <!--Start of Display-->
       <!--A.1.II-->
       <div class="container">
-        <h3>Hello, you are logged in as: {{ me.email }}</h3>
+        <div class="Welcome">
+          <h3>Hello, you are logged in as: {{ me.email }}</h3>
+        </div>
       </div>
       <!--A.1.III-->
       <div class="tab-content" id="v-pills-tabContent">
@@ -208,11 +210,13 @@
 
     <!--A.2-->
     <div v-if="!user" class="container">
-      <h3>Ooops! You are unauthorized!</h3>
-      <br />
-      <br />
-      <div class="spinner-border text-warning" role="status">
-        <span class="visually-hidden">Loading...</span>
+      <div class="Welcome">
+        <h3>Ooops! You are unauthorized!</h3>
+        <br />
+        <br />
+        <div class="spinner-border text-warning" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
       </div>
     </div>
     <!--End of A.2-->
@@ -323,10 +327,15 @@ export default {
   background-color: gray;
 }
 .container {
+  margin-top: 20px;
+  max-height: 50px;
+}
+
+.Welcome {
   background-color: white;
   border: 2px solid yellow;
   border-radius: 5px;
-  margin-top: 20px;
+  margin-top: 100px;
   max-height: 50px;
 }
 
