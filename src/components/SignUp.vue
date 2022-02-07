@@ -130,10 +130,10 @@ export default {
 
 /* for desktop */
 #forAdvertisement {
-  width: 1400px;
-  height: 800px;
+  width: 1300px;
+  height: 600px;
   margin-right: 0px;
-  margin-top: 0.2px;
+  margin-top: 6px;
   margin-left: 0px;
   display: flex;
 }

@@ -20,10 +20,11 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
+              <!--v-on:click="gotoDanceClasses" this was inside the a tag-->
               <a
                 class="nav-link active"
-                v-on:click="gotoDanceClasses"
                 aria-current="page"
+                v-on:click="Search"
                 href="#services"
                 >Classes</a
               >
@@ -73,11 +74,12 @@
               placeholder="Search"
               aria-label="Search"
             />
+
             <button
               class="btn btn-outline-warning"
-              v-on:click="Search"
               type="submit"
               href="#services"
+              v-on:click="Search"
             >
               Search
             </button>

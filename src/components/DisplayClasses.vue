@@ -234,16 +234,16 @@ export default {
   height: 1000px;
   display: flex;
   flex-wrap: wrap;
-  top: 80px;
+  top: 100px;
   position: relative;
   margin-left: 0px;
 }
 
 #miniNavYellow {
   background-color: yellow;
-  display: relative;
+  display: flex relative;
   width: 1500px;
-  height: 600px;
+  height: 400px;
 }
 
 .form-control.2 {
