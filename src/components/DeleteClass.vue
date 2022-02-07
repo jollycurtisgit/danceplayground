@@ -72,10 +72,10 @@ export default {
     // price: this.price,
     // });
     // console.log(response);
-    //this.$emit("new-class-created");
+    //this. $emit("new-class-created");
     //},
     processDelete: async function () {
-      await axios.delete(API + "delete.class.2/" + this.classId);
+      await axios.delete(API + "delete.class/" + this.classId);
       alert("na delete na yan ahh  " + this.classId);
       //this.classBeingEdited = { classId };
       //this function should be done from here

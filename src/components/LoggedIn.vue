@@ -266,7 +266,7 @@ export default {
     },
     LogOut() {
       localStorage.removeItem("token");
-      this.$router.push("/Login2");
+      this.$emit("out");
     },
     Home() {
       this.$router.push("/Home");
@@ -329,6 +329,7 @@ export default {
   margin-top: 20px;
   max-height: 50px;
 }
+
 #v-pills-tab {
   background-color: indigo;
   width: 230px;

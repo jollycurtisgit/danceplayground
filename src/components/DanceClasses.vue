@@ -2,21 +2,20 @@
   <div>
     <div id="DanceClassForm" v-for="id in classesLimitDisplay" v-bind:key="id">
       <div id="miniNav">
-        <button v-on:click="View1Method" class="btn btn-outline-primary">
-          List View
-        </button>
+        <h5>Please use any keyword:</h5>
+        <input
+          class="form-control"
+          type="search"
+          placeholder="Ex: name, schedule, location"
+          v-model="wordSearch"
+        />
+        <button v-on:click="View1Method">List View</button>
         <button v-on:click="View2Method" class="btn btn-outline-primary">
           Large Icons View
         </button>
         <button v-on:click="goToAddClass" class="btn btn-outline-primary">
           +
         </button>
-        <input
-          class="form-control"
-          type="search"
-          placeholder="Please input a key-word, you may use schedule, location or simply the name of the class"
-          v-model="wordSearch"
-        />
       </div>
       <!--First Set-->
       <div v-if="page == 'View_1'">
@@ -194,14 +193,29 @@ export default {
 </script>
 <style>
 /*Table*/
+h5 {
+  color: yellow;
+  margin: 5px 5px 5px 5px;
+}
 #miniNav {
   background-color: indigo;
   border: 2px solid yellow;
   padding: 5px;
+  display: flex;
+  height: 50px;
 }
-.form-control {
-  width: 450px;
+#miniNav .form-control {
+  width: 250px;
+  margin: 5px 5px 5px 5px;
 }
+
+#miniNav button {
+  background-color: yellow;
+  margin: -1px 5px 5px 5px;
+  font: bold indigo 12px;
+  border-radius: 5px;
+}
+
 .table {
   border: 3px, black;
 }
@@ -223,14 +237,7 @@ export default {
   background-color: red;
   margin-left: 0px;
 }
-#v-pills-tab {
-  background-color: white;
-  width: 230px;
-  height: 900px;
-  left: 0;
-  position: fixed;
-  margin-top: 0px;
-}
+
 .card {
   height: 8000px;
   margin: 7px;

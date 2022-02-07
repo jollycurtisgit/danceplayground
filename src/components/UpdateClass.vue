@@ -5,6 +5,8 @@
     <div id="EditClassForm">
       <!--1.1.A-->
       <div>
+        <img :src="this.link" />
+        <br />
         <label class="form-label">Update all the info here:</label>
         <br />
         <br />
@@ -23,6 +25,17 @@
       </div>
       <br />
       <br />
+
+      <!---Checkboxes-->
+      <br />
+
+      <br />
+      <!--Radios--->
+    </div>
+    <!--End of first form-->
+    <!--Start of second form-->
+    <!--1.2-->
+    <div id="EditClassForm">
       <!--duration-->
       <div>
         <label>Duration per session: </label>
@@ -33,17 +46,8 @@
           <option value="2hrs">2 hours</option>
         </select>
       </div>
-      <!---Checkboxes-->
       <br />
-
       <br />
-      <!--Radios--->
-    </div>
-
-    <!--End of first form-->
-    <!--Start of second form-->
-    <!--1.2-->
-    <div id="AddClassForm">
       <label class="form-label"
         >Is the class comprehensive or limited to a specific level:</label
       >
@@ -167,7 +171,7 @@
     </div>
 
     <!--End of second form-->
-    <div id="AddClassForm">
+    <div id="EditClassForm">
       <div>
         <label class="form-label">Image Link</label>
         <input
@@ -224,6 +228,7 @@ export default {
       instructorName: "",
       email: "",
       password: "",
+      image: "",
     };
   },
   created: async function () {
@@ -241,6 +246,7 @@ export default {
     this.schedule = response.data.schedule;
     this.email = response.data.email;
     this.password = response.data.password;
+    this.image = response.data.link;
     alert("Nasa UpdateClass na ako: " + this.classId);
     alert(response);
     console.log(response.data + "UpdateClass na to ah");
@@ -279,25 +285,71 @@ export default {
 };
 </script>
 <style scoped>
+/* */
 /* for desktop */
 #forBG {
   width: 1000px;
   height: 800px;
   margin-right: 0px;
+  margin-left: 0px;
   margin-top: 0px;
   background-position: 0px 30px;
   background-repeat: no-repeat;
+  background-color: indigo;
+  display: flex;
 }
-#AddClassForm {
+
+#EditClassForm {
   background-color: white;
   border: 2px solid yellow;
   border-radius: 5px;
-  width: 600px;
-  height: 470px;
-  padding: 40px 50px 80px 50px;
-  margin-right: 780px;
-  margin-top: 50px;
+  width: 350px;
+  height: 450px;
+  padding: 10px 10px 80px 10px;
+  margin-left: 10px;
+  margin-top: 5px;
+  font-size: 14px;
 }
+
+/* for tablet */
+@media screen and (max-width: 992px) {
+  #AddClassForm {
+    background-color: white;
+    border: 2px solid yellow;
+    border-radius: 5px;
+    width: 600px;
+    height: 460px;
+    padding: 50px 50px 80px 50px;
+    margin-left: 60px;
+    position: absolute;
+  }
+  #forBG {
+    background: none;
+  }
+}
+
+/* for celpphone */
+@media screen and (max-width: 600px) {
+  #AddClassForm {
+    background-color: white;
+    border: 2px solid green;
+    border-radius: 5px;
+    width: 300px;
+    height: 460px;
+    padding: 50px 20px 80px 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 50px;
+    position: absolute;
+  }
+  #forBG {
+    background: none;
+    display: flex;
+  }
+}
+
+/* */
+
 /* for tablet */
 @media screen and (max-width: 992px) {
   #AddClassForm {

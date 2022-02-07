@@ -95,7 +95,7 @@
         v-on:update-class-function="updateClassFunction"
       />
       <SignUp v-if="page == 'SignUp'" />
-      <LoggedIn v-if="page == 'LoggedIn'" />
+      <LoggedIn v-if="page == 'LoggedIn'" v-on:out="out" />
       <UpdateClass
         v-if="page == 'UpdateClass'"
         v-bind:classId="classBeingEdited"
@@ -160,6 +160,9 @@ export default {
     },
     Search: function () {
       this.page = "DisplayClasses";
+    },
+    out: function () {
+      this.page = "LoggedIn";
     },
   },
 };

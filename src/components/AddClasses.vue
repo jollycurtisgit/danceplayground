@@ -252,12 +252,13 @@ export default {
         "Great!",
         "Thank you for making the community a healthier place!",
         "success"
-      );
-      swal(
-        "One more thing",
-        "Please be patient, it will take a while for your new class to appear",
-        "warning"
-      );
+      ).then((value) => {
+        swal(
+          "One more thing",
+          "Please be patient, it will take a while for your new class to appear",
+          "warning"
+        );
+      });
       this.$emit("addClass");
       //this.$router.push("DanceClasses");
     },
@@ -291,20 +292,6 @@ export default {
   background-color: indigo;
   display: flex;
 }
-
-#AddClass {
-  margin-top: 0px;
-}
-
-#v-pills-tab {
-  background-color: white;
-  width: 230px;
-  height: 900px;
-  left: 0;
-  position: fixed;
-  margin-top: 0px;
-}
-
 #AddClassForm {
   background-color: white;
   border: 2px solid yellow;
