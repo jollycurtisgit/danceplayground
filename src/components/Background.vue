@@ -66,10 +66,6 @@ button .carousel-control-next {
   border: 0px;
   padding: 0px;
 }
-
-img {
-  z-index: -1;
-}
 </style>
 
 

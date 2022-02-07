@@ -83,7 +83,7 @@ import axios from "axios";
 import Background from "./Background.vue";
 //import swal from "sweetalert2/dist/sweetalert2.js";
 const API =
-  "https://3000-jollychua-danceplaygroun-jlpvcr18ayh.ws-us30.gitpod.io/";
+  "https://3000-jollycurtisgit-danceplay-cwxrl0zxzch.ws-us30.gitpod.io/";
 export default {
   name: "SignUp",
   components: {
@@ -133,20 +133,23 @@ export default {
   width: 1400px;
   height: 800px;
   margin-right: 0px;
-  margin-top: 30px;
+  margin-top: 0.2px;
   margin-left: 0px;
   display: flex;
 }
 
 #SignUpForm {
+  height: 550px;
   background-color: white;
   border: 2px solid yellow;
   border-radius: 5px;
-  width: 600px;
-  height: 550px;
-  padding: 20px 50px 20px 50px;
+  width: 400px;
+  padding: 20px 30px 80px 30px;
   margin-left: 0px;
   margin-top: 50px;
+  z-index: 1;
+  position: absolute;
+  left: 1050px;
 }
 
 #flex {

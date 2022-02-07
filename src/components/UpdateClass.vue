@@ -37,7 +37,7 @@
 import axios from "axios";
 //import swal from "sweetalert2/dist/sweetalert2.js";
 const API =
-  "https://3000-jollychua-danceplaygroun-jlpvcr18ayh.ws-us30.gitpod.io/";
+  "https://3000-jollycurtisgit-danceplay-cwxrl0zxzch.ws-us30.gitpod.io/";
 export default {
   name: "UpdateClass",
   props: ["classId"],

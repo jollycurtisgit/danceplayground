@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <!---Nav-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
         <a class="navbar-brand" v-on:click="gotoLogIn" href="#"
           >Dance Playground</a
@@ -73,7 +73,11 @@
               placeholder="Search"
               aria-label="Search"
             />
-            <button class="btn btn-outline-success" type="submit">
+            <button
+              class="btn btn-outline-success"
+              v-on:click="Search"
+              type="submit"
+            >
               Search
             </button>
           </div>
@@ -96,6 +100,7 @@
         v-if="page == 'UpdateClass'"
         v-bind:classId="classBeingEdited"
       />
+      <DisplayClasses v-if="page == 'DisplayClasses'" />
     </div>
     <!--endofPages-->
   </div>
@@ -106,6 +111,7 @@ import Login2 from "@/components/Login2";
 import SignUp from "@/components/SignUp";
 import LoggedIn from "@/components/LoggedIn";
 import UpdateClass from "@/components/UpdateClass";
+import DisplayClasses from "@/components/DisplayClasses";
 //import ClassDisplay from "@/components/ClassDisplay";
 export default {
   name: "App",
@@ -121,6 +127,7 @@ export default {
     SignUp,
     UpdateClass,
     //ClassDisplay,
+    DisplayClasses,
     LoggedIn,
   },
   methods: {
@@ -151,12 +158,26 @@ export default {
       this.status = "";
       this.classBeingEdited = classId;
     },
+    Search: function () {
+      this.page = "DisplayClasses";
+    },
   },
 };
 </script>
 <style>
 body {
   background-color: blueviolet;
+}
+
+a {
+  color: yellow;
+}
+.nav-link {
+  color: yellow;
+}
+.navbar {
+  color: yellow;
+  background-color: indigo;
 }
 /* On screens that are 992px or less, set the background color to yellow */
 @media screen and (max-width: 992px) {

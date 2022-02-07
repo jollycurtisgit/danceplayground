@@ -37,7 +37,7 @@
 import axios from "axios";
 //import swal from "sweetalert2/dist/sweetalert2.js";
 const API =
-  "https://3000-jollychua-danceplaygroun-jlpvcr18ayh.ws-us30.gitpod.io/";
+  "https://3000-jollycurtisgit-danceplay-cwxrl0zxzch.ws-us30.gitpod.io/";
 export default {
   name: "DeleteClass",
   props: ["classId"],
@@ -61,7 +61,7 @@ export default {
     this.link = response.data.link;
     alert("Nasa UpdateClass na ako: " + this.classId);
     alert(response);
-    console.log(response.data + "UpdateClass na to ah");
+    alert(response.data + "UpdateClass na to ah");
   },
   methods: {
     // async updateClassFunction(classId) {
@@ -75,7 +75,7 @@ export default {
     //this.$emit("new-class-created");
     //},
     processDelete: async function () {
-      await axios.delete(API + "delete.class/" + this.classId);
+      await axios.delete(API + "delete.class.2/" + this.classId);
       alert("na delete na yan ahh  " + this.classId);
       //this.classBeingEdited = { classId };
       //this function should be done from here

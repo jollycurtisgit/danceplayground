@@ -61,7 +61,7 @@ import axios from "axios";
 import Background from "./Background.vue";
 import DisplayClasses from "./DisplayClasses.vue";
 const API =
-  "https://3000-jollychua-danceplaygroun-jlpvcr18ayh.ws-us30.gitpod.io/";
+  "https://3000-jollycurtisgit-danceplay-cwxrl0zxzch.ws-us30.gitpod.io/";
 export default {
   name: "Login",
   components: {
@@ -85,7 +85,7 @@ export default {
         email: this.email,
         password: this.password,
       });
-      console.log(response);
+      alert(response);
       localStorage.setItem("token", response.data.token);
       swal("Welcome!", "You are now inside your account!", "success");
       /*this.$router.push("LoggedIn");*/
@@ -118,10 +118,10 @@ export default {
   height: 470px;
   padding: 40px 30px 80px 30px;
   margin-left: 0px;
-  margin-top: 50px;
   z-index: 1;
   position: absolute;
-  left: 1100px;
+  left: 1050px;
+  margin-top: 100px;
 }
 /* for tablet */
 @media screen and (max-width: 992px) {

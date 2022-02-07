@@ -57,7 +57,7 @@ import axios from "axios";
 import Background from "./Background.vue";
 import DisplayClasses from "./DisplayClasses.vue";
 const API =
-  "https://3000-jollychua-danceplaygroun-jlpvcr18ayh.ws-us30.gitpod.io/";
+  "https://3000-jollycurtisgit-danceplay-cwxrl0zxzch.ws-us30.gitpod.io/";
 export default {
   name: "Login2",
   components: {
@@ -97,7 +97,7 @@ export default {
   width: 1300px;
   height: 800px;
   margin-right: 0px;
-  margin-top: 50px;
+  margin-top: 0.2px;
   margin-left: 0px;
   display: flex;
 }
@@ -105,11 +105,14 @@ export default {
   background-color: white;
   border: 2px solid yellow;
   border-radius: 5px;
-  width: 800px;
+  width: 400px;
   height: 470px;
   padding: 40px 30px 80px 30px;
-  margin-left: 5px;
-  margin-top: 50px;
+  margin-left: 0px;
+  z-index: 1;
+  position: absolute;
+  left: 1050px;
+  margin-top: 100px;
 }
 /* for tablet */
 @media screen and (max-width: 992px) {

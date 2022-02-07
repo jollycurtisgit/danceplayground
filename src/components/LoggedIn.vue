@@ -227,7 +227,7 @@ import MasterList from "./MasterList.vue";
 import DeleteClass from "./DeleteClass.vue";
 
 const API =
-  "https://3000-jollychua-danceplaygroun-jlpvcr18ayh.ws-us30.gitpod.io/";
+  "https://3000-jollycurtisgit-danceplay-cwxrl0zxzch.ws-us30.gitpod.io/";
 export default {
   name: "LoggedIn",
   data() {
@@ -330,10 +330,11 @@ export default {
   max-height: 50px;
 }
 #v-pills-tab {
-  background-color: white;
+  background-color: indigo;
   width: 230px;
-  height: 900px;
+  height: 1000px;
   left: 0;
   position: fixed;
+  margin-top: -17px;
 }
 </style> 

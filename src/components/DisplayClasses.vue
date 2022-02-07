@@ -1,7 +1,15 @@
 <template>
   <div>
-    <!--End of search bar-->
-    <div id="Display">
+    <div v-if="!classes" class="Display">
+      <h3>Please wait</h3>
+      <br />
+      <br />
+      <div class="spinner-border text-warning" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+
+    <div class="Display" v-if="classes">
       <input
         class="form-control me-2"
         type="search"
@@ -23,13 +31,12 @@
         </div>
       </div>
     </div>
-    <!--End of Display-->
   </div>
 </template>
 <script>
 import axios from "axios";
 const API =
-  "https://3000-jollychua-danceplaygroun-jlpvcr18ayh.ws-us30.gitpod.io/";
+  "https://3000-jollycurtisgit-danceplay-cwxrl0zxzch.ws-us30.gitpod.io/";
 export default {
   name: "DisplayClasses",
   data: function () {
@@ -65,13 +72,17 @@ export default {
 };
 </script>
 
+
 <style scoped>
-#Display {
-  background-color: blue-violet;
+.Display {
+  background-color: indigo;
   width: 1500px;
   height: 1000px;
   display: flex;
   flex-wrap: wrap;
+  top: 100px;
+  position: relative;
+  margin-left: 0px;
 }
 
 .form-control.2 {
@@ -85,7 +96,7 @@ export default {
 .card {
   background-color: white;
   border-radius: 20px;
-  height: 340px;
+  height: 360px;
   width: 250px;
   margin: 7px;
   left: 80px;

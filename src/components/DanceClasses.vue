@@ -110,7 +110,7 @@ import axios from "axios";
 import AddClasses from "./AddClasses.vue";
 import UpdateClass from "./UpdateClass.vue";
 const API =
-  "https://3000-jollychua-danceplaygroun-jlpvcr18ayh.ws-us30.gitpod.io/";
+  "https://3000-jollycurtisgit-danceplay-cwxrl0zxzch.ws-us30.gitpod.io/";
 //import ClassCard from "@/components/ClassCard";
 export default {
   name: "DanceClasses",
@@ -184,7 +184,7 @@ export default {
   border-radius: 5px;
   width: 1010px;
   height: 8000px;
-  padding: 40px 50px 80px 50px;
+  padding: 40px 20px 80px 20px;
   margin-top: 20px;
   margin-right: 10px;
   margin-bottom: 0px;
