@@ -1,15 +1,23 @@
 <template>
   <div>
     <div id="DanceClassForm" v-for="id in classesLimitDisplay" v-bind:key="id">
-      <button v-on:click="View1Method" class="btn btn-outline-primary">
-        List View
-      </button>
-      <button v-on:click="View2Method" class="btn btn-outline-primary">
-        Large Icons View
-      </button>
-      <button v-on:click="goToAddClass" class="btn btn-outline-primary">
-        +
-      </button>
+      <div id="miniNav">
+        <button v-on:click="View1Method" class="btn btn-outline-primary">
+          List View
+        </button>
+        <button v-on:click="View2Method" class="btn btn-outline-primary">
+          Large Icons View
+        </button>
+        <button v-on:click="goToAddClass" class="btn btn-outline-primary">
+          +
+        </button>
+        <input
+          class="form-control"
+          type="search"
+          placeholder="Please input a key-word, you may use schedule, location or simply the name of the class"
+          v-model="wordSearch"
+        />
+      </div>
       <!--First Set-->
       <div v-if="page == 'View_1'">
         <div>
@@ -24,7 +32,7 @@
                 <th scope="col"></th>
               </tr>
             </thead>
-            <tbody v-for="id in classes" v-bind:key="id">
+            <tbody v-for="id in filteredClasses" v-bind:key="id">
               <tr>
                 <th scope="row">{{ id.name }}</th>
                 <td class="list-grou-item">{{ id.location }}</td>
@@ -67,11 +75,7 @@
       <!--Second Set-->
       <div class="card" v-if="page == 'View_2'">
         <div class="flex-container">
-          <div
-            class="card-body"
-            v-for="id in classesLimitDisplay"
-            v-bind:key="id"
-          >
+          <div class="card-body" v-for="id in filteredClasses" v-bind:key="id">
             <img :src="id.link" />
             <h5 class="card-title">{{ id.name }}</h5>
             <p class="card-text">
@@ -120,6 +124,7 @@ export default {
       classesLimitDisplay: "",
       page: "View_1",
       classBeingEdited_forDelete: "",
+      wordSearch: "",
     };
   },
   components: {
@@ -133,6 +138,23 @@ export default {
     /* Never Delete*/
     /*     this.classesLimitDisplay = response.data.slice(0, 3);  */
     console.log("created async is here");
+  },
+  computed: {
+    filteredClasses: function () {
+      let filtered = this.classes.filter(
+        (eachClasses) =>
+          eachClasses.name
+            .toLowerCase()
+            .includes(this.wordSearch.toLowerCase()) ||
+          eachClasses.location
+            .toLowerCase()
+            .includes(this.wordSearch.toLowerCase()) ||
+          eachClasses.schedule
+            .toLowerCase()
+            .includes(this.wordSearch.toLowerCase())
+      );
+      return filtered;
+    },
   },
   methods: {
     goToUpdate: function (classId) {
@@ -172,6 +194,14 @@ export default {
 </script>
 <style>
 /*Table*/
+#miniNav {
+  background-color: indigo;
+  border: 2px solid yellow;
+  padding: 5px;
+}
+.form-control {
+  width: 450px;
+}
 .table {
   border: 3px, black;
 }
