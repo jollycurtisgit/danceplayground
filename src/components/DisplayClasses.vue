@@ -14,14 +14,17 @@
     <div class="Display" v-if="classes">
       <div id="miniNavYellow">
         <!--1-->
-        <input
-          class="form-control me-2"
-          type="search"
-          placeholder="Please input a key-word, you may use schedule, location or simply the name of the class"
-          v-model="wordSearch"
-        />
+        <div id="one">
+          <h5>Please use any keyword:</h5>
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="name, schedule, location, etc."
+            v-model="wordSearch"
+          />
+        </div>
         <!--2-->
-        <div id="miniNav">
+        <div id="two">
           <label>Duration per session: </label>
           <select v-model="duration">
             <option value="30mins">30 minutes</option>
@@ -31,7 +34,7 @@
           </select>
         </div>
         <!--3-->
-        <div>
+        <div id="three">
           <label class="form-label"
             >Is the class comprehensive or limited to a specific level:</label
           >
@@ -177,7 +180,7 @@
 <script>
 import axios from "axios";
 const API =
-  "https://3000-jollycurtisgit-danceplay-cwxrl0zxzch.ws-us30.gitpod.io/";
+  "https://3000-jollycurtisgit-danceplay-uwoheb8rqm1.ws-us30.gitpod.io/";
 export default {
   name: "DisplayClasses",
   data: function () {
@@ -223,11 +226,48 @@ export default {
   width: 100%;
   width: 1500px;
   text-align: center;
+  border-radius: 20px;
 }
 .spinner-border {
   color: yellow;
   position: absolute;
 }
+
+h6 {
+  color: indigo;
+  margin: 5px 5px 5px 5px;
+  padding: 15px 0px 5px 5px;
+}
+#miniNavYellow .form-control {
+  width: 250px;
+  height: 30px;
+  margin: 0px 5px 5px 5px;
+}
+
+#miniNavYellow #one {
+  display: flex;
+  height: 70px;
+  width: 500px;
+  padding: 5px 5px 5px 5px;
+  margin: 20px 0px 0px 20px;
+}
+
+#miniNavYellow #two {
+  display: relative;
+  height: 70px;
+  width: 100px;
+  padding: 5px 5px 5px 5px;
+  margin-right: 15px;
+}
+
+#miniNavYellow #three {
+  display: relative;
+  height: 70px;
+  width: 200px;
+  padding: 5px 5px 5px 5px;
+  margin: 0px 20px 0px 20px;
+}
+
 .Display {
   background-color: indigo;
   width: 1500px;
@@ -241,11 +281,12 @@ export default {
 
 #miniNavYellow {
   background-color: yellow;
-  display: flex relative;
+  border-radius: 20px;
+  display: flex;
   width: 1500px;
-  height: 400px;
+  height: 200px;
+  border: 2px solid orange;
 }
-
 .form-control.2 {
   margin: 10px, 10px, 10px, 10px;
 }
@@ -262,7 +303,7 @@ export default {
   margin: 7px;
   left: 80px;
   border: 5px;
-  border-color: yellow;
+  border: 2px solid yellow;
 }
 .card-body {
   background-color: white;

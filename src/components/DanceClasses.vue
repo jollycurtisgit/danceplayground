@@ -113,7 +113,7 @@ import axios from "axios";
 import AddClasses from "./AddClasses.vue";
 import UpdateClass from "./UpdateClass.vue";
 const API =
-  "https://3000-jollycurtisgit-danceplay-cwxrl0zxzch.ws-us30.gitpod.io/";
+  "https://3000-jollycurtisgit-danceplay-uwoheb8rqm1.ws-us30.gitpod.io/";
 //import ClassCard from "@/components/ClassCard";
 export default {
   name: "DanceClasses",
