@@ -195,4 +195,21 @@ img {
   left: 12px;
   position: absolute;
 }
+
+@media screen and (max-width: 992px) {
+  #notClasses {
+    color: yellow;
+    width: 100%;
+    width: 900px;
+    text-align: center;
+    border-radius: 20px;
+  }
+  #miniNavYellow {
+    background-color: yellow;
+    display: flex;
+    width: 900px;
+    height: 50px;
+    position: static;
+  }
+}
 </style>

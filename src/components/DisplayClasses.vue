@@ -46,6 +46,9 @@
         >
           2 hours
         </button>
+        <button type="button" class="btn btn-warning" v-on:click="Refresh">
+          🔄 (Refresh)
+        </button>
       </div>
       <!--A.1.3-->
       <!--div id="three">
@@ -229,6 +232,9 @@ export default {
     TwoHRDurationMethod: function () {
       this.page = "TwoHRDurationPage";
     },
+    Refresh: function () {
+      this.page = "loadingpage";
+    },
   },
 };
 </script>
@@ -341,5 +347,26 @@ img {
   left: 12px;
   position: absolute;
 }
-</style>
 
+/* Tablet: On screens that are 992px or less */
+@media screen and (max-width: 992px) {
+  .Display {
+    background-color: blueviolet;
+    width: 750px;
+    height: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    top: 100px;
+    position: relative;
+    margin-left: 0px;
+  }
+  #miniNavYellow {
+    background-color: yellow;
+    /*border-radius: 20px;*/
+    display: flex;
+    width: 750px;
+    height: 200px;
+    /*border: 2px solid orange;*/
+  }
+}
+</style>
