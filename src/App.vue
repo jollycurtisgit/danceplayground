@@ -202,22 +202,58 @@ a {
   color: yellow;
   background-color: indigo;
 }
-/* On screens that are 992px or less, set the background color to yellow */
+/* Tablet: On screens that are 992px or less */
 @media screen and (max-width: 992px) {
   body {
     background-image: url("https://scontent.fmnl3-4.fna.fbcdn.net/v/t39.30808-6/272027619_3044447049128016_6083752026578421933_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=0debeb&_nc_eui2=AeF5kZShzqlpUmrr7I6OckrMyQkOrs290ULJCQ6uzb3RQjAWO7KQsaf2TYmhKIqsyOGyBP1XbLf-bI5-GC1F7_M8&_nc_ohc=HwKDwfqQBnEAX_4XGh-&_nc_ht=scontent.fmnl3-4.fna&oh=00_AT-ouT2FW1jhlzsB1TVufCRiSqNxASzAlVaHeDRtiNulaQ&oe=61E93055");
     background-repeat: no-repeat;
-    background-color: yellow;
+    background-color: blueviolet;
     background-size: cover;
+    width: 750px;
+  }
+  .navbar {
+    width: 100%;
+    width: 750px;
+    position: fixed;
+    z-index: 5;
+  }
+  .container-sm {
+    display: flex;
+    height: 750px;
+    width: 900px;
+    margin-left: 0px;
+    margin-right: 0px;
+    /*background-color: red;*/
+  }
+  .container-fluid {
+    width: 750px;
   }
 }
-/* On screens that are 600px or less, set the background color to olive */
+/* Cellphone: On screens that are 600px or less */
 @media screen and (max-width: 600px) {
   body {
     background-image: url("https://scontent.fmnl3-4.fna.fbcdn.net/v/t39.30808-6/272027619_3044447049128016_6083752026578421933_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=0debeb&_nc_eui2=AeF5kZShzqlpUmrr7I6OckrMyQkOrs290ULJCQ6uzb3RQjAWO7KQsaf2TYmhKIqsyOGyBP1XbLf-bI5-GC1F7_M8&_nc_ohc=HwKDwfqQBnEAX_4XGh-&_nc_ht=scontent.fmnl3-4.fna&oh=00_AT-ouT2FW1jhlzsB1TVufCRiSqNxASzAlVaHeDRtiNulaQ&oe=61E93055");
     background-repeat: no-repeat;
     background-color: blueviolet;
-    background-size: 600px 580px;
+    background-size: cover;
+    width: 370px;
+  }
+  .navbar {
+    width: 100%;
+    width: 370px;
+    position: fixed;
+    z-index: 5;
+  }
+  .container-sm {
+    display: flex;
+    height: 370px;
+    width: 550px;
+    margin-left: 0px;
+    margin-right: 0px;
+    /*background-color: red;*/
+  }
+  .container-fluid {
+    width: 370px;
   }
 }
 .container-sm {

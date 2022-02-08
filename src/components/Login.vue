@@ -103,12 +103,13 @@ export default {
   height: 50px;
 }
 
+/* for desktop */
 #removeMargin {
   margin-left: 0px;
   width: 1500px;
   margin-top: 9px;
 }
-/* for desktop */
+
 #forAdvertisement {
   width: 1300px;
   height: 580px;
@@ -139,11 +140,24 @@ export default {
     width: 600px;
     height: 460px;
     padding: 50px 50px 80px 50px;
-    margin-left: 0px;
-    /*position: absolute;*/
+    margin-left: 18px;
+    left: 10%;
+    margin-right: 80%;
   }
   #forAdvertisement {
     background: none;
+    width: 900px;
+    margin-left: 0px;
+    left: 1%;
+    margin-right: 80%;
+  }
+  #removeMargin {
+    margin-left: 0px;
+    width: 900px;
+    margin-top: 9px;
+    margin-left: 20px;
+    left: 20%;
+    margin-right: 70%;
   }
 }
 /* for celpphone */
@@ -162,6 +176,11 @@ export default {
   }
   #forAdvertisement {
     background: none;
+  }
+  #removeMargin {
+    margin-left: 0px;
+    width: 900px;
+    margin-top: 9px;
   }
 }
 </style>

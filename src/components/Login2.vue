@@ -115,6 +115,10 @@ export default {
 }
 /* for tablet */
 @media screen and (max-width: 992px) {
+  #removeMargin {
+    margin-left: 0px;
+    width: 900px;
+  }
   #LoginForm {
     background-color: white;
     border: 2px solid yellow;

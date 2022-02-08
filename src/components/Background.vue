@@ -67,6 +67,37 @@ button .carousel-control-next {
   border: 0px;
   padding: 0px;
 }
+
+/* On screens that are 992px or less, set the background color to yellow */
+@media screen and (max-width: 992px) {
+  #litaw {
+    width: 990px;
+    height: 500px;
+    display: none;
+  }
+  #carouselExampleFade {
+    width: 990px;
+    height: 500px;
+  }
+  .carousel-inner {
+    display: none;
+  }
+}
+/* Cellphone: On screens that are 600px or less */
+@media screen and (max-width: 600px) {
+  #litaw {
+    width: 450px;
+    height: 500px;
+    display: none;
+  }
+  #carouselExampleFade {
+    width: 450px;
+    height: 500px;
+  }
+  .carousel-inner {
+    display: none;
+  }
+}
 </style>
 
 
