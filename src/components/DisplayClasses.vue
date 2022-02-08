@@ -157,20 +157,23 @@
     <!--End of A.1-->
     <!---end of mininav yellow---->
     <div>
+      <Loading v-if="page == loadingpage" />
       <DisplayClassesActive v-if="page == DisplayClassesActivePage" />
     </div>
   </div>
 </template>
 <script>
+import Loading from "./Loading.vue";
 import DisplayClassesActive from "./DisplayClassesActive.vue";
 export default {
   name: "DisplayClasses",
   components: {
     DisplayClassesActive,
+    Loading,
   },
   data: function () {
     return {
-      page: null,
+      page: "loadingpage",
       id: "",
       classBeingEdited: "",
       name: "",

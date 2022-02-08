@@ -5,8 +5,7 @@ import swal from "sweetalert";
 import router from "./router";
 import "./axios";
 
-
-import 'sweetalert2/src/sweetalert2.scss'
+import "sweetalert2/src/sweetalert2.scss";
 
 import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
 

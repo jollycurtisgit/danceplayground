@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div id="RED">
+    <h1>Hello World!</h1>
     <!--Not--->
     <div v-if="!classes" id="notClasses" class="Display">
       <div class="absolute">
@@ -45,9 +46,10 @@ export default {
     return {
       classes: "",
       image: "",
-      wordSearch: "",
+      wordsearch: "",
     };
   },
+  props: ["wordsearch"],
   created: async function () {
     const response = await axios.get(API + "AddClasses");
     this.classes = response.data;
@@ -60,13 +62,13 @@ export default {
         (eachClasses) =>
           eachClasses.name
             .toLowerCase()
-            .includes(this.wordSearch.toLowerCase()) ||
+            .includes(this.wordsearch.toLowerCase()) ||
           eachClasses.location
             .toLowerCase()
-            .includes(this.wordSearch.toLowerCase()) ||
+            .includes(this.wordsearch.toLowerCase()) ||
           eachClasses.schedule
             .toLowerCase()
-            .includes(this.wordSearch.toLowerCase())
+            .includes(this.wordsearch.toLowerCase())
       );
       return filtered;
     },
@@ -76,6 +78,9 @@ export default {
 
 
 <style scoped>
+#RED {
+  background-color: red;
+}
 .absolute {
   margin-left: 45%;
 }

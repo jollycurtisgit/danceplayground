@@ -123,7 +123,7 @@ export default {
       classesLimitDisplay: "",
       page: "View_1",
       classBeingEdited_forDelete: "",
-      wordSearch: "",
+      wordsearch: "",
     };
   },
   components: {
