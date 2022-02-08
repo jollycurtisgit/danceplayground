@@ -154,7 +154,7 @@ export default {
       console.log(classId);
       //this function aims to send the classId to my UpdateClass.vue
       this.classBeingEdited = classId;
-      alert("this will go to updateclass: " + classId + "Horrraaaayyy!");
+      alert("Please wait, processing " + classId + "  now....");
       this.page = "UpdateClass";
     },
     onEditClass: function (classId) {

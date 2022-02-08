@@ -23,6 +23,13 @@
           <option value="1.5hrs">1.5 hours</option>
           <option value="2hrs">2 hours</option>
         </select>
+        <button
+          type="button"
+          class="btn btn-warning"
+          v-on:click="DisplayClassesPerDurationMethod"
+        >
+          Search by: 30 mins classes
+        </button>
       </div>
       <!--A.1.3-->
       <div id="three">
@@ -151,17 +158,20 @@
     <div>
       <Loading v-if="page == 'loadingpage'" />
       <DisplayClassesActive v-if="page == 'DisplayClassesActivePage'" />
+      <DisplayClassesDuration v-if="page == 'DisplayClassesDurationPage'" />
     </div>
   </div>
 </template>
 <script>
 import Loading from "./Loading.vue";
 import DisplayClassesActive from "./DisplayClassesActive.vue";
+import DisplayClassesDuration from "./DisplayClassesDuration.vue";
 export default {
   name: "DisplayClasses",
   components: {
     DisplayClassesActive,
     Loading,
+    DisplayClassesDuration,
   },
   data: function () {
     return {
@@ -187,6 +197,9 @@ export default {
   methods: {
     DisplayActiveClassesMethod: function () {
       this.page = "DisplayClassesActivePage";
+    },
+    DisplayClassesPerDurationMethod: function () {
+      this.page = "DisplayClassesDurationPage";
     },
   },
 };
@@ -218,7 +231,7 @@ h6 {
   height: 30px;
   margin: 0px 5px 5px 5px;
 }
-
+/*
 #miniNavYellow #one {
   display: flex;
   height: 70px;
@@ -226,7 +239,7 @@ h6 {
   padding: 5px 5px 5px 5px;
   margin: 20px 0px 0px 20px;
 }
-
+*/
 #miniNavYellow #two {
   display: relative;
   height: 70px;
@@ -244,9 +257,9 @@ h6 {
 }
 
 .Display {
-  background-color: indigo;
+  background-color: blueviolet;
   width: 1500px;
-  height: 1000px;
+  height: 300px;
   display: flex;
   flex-wrap: wrap;
   top: 100px;
@@ -266,7 +279,7 @@ h6 {
   margin: 10px, 10px, 10px, 10px;
 }
 
-.button {
+button {
   margin: 10px, 10px, 10px, 10px;
 }
 

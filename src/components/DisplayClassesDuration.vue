@@ -30,6 +30,8 @@
               <br />
               Schedule: {{ id.schedule }}
               <br />
+              Duration: {{ id.duration }}
+              <br />
               Price per session: {{ id.price }}
             </p>
           </div>
@@ -55,10 +57,10 @@ export default {
     };
   },
   created: async function () {
-    const response = await axios.get(API + "AddClasses");
+    const response = await axios.get(API + "durationClassesSearch");
     this.classes = response.data;
     this.image = response.data.link;
-    alert("Active");
+    alert("30");
     alert(response);
   },
   computed: {

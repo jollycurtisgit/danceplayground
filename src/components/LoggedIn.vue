@@ -70,7 +70,7 @@
         >
         <!--A.1.I.6-->
         <a
-          class="nav-link"
+          class="nav-link disabled"
           id="v-pills-uClasses-tab"
           data-bs-toggle="pill"
           href="#v-pills-uClasses"

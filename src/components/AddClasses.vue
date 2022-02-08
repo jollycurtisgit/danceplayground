@@ -246,8 +246,6 @@ export default {
         email: this.email,
         password: this.password,
       });
-      alert(response);
-      //alert("hoy!");
       swal(
         "Great!",
         "Thank you for making the community a healthier place!",

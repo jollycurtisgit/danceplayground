@@ -1,7 +1,7 @@
  <template>
   <div class="Display">
     <div class="absolute">
-      <h3>Please wait...</h3>
+      <h3>Please select display all button...</h3>
       <br />
       <br />
       <div class="spinner-border text-warning" role="status">
@@ -19,6 +19,16 @@ export default {
 
 <style scoped>
 .Display {
-  background-color: rosybrown;
+  background-color: blueviolet;
+}
+h3 {
+  left: 40%;
+  color: yellow;
+  position: absolute;
+}
+
+.spinner-border {
+  position: absolute;
+  left: 50%;
 }
 </style>
