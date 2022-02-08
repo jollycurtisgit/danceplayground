@@ -275,10 +275,18 @@ export default {
         link: this.link,
         instructorName: this.instructorName,
       });
-      alert("na edit na yan ahh  " + this.classId);
+      alert("Updating:  " + this.classId);
       //this.classBeingEdited = { classId };
       //this function should be done from here
-      swal("Awesome!", "Thank you for keeping us updated!", "success");
+      swal("Awesome!", "Thank you for keeping us updated!", "success").then(
+        (value) => {
+          swal(
+            "One more thing",
+            "Please be patient, it will take a while for your UPDATED class to appear",
+            "warning"
+          );
+        }
+      );
       this.$emit("classes-updated");
     },
   },

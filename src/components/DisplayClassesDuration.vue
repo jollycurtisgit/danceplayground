@@ -60,8 +60,6 @@ export default {
     const response = await axios.get(API + "durationClassesSearch");
     this.classes = response.data;
     this.image = response.data.link;
-    alert("30");
-    alert(response);
   },
   computed: {
     filteredClasses: function () {
