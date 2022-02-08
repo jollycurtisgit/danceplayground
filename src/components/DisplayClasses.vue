@@ -1,124 +1,116 @@
 <template>
-  <div>
-    <div v-if="!classes" id="notClasses" class="Display">
-      <div class="absolute">
-        <h3>Please wait...</h3>
+  <div class="Display">
+    <!---A.1-->
+    <div id="miniNavYellow">
+      <!--A.1.Button-->
+      <div>
+        <button
+          type="button"
+          class="btn btn-warning"
+          v-on:click="DisplayActiveClassesMethod"
+        >
+          Display All
+        </button>
+      </div>
+      <!--A.1.1-->
+      <div id="one">
+        <h5>Please use any keyword:</h5>
+        <input
+          class="form-control me-2"
+          type="search"
+          placeholder="name, schedule, location, etc."
+          v-model="wordSearch"
+        />
+      </div>
+      <!--A.1.2-->
+      <div id="two">
+        <label>Duration per session: </label>
+        <select v-model="duration">
+          <option value="30mins">30 minutes</option>
+          <option value="1hr">1 hour</option>
+          <option value="1.5hrs">1.5 hours</option>
+          <option value="2hrs">2 hours</option>
+        </select>
+      </div>
+      <!--A.1.3-->
+      <div id="three">
+        <label class="form-label"
+          >Is the class comprehensive or limited to a specific level:</label
+        >
         <br />
+        <!--A.1.3.option 1-->
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            id="inlineCheckbox1"
+            v-model="complexity"
+            value="beginner"
+          />
+          <label class="form-check-label" for="inlineCheckbox1">Beginner</label>
+        </div>
+        <!--A.1.3.option 2-->
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            id="inlineCheckbox2"
+            v-model="complexity"
+            value="intermediate"
+          />
+          <label class="form-check-label" for="inlineCheckbox2"
+            >Intermediate</label
+          >
+        </div>
+        <!--A.1.3.option 3-->
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            id="inlineCheckbox3"
+            value="advanced"
+            v-model="complexity"
+          />
+          <label class="form-check-label" for="inlineCheckbox2">Advanced</label>
+        </div>
+        <!--End of A.1.3.option 3-->
+      </div>
+      <!--End of A.1.3-->
+      <!--A.1.4-->
+      <div>
+        <label class="form-label">Best for: </label>
         <br />
-        <div class="spinner-border text-warning" role="status">
-          <span class="visually-hidden">Loading...</span>
+        <!--A.1.4.option 1-->
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="exampleRadios"
+            id="exampleRadios1"
+            value="solo"
+            v-model="best_for"
+          />
+          <label class="form-check-label" for="exampleRadios1"> Solo </label>
+        </div>
+        <!--A.1.4.option 2-->
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="exampleRadios"
+            id="exampleRadios2"
+            v-model="best_for"
+            value="couples"
+          />
+          <label class="form-check-label" for="exampleRadios2"> Couples </label>
         </div>
       </div>
-    </div>
-
-    <div class="Display" v-if="classes">
-      <div id="miniNavYellow">
-        <!--1-->
-        <div id="one">
-          <h5>Please use any keyword:</h5>
-          <input
-            class="form-control me-2"
-            type="search"
-            placeholder="name, schedule, location, etc."
-            v-model="wordSearch"
-          />
-        </div>
-        <!--2-->
-        <div id="two">
-          <label>Duration per session: </label>
-          <select v-model="duration">
-            <option value="30mins">30 minutes</option>
-            <option value="1hr">1 hour</option>
-            <option value="1.5hrs">1.5 hours</option>
-            <option value="2hrs">2 hours</option>
-          </select>
-        </div>
-        <!--3-->
-        <div id="three">
-          <label class="form-label"
-            >Is the class comprehensive or limited to a specific level:</label
-          >
-          <br />
-
-          <div class="form-check form-check-inline">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              id="inlineCheckbox1"
-              v-model="complexity"
-              value="beginner"
-            />
-            <label class="form-check-label" for="inlineCheckbox1"
-              >Beginner</label
-            >
-          </div>
-
-          <div class="form-check form-check-inline">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              id="inlineCheckbox2"
-              v-model="complexity"
-              value="intermediate"
-            />
-            <label class="form-check-label" for="inlineCheckbox2"
-              >Intermediate</label
-            >
-          </div>
-
-          <div class="form-check form-check-inline">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              id="inlineCheckbox3"
-              value="advanced"
-              v-model="complexity"
-            />
-            <label class="form-check-label" for="inlineCheckbox2"
-              >Advanced</label
-            >
-          </div>
-        </div>
-        <br />
-        <br />
-        <!--4-->
-        <div>
-          <label class="form-label">Best for: </label>
-          <br />
-
-          <div class="form-check form-check-inline">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="exampleRadios"
-              id="exampleRadios1"
-              value="solo"
-              v-model="best_for"
-            />
-            <label class="form-check-label" for="exampleRadios1"> Solo </label>
-          </div>
-          <!--1.1.H-->
-          <div class="form-check form-check-inline">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="exampleRadios"
-              id="exampleRadios2"
-              v-model="best_for"
-              value="couples"
-            />
-            <label class="form-check-label" for="exampleRadios2">
-              Couples
-            </label>
-          </div>
-        </div>
-        <br />
-        <br />
-        <!--end of radio buttons--->
-        <!--5-->
+      <!--End of A.1.4-->
+      <!-- A.1.5-->
+      <div>
         <label class="form-label">Type of Dance:</label>
         <br />
-        <!--1.2.A-->
+        <!--A.1.5 option 1-->
         <div class="form-check form-check-inline">
           <input
             class="form-check-input"
@@ -130,7 +122,7 @@
           />
           <label class="form-check-label" for="exampleRadios1"> Modern </label>
         </div>
-        <!--1.2.B-->
+        <!--A.1.5 option 2-->
         <div class="form-check form-check-inline">
           <input
             class="form-check-input"
@@ -144,7 +136,7 @@
             Not-So-Modern
           </label>
         </div>
-        <!--1.2.C-->
+        <!--A.1.5 option 3-->
         <div class="form-check form-check-inline">
           <input
             class="form-check-input"
@@ -158,66 +150,53 @@
             Traditional
           </label>
         </div>
+        <!--End of A.1.5 option 3-->
       </div>
-      <!------->
-      <div class="card" v-for="id in filteredClasses" v-bind:key="id">
-        <img :src="id.link" />
-        <!--img src="..." class="card-img-top" alt="..."-->
-        <div class="card-body">
-          <h5 class="card-title">{{ id.name }}</h5>
-          <p class="card-text">
-            Location: {{ id.location }}
-            <br />
-            Schedule: {{ id.schedule }}
-            <br />
-            Price per session: {{ id.price }}
-          </p>
-        </div>
-      </div>
+      <!--End of A.1.5-->
+    </div>
+    <!--End of A.1-->
+    <!---end of mininav yellow---->
+    <div>
+      <DisplayClassesActive v-if="page == DisplayClassesActivePage" />
     </div>
   </div>
 </template>
 <script>
-import axios from "axios";
-const API =
-  "https://3000-jollycurtisgit-danceplay-uwoheb8rqm1.ws-us30.gitpod.io/";
+import DisplayClassesActive from "./DisplayClassesActive.vue";
 export default {
   name: "DisplayClasses",
+  components: {
+    DisplayClassesActive,
+  },
   data: function () {
     return {
-      classes: "",
+      page: null,
+      id: "",
+      classBeingEdited: "",
+      name: "",
+      location: "",
+      schedule: "",
+      duration: "",
+      complexity: [],
+      best_for: "",
+      category: "",
+      price: "",
+      link: "",
+      instructorName: "",
+      email: "",
+      password: "",
       image: "",
-      wordSearch: "",
     };
   },
-  created: async function () {
-    const response = await axios.get(API + "AddClasses");
-    this.classes = response.data;
-    this.image = response.data.link;
-    console.log("classList");
-  },
-  computed: {
-    filteredClasses: function () {
-      let filtered = this.classes.filter(
-        (eachClasses) =>
-          eachClasses.name
-            .toLowerCase()
-            .includes(this.wordSearch.toLowerCase()) ||
-          eachClasses.location
-            .toLowerCase()
-            .includes(this.wordSearch.toLowerCase()) ||
-          eachClasses.schedule
-            .toLowerCase()
-            .includes(this.wordSearch.toLowerCase())
-      );
-      return filtered;
+  methods: {
+    DisplayActiveClassesMethod: function () {
+      this.page = "DisplayClassesActivePage";
     },
   },
 };
 </script>
 
-
-<style scoped>
+<style scoped >
 .absolute {
   margin-left: 45%;
 }
@@ -325,3 +304,4 @@ img {
   position: absolute;
 }
 </style>
+
