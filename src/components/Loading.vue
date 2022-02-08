@@ -1,7 +1,7 @@
  <template>
   <div class="Display">
     <div class="absolute">
-      <h3>Please select display all button...</h3>
+      <h3>Please select any of the buttons...</h3>
       <br />
       <br />
       <div class="spinner-border text-warning" role="status">

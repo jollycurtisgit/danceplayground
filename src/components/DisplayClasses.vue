@@ -16,19 +16,35 @@
       <div id="one"></div>
       <!--A.1.2-->
       <div id="two">
-        <label>Duration per session: </label>
-        <select v-model="duration">
-          <option value="30mins">30 minutes</option>
+        <label>Search by Duration: </label>
+        <!--select v-model="duration">
+          <option value="30mins">
+            30 minutes
+          </option>
           <option value="1hr">1 hour</option>
           <option value="1.5hrs">1.5 hours</option>
           <option value="2hrs">2 hours</option>
-        </select>
+        </select-->
         <button
           type="button"
           class="btn btn-warning"
           v-on:click="DisplayClassesPerDurationMethod"
         >
-          Search by: 30 mins classes
+          30 mins
+        </button>
+        <button
+          type="button"
+          class="btn btn-warning"
+          v-on:click="OneHRDurationMethod"
+        >
+          1 hour
+        </button>
+        <button
+          type="button"
+          class="btn btn-warning"
+          v-on:click="DisplayClassesPerDurationMethod"
+        >
+          2 hours
         </button>
       </div>
       <!--A.1.3-->
@@ -159,6 +175,7 @@
       <Loading v-if="page == 'loadingpage'" />
       <DisplayClassesActive v-if="page == 'DisplayClassesActivePage'" />
       <DisplayClassesDuration v-if="page == 'DisplayClassesDurationPage'" />
+      <OneHRDuration v-if="page == 'OneHRDurationPage'" />
     </div>
   </div>
 </template>
@@ -166,12 +183,14 @@
 import Loading from "./Loading.vue";
 import DisplayClassesActive from "./DisplayClassesActive.vue";
 import DisplayClassesDuration from "./DisplayClassesDuration.vue";
+import OneHRDuration from "./OneHRDuration.vue";
 export default {
   name: "DisplayClasses",
   components: {
     DisplayClassesActive,
     Loading,
     DisplayClassesDuration,
+    OneHRDuration,
   },
   data: function () {
     return {
@@ -200,6 +219,9 @@ export default {
     },
     DisplayClassesPerDurationMethod: function () {
       this.page = "DisplayClassesDurationPage";
+    },
+    OneHRDurationMethod: function () {
+      this.page = "OneHRDurationPage";
     },
   },
 };
@@ -291,6 +313,7 @@ button {
   margin: 7px;
   left: 80px;
   border: 5px;
+  color: indigo;
   border: 2px solid yellow;
 }
 .card-body {

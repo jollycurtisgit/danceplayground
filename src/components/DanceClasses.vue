@@ -157,7 +157,11 @@ export default {
   },
   methods: {
     goToUpdate: function (classId) {
-      alert("Una: this will go to updateclass: " + classId);
+      swal(
+        "Please be patient, wait for: " +
+          classId +
+          "'s info to display before making changes.."
+      );
       //to diplay the update area component
       //send the classId to the form
       this.$emit("update-class-function", classId);
