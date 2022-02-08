@@ -1,37 +1,28 @@
 <template>
-  <div id="RED">
-    <h1>Hello World!</h1>
+  <div v-if="classes">
+    <div id="miniNavYellow">
+      <h5>Please use any keyword:</h5>
+      <input
+        class="form-control me-2"
+        type="search"
+        placeholder="name, schedule, location, etc."
+        v-model="wordSearch"
+      />
+    </div>
+    <div class="card" v-for="id in filteredClasses" v-bind:key="id">
+      <img :src="id.link" />
+      <div class="card-body">
+        <h5 class="card-title">{{ id.name }}</h5>
+        <p class="card-text">
+          Location: {{ id.location }}
+          <br />
+          Schedule: {{ id.schedule }}
+          <br />
+          Price per session: {{ id.price }}
+        </p>
+      </div>
+    </div>
     <!--Not--->
-    <div v-if="!classes" id="notClasses" class="Display">
-      <div class="absolute">
-        <h3>Please wait...</h3>
-        <br />
-        <br />
-        <div class="spinner-border text-warning" role="status">
-          <span class="visually-hidden">Loading...</span>
-        </div>
-      </div>
-    </div>
-    <!--End of Not--->
-    <!--Start of Created--->
-    <div class="Display" v-if="classes">
-      <div class="card" v-for="id in filteredClasses" v-bind:key="id">
-        <img :src="id.link" />
-        <!--img src="..." class="card-img-top" alt="..."-->
-        <div class="card-body">
-          <h5 class="card-title">{{ id.name }}</h5>
-          <p class="card-text">
-            Location: {{ id.location }}
-            <br />
-            Schedule: {{ id.schedule }}
-            <br />
-            Price per session: {{ id.price }}
-          </p>
-        </div>
-        <!--end of card body -->
-      </div>
-    </div>
-    <!--end-of--created-->
   </div>
 </template>
 
@@ -46,15 +37,15 @@ export default {
     return {
       classes: "",
       image: "",
-      wordsearch: "",
+      wordSearch: "",
     };
   },
-  props: ["wordsearch"],
   created: async function () {
     const response = await axios.get(API + "AddClasses");
     this.classes = response.data;
     this.image = response.data.link;
-    console.log("classList");
+    alert("Active");
+    alert(response);
   },
   computed: {
     filteredClasses: function () {
@@ -62,13 +53,13 @@ export default {
         (eachClasses) =>
           eachClasses.name
             .toLowerCase()
-            .includes(this.wordsearch.toLowerCase()) ||
+            .includes(this.wordSearch.toLowerCase()) ||
           eachClasses.location
             .toLowerCase()
-            .includes(this.wordsearch.toLowerCase()) ||
+            .includes(this.wordSearch.toLowerCase()) ||
           eachClasses.schedule
             .toLowerCase()
-            .includes(this.wordsearch.toLowerCase())
+            .includes(this.wordSearch.toLowerCase())
       );
       return filtered;
     },
@@ -144,14 +135,9 @@ h6 {
 
 #miniNavYellow {
   background-color: yellow;
-  border-radius: 20px;
   display: flex;
   width: 1500px;
-  height: 200px;
-  border: 2px solid orange;
-}
-.form-control.2 {
-  margin: 10px, 10px, 10px, 10px;
+  height: 50px;
 }
 
 .button {

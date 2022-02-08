@@ -18,4 +18,7 @@ export default {
 </script>
 
 <style scoped>
+.Display {
+  background-color: rosybrown;
+}
 </style>

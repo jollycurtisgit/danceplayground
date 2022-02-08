@@ -13,15 +13,7 @@
         </button>
       </div>
       <!--A.1.1-->
-      <div id="one">
-        <h5>Please use any keyword:</h5>
-        <input
-          class="form-control me-2"
-          type="search"
-          placeholder="name, schedule, location, etc."
-          v-model="wordSearch"
-        />
-      </div>
+      <div id="one"></div>
       <!--A.1.2-->
       <div id="two">
         <label>Duration per session: </label>
@@ -157,8 +149,8 @@
     <!--End of A.1-->
     <!---end of mininav yellow---->
     <div>
-      <Loading v-if="page == loadingpage" />
-      <DisplayClassesActive v-if="page == DisplayClassesActivePage" />
+      <Loading v-if="page == 'loadingpage'" />
+      <DisplayClassesActive v-if="page == 'DisplayClassesActivePage'" />
     </div>
   </div>
 </template>
@@ -189,6 +181,7 @@ export default {
       email: "",
       password: "",
       image: "",
+      wordSearch: "",
     };
   },
   methods: {
@@ -263,11 +256,11 @@ h6 {
 
 #miniNavYellow {
   background-color: yellow;
-  border-radius: 20px;
+  /*border-radius: 20px;*/
   display: flex;
   width: 1500px;
   height: 200px;
-  border: 2px solid orange;
+  /*border: 2px solid orange;*/
 }
 .form-control.2 {
   margin: 10px, 10px, 10px, 10px;
