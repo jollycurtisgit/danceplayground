@@ -205,10 +205,8 @@
 
 <script>
 import axios from "axios";
-import RecycleCard from "./RecycleCard.vue";
 //import swal from "sweetalert2/dist/sweetalert2.js";
-const API =
-  "https://3000-jollycurtisgit-danceplay-uwoheb8rqm1.ws-us30.gitpod.io/";
+const API = "https://herokudance.herokuapp.com/";
 export default {
   name: "AddClasses",
   data: function () {
@@ -227,9 +225,7 @@ export default {
       password: "",
     };
   },
-  components: {
-    RecycleCard,
-  },
+  components: {},
   methods: {
     async addNew() {
       const response = await axios.post(API + "TryClass", {

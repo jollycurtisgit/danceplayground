@@ -230,8 +230,7 @@ import UpdateClass from "./UpdateClass.vue";
 import MasterList from "./MasterList.vue";
 import DeleteClass from "./DeleteClass.vue";
 
-const API =
-  "https://3000-jollycurtisgit-danceplay-uwoheb8rqm1.ws-us30.gitpod.io/";
+const API = "https://herokudance.herokuapp.com/";
 export default {
   name: "LoggedIn",
   data() {

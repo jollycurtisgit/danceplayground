@@ -207,8 +207,7 @@
 <script>
 import axios from "axios";
 //import swal from "sweetalert2/dist/sweetalert2.js";
-const API =
-  "https://3000-jollycurtisgit-danceplay-uwoheb8rqm1.ws-us30.gitpod.io/";
+const API = "https://herokudance.herokuapp.com/";
 export default {
   name: "UpdateClass",
   props: ["classId"],

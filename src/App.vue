@@ -176,7 +176,7 @@ export default {
       this.page = "DisplayClasses";
     },
     out: function () {
-      this.page = "LoggedIn";
+      this.page = "Login";
     },
   },
 };

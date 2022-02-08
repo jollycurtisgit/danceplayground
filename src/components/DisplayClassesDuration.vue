@@ -36,8 +36,7 @@
 
 <script>
 import axios from "axios";
-const API =
-  "https://3000-jollycurtisgit-danceplay-uwoheb8rqm1.ws-us30.gitpod.io/";
+const API = "https://herokudance.herokuapp.com/";
 export default {
   name: "DisplayClassesActive",
   data: function () {

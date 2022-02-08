@@ -112,8 +112,7 @@
 import axios from "axios";
 import AddClasses from "./AddClasses.vue";
 import UpdateClass from "./UpdateClass.vue";
-const API =
-  "https://3000-jollycurtisgit-danceplay-uwoheb8rqm1.ws-us30.gitpod.io/";
+const API = "https://herokudance.herokuapp.com/";
 //import ClassCard from "@/components/ClassCard";
 export default {
   name: "DanceClasses",
