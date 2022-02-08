@@ -11,15 +11,6 @@
       </div>
     </div>
     <div v-if="classes">
-      <div id="miniNavYellow">
-        <p>Please use any keyword:</p>
-        <input
-          class="form-control me-2"
-          type="search"
-          placeholder="name, schedule, location, etc."
-          v-model="wordSearch"
-        />
-      </div>
       <div id="divscontainer">
         <div class="card" v-for="id in filteredClasses" v-bind:key="id">
           <img :src="id.link" />

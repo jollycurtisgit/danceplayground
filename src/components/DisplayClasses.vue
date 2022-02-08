@@ -42,19 +42,19 @@
         <button
           type="button"
           class="btn btn-warning"
-          v-on:click="DisplayClassesPerDurationMethod"
+          v-on:click="TwoHRDurationMethod"
         >
           2 hours
         </button>
       </div>
       <!--A.1.3-->
-      <div id="three">
+      <!--div id="three">
         <label class="form-label"
           >Is the class comprehensive or limited to a specific level:</label
         >
-        <br />
-        <!--A.1.3.option 1-->
-        <div class="form-check form-check-inline">
+        <br /-->
+      <!--A.1.3.option 1-->
+      <!--div class="form-check form-check-inline">
           <input
             class="form-check-input"
             type="checkbox"
@@ -63,9 +63,9 @@
             value="beginner"
           />
           <label class="form-check-label" for="inlineCheckbox1">Beginner</label>
-        </div>
-        <!--A.1.3.option 2-->
-        <div class="form-check form-check-inline">
+        </div-->
+      <!--A.1.3.option 2-->
+      <!--div class="form-check form-check-inline">
           <input
             class="form-check-input"
             type="checkbox"
@@ -76,9 +76,9 @@
           <label class="form-check-label" for="inlineCheckbox2"
             >Intermediate</label
           >
-        </div>
-        <!--A.1.3.option 3-->
-        <div class="form-check form-check-inline">
+        </div-->
+      <!--A.1.3.option 3-->
+      <!--div class="form-check form-check-inline">
           <input
             class="form-check-input"
             type="checkbox"
@@ -87,16 +87,16 @@
             v-model="complexity"
           />
           <label class="form-check-label" for="inlineCheckbox2">Advanced</label>
-        </div>
-        <!--End of A.1.3.option 3-->
-      </div>
+        </div-->
+      <!--End of A.1.3.option 3-->
+      <!--/div-->
       <!--End of A.1.3-->
       <!--A.1.4-->
-      <div>
+      <!--div>
         <label class="form-label">Best for: </label>
         <br />
         <!--A.1.4.option 1-->
-        <div class="form-check form-check-inline">
+      <!--div class="form-check form-check-inline">
           <input
             class="form-check-input"
             type="radio"
@@ -106,9 +106,9 @@
             v-model="best_for"
           />
           <label class="form-check-label" for="exampleRadios1"> Solo </label>
-        </div>
-        <!--A.1.4.option 2-->
-        <div class="form-check form-check-inline">
+        </div-->
+      <!--A.1.4.option 2-->
+      <!--div class="form-check form-check-inline">
           <input
             class="form-check-input"
             type="radio"
@@ -119,14 +119,14 @@
           />
           <label class="form-check-label" for="exampleRadios2"> Couples </label>
         </div>
-      </div>
+      </div-->
       <!--End of A.1.4-->
       <!-- A.1.5-->
-      <div>
+      <!--div>
         <label class="form-label">Type of Dance:</label>
         <br />
         <!--A.1.5 option 1-->
-        <div class="form-check form-check-inline">
+      <!--div class="form-check form-check-inline">
           <input
             class="form-check-input"
             type="radio"
@@ -138,7 +138,7 @@
           <label class="form-check-label" for="exampleRadios1"> Modern </label>
         </div>
         <!--A.1.5 option 2-->
-        <div class="form-check form-check-inline">
+      <!--div class="form-check form-check-inline">
           <input
             class="form-check-input"
             type="radio"
@@ -152,7 +152,7 @@
           </label>
         </div>
         <!--A.1.5 option 3-->
-        <div class="form-check form-check-inline">
+      <!--div class="form-check form-check-inline">
           <input
             class="form-check-input"
             type="radio"
@@ -166,7 +166,7 @@
           </label>
         </div>
         <!--End of A.1.5 option 3-->
-      </div>
+      <!--/div>
       <!--End of A.1.5-->
     </div>
     <!--End of A.1-->
@@ -176,6 +176,7 @@
       <DisplayClassesActive v-if="page == 'DisplayClassesActivePage'" />
       <DisplayClassesDuration v-if="page == 'DisplayClassesDurationPage'" />
       <OneHRDuration v-if="page == 'OneHRDurationPage'" />
+      <TwoHRDuration v-if="page == 'TwoHRDurationPage'" />
     </div>
   </div>
 </template>
@@ -184,6 +185,7 @@ import Loading from "./Loading.vue";
 import DisplayClassesActive from "./DisplayClassesActive.vue";
 import DisplayClassesDuration from "./DisplayClassesDuration.vue";
 import OneHRDuration from "./OneHRDuration.vue";
+import TwoHRDuration from "./TwoHRDuration.vue";
 export default {
   name: "DisplayClasses",
   components: {
@@ -191,6 +193,7 @@ export default {
     Loading,
     DisplayClassesDuration,
     OneHRDuration,
+    TwoHRDuration,
   },
   data: function () {
     return {
@@ -222,6 +225,9 @@ export default {
     },
     OneHRDurationMethod: function () {
       this.page = "OneHRDurationPage";
+    },
+    TwoHRDurationMethod: function () {
+      this.page = "TwoHRDurationPage";
     },
   },
 };

@@ -11,6 +11,7 @@
       </div>
     </div>
     <div v-if="classes">
+      </div>
       <div id="divscontainer">
         <div class="card" v-for="id in filteredClasses" v-bind:key="id">
           <img :src="id.link" />
@@ -39,7 +40,7 @@ import axios from "axios";
 const API =
   "https://3000-jollycurtisgit-danceplay-uwoheb8rqm1.ws-us30.gitpod.io/";
 export default {
-  name: "OneHRDuration",
+  name: "TwoHRDuration",
   data: function () {
     return {
       classes: "",
@@ -48,7 +49,7 @@ export default {
     };
   },
   created: async function () {
-    const response = await axios.get(API + "oneHR");
+    const response = await axios.get(API + "twoHR");
     this.classes = response.data;
     this.image = response.data.link;
   },
