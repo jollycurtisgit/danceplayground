@@ -1,5 +1,8 @@
 <template>
   <div id="removeMargin">
+    <!--div id="forAdvertisement" v-if="!handleSubmit">
+      <h1>Loading API...for users</h1>
+    </div-->
     <div id="forAdvertisement">
       <Background />
       <!---firstform--->
@@ -28,13 +31,12 @@
               placeholder="Last Name"
             />
           </div>
-
           <div class="mb-3">
             <label for="inputEmail4" class="form-label">Email</label>
             <input
               type="email"
-              class="form-control"
               v-model="email"
+              class="form-control"
               id="inputEmail4"
             />
             <div class="valid-feedback">Looks good!</div>
@@ -82,7 +84,9 @@
 import axios from "axios";
 import Background from "./Background.vue";
 //import swal from "sweetalert2/dist/sweetalert2.js";
-const API = "https://herokudance.herokuapp.com/";
+//const API = "https://herokudance.herokuapp.com/";
+const API =
+  "https://3000-jollycurtisgit-danceplay-8shn39roqwe.ws-us30.gitpod.io/";
 export default {
   name: "SignUp",
   components: {
@@ -90,16 +94,19 @@ export default {
   },
   data: function () {
     return {
+      users: "",
       fName: "",
       lName: "",
       email: "",
       password: "",
       password_confirm: "",
+      wordSearch: "",
+      users: "",
     };
   },
   methods: {
     async handleSubmit() {
-      const response = await axios.post(API + "SignUp", {
+      const response = await axios.post(API + "SignUpTry", {
         fName: this.fName,
         lName: this.lName,
         email: this.email,
@@ -117,6 +124,7 @@ export default {
         "info"
       );
     },
+    /**End of Terms*/
   },
 };
 </script>

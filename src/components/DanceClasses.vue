@@ -157,9 +157,11 @@ export default {
   methods: {
     goToUpdate: function (classId) {
       swal(
+        "Gentle reminder:",
         "Please be patient, wait for: " +
           classId +
-          "'s info to display before making changes.."
+          "'s info to display before making any changes..",
+        "info"
       );
       //to diplay the update area component
       //send the classId to the form

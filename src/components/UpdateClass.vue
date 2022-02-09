@@ -251,9 +251,6 @@ export default {
     this.email = response.data.email;
     this.password = response.data.password;
     this.image = response.data.link;
-    alert("Nasa UpdateClass na ako: " + this.classId);
-    alert(response);
-    console.log(response.data + "UpdateClass na to ah");
   },
   methods: {
     // async updateClassFunction(classId) {
@@ -272,7 +269,7 @@ export default {
         location: this.location,
         schedule: this.schedule,
         duration: this.duration,
-        complexity: [this.complexity],
+        complexity: this.complexity,
         best_for: this.best_for,
         category: this.category,
         price: this.price,
