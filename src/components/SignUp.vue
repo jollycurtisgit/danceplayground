@@ -106,16 +106,24 @@ export default {
   },
   methods: {
     async handleSubmit() {
-      const response = await axios.post(API + "SignUpTry", {
-        fName: this.fName,
-        lName: this.lName,
-        email: this.email,
-        password: this.password,
-        password_confirm: this.password_confirm,
-      });
-      swal("Welcome!", "You may now login!", "success");
-      this.$router.push("Login2");
-      console.log(response);
+      try {
+        const response = await axios.post(API + "SignUpTry", {
+          fName: this.fName,
+          lName: this.lName,
+          email: this.email,
+          password: this.password,
+          password_confirm: this.password_confirm,
+        });
+        swal("Welcome!", "You may now login!", "success");
+        this.$router.push("Login2");
+        console.log(response);
+      } catch (err) {
+        swal(
+          "Oh No!!!",
+          "Hey there's a duplicate email on our database, you prolly created one before. Please change your email address.",
+          "error"
+        );
+      }
     },
     terms() {
       swal(
