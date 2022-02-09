@@ -84,7 +84,6 @@ export default {
         email: this.email,
         password: this.password,
       });
-      alert(response);
       localStorage.setItem("token", response.data.token);
       swal("Welcome!", "You are now inside your account!", "success");
       /*this.$router.push("LoggedIn");*/

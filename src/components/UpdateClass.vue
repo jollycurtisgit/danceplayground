@@ -193,7 +193,7 @@
       </div>
       <br />
       <div>
-        <label class="form-label">Email</label>
+        <label class="form-label">Contact Me (Email)</label>
         <input type="text" v-model="email" class="form-control" />
       </div>
       <br />

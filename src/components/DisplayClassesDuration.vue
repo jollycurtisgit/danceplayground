@@ -160,12 +160,13 @@ h6 {
 .card {
   background-color: white;
   border-radius: 20px;
-  height: 360px;
+  height: 410px;
   width: 250px;
   margin: 7px;
   left: 80px;
   border: 5px;
-  border: 2px solid yellow;
+  color: indigo;
+  border: 2px solid indigo;
 }
 .card-body {
   background-color: white;

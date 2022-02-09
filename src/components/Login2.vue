@@ -75,7 +75,6 @@ export default {
         email: this.email,
         password: this.password,
       });
-      console.log(response);
       localStorage.setItem("token", response.data.token);
       /*this.$emit("welcome-user");*/
       swal("Welcome!", "You are now inside your account!", "success");

@@ -46,18 +46,22 @@
         >
           2 hours
         </button>
+      </div>
+      <!--A.1.3-->
+      <div id="three">
         <button type="button" class="btn btn-warning" v-on:click="Refresh">
           🔄 (Refresh)
         </button>
-      </div>
-      <!--A.1.3-->
-      <!--div id="three">
-        <label class="form-label"
+        <label
+          >Please wait for 30 - 60 seconds before clicking another button, thank
+          you</label
+        >
+        <!--label class="form-label"
           >Is the class comprehensive or limited to a specific level:</label
         >
-        <br /-->
-      <!--A.1.3.option 1-->
-      <!--div class="form-check form-check-inline">
+        <br />
+        <!--A.1.3.option 1-->
+        <!--div class="form-check form-check-inline">
           <input
             class="form-check-input"
             type="checkbox"
@@ -67,8 +71,8 @@
           />
           <label class="form-check-label" for="inlineCheckbox1">Beginner</label>
         </div-->
-      <!--A.1.3.option 2-->
-      <!--div class="form-check form-check-inline">
+        <!--A.1.3.option 2-->
+        <!--div class="form-check form-check-inline">
           <input
             class="form-check-input"
             type="checkbox"
@@ -80,8 +84,8 @@
             >Intermediate</label
           >
         </div-->
-      <!--A.1.3.option 3-->
-      <!--div class="form-check form-check-inline">
+        <!--A.1.3.option 3-->
+        <!--div class="form-check form-check-inline">
           <input
             class="form-check-input"
             type="checkbox"
@@ -91,8 +95,8 @@
           />
           <label class="form-check-label" for="inlineCheckbox2">Advanced</label>
         </div-->
-      <!--End of A.1.3.option 3-->
-      <!--/div-->
+        <!--End of A.1.3.option 3-->
+      </div>
       <!--End of A.1.3-->
       <!--A.1.4-->
       <!--div>
@@ -317,10 +321,10 @@ button {
   margin: 10px, 10px, 10px, 10px;
 }
 
-.card {
+.cardBig {
   background-color: white;
   border-radius: 20px;
-  height: 360px;
+  height: 410px;
   width: 250px;
   margin: 7px;
   left: 80px;

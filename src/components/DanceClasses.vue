@@ -179,9 +179,7 @@ export default {
       this.page = "View_1";
     },
     deleteClass: async function (classId) {
-      alert(
-        "Una: this will go to deleteclass pero punta muna LoggedIn: " + classId
-      );
+      swal("Hey!", "You are deleting: " + classId, "warning");
       //to diplay the update area component
       //send the classId to the form
       this.$emit("delete-class-function", classId);

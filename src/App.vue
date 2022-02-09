@@ -30,7 +30,7 @@
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Members</a>
+              <a class="nav-link disabled" href="#">Members</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" v-on:click="gotoSignUp" href="#"
@@ -50,8 +50,8 @@
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li>
-                  <a class="dropdown-item" href="#"
-                    >About Us Empty Don't Click</a
+                  <a class="dropdown-item" v-on:click="gettingStarted" href="#"
+                    >Getting Started</a
                   >
                 </li>
                 <li>
@@ -177,6 +177,11 @@ export default {
     },
     out: function () {
       this.page = "Login";
+    },
+    gettingStarted: function () {
+      swal(
+        "Hi welcome! This website aims to make people be aware of the available dance classes in our community. Our aim is to make our community a fun place to live by helping others make more money and others become more physically active."
+      );
     },
   },
 };

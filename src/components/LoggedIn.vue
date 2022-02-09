@@ -12,7 +12,7 @@
       >
         <!--A.1.I.1-->
         <a
-          class="nav-link active"
+          class="nav-link disabled"
           id="v-pills-home-tab"
           data-bs-toggle="pill"
           data-bs-target="#v-pills-home"
@@ -23,7 +23,7 @@
         >
         <!--A.1.I.2-->
         <a
-          class="nav-link"
+          class="nav-link disabled"
           id="v-pills-profile-tab"
           data-bs-toggle="pill"
           data-bs-target="#v-pills-profile"
@@ -46,7 +46,7 @@
         >
         <!--A.1.I.4-->
         <a
-          class="nav-link"
+          class="nav-link disabled"
           id="v-pills-eClasses-tab"
           data-bs-toggle="pill"
           data-bs-target="#v-pills-profile"
@@ -82,7 +82,7 @@
         >
         <!--A.1.I.7-->
         <a
-          class="nav-link"
+          class="nav-link disabled"
           id="v-pills-mList-tab"
           data-bs-toggle="pill"
           data-bs-target="#v-pills-mList"
@@ -94,7 +94,7 @@
         >
         <!--A.1.I.7-->
         <a
-          class="nav-link"
+          class="nav-link disabled"
           id="v-pills-messages-taaaaaaaab"
           data-bs-toggle="pill"
           data-bs-target="#v-pills-friends"
@@ -135,7 +135,7 @@
           id="v-pills-profile"
           aria-labelledby="v-pills-profile-tab"
         >
-          ...bjvjvjhcvhjcjcjchjcjhcjhcfjhcjc...bjvjvjhcvhjcjcjchjcjhcjhcfjhcjc...bjvjvjhcvhjcjcjchjcjhcjhcfjhcjc...bjvjvjhcvhjcjcjchjcjhcjhcfjhcjc...bjvjvjhcvhjcjcjchjcjhcjhcfjhcjc
+          <!--...bjvjvjhcvhjcjcjchjcjhcjhcfjhcjc...-->
         </div>
         <!--A.1.II.3-->
         <div
@@ -292,25 +292,15 @@ export default {
       console.log(classId);
       //this function aims to send the classId to my UpdateClass.vue
       this.classBeingEdited = classId;
-      alert("pangalawa (andito pa):" + this.classBeingEdited);
-      alert(
-        "pangatlo: this will go to updateclass: " + classId + "Horrraaaayyy!"
-      );
       this.page = "UpdateClasses";
       //this.$router.push("/UpdateClass");
-      alert(this.classBeingEdited);
     },
     deleteClassFunction: function (classId) {
-      console.log(classId);
+      swal("Hey!", "You sure you wanna delete this?", "error");
       //this function aims to send the classId to my UpdateClass.vue
       this.classBeingDeleted = classId;
-      alert("pangalawa (andito pa delete):" + this.classBeingDeleted);
-      alert(
-        "pangatlo: this will go to updateclass: " + classId + "Horrraaaayyy!"
-      );
       this.page = "DeleteClass";
       //this.$router.push("/UpdateClass");
-      alert("pang apat" + this.classBeingDeleted);
     },
     goBackToClasses: function () {
       this.page = "DanceClasses";
