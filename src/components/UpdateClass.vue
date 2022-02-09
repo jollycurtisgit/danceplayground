@@ -48,121 +48,126 @@
       </div>
       <br />
       <br />
-      <label class="form-label"
-        >Is the class comprehensive or limited to a specific level:</label
-      >
-      <br />
-      <!--1.1.D-->
-      <div class="form-check form-check-inline">
-        <input
-          class="form-check-input"
-          type="checkbox"
-          id="inlineCheckbox1"
-          v-model="complexity"
-          value="beginner"
-        />
-        <label class="form-check-label" for="inlineCheckbox1">Beginner</label>
-      </div>
-      <!--1.1.E-->
-      <div class="form-check form-check-inline">
-        <input
-          class="form-check-input"
-          type="checkbox"
-          id="inlineCheckbox2"
-          v-model="complexity"
-          value="intermediate"
-        />
-        <label class="form-check-label" for="inlineCheckbox2"
-          >Intermediate</label
+      <div>
+        <label class="form-label"
+          >Is the class comprehensive or limited to a specific level:</label
         >
-      </div>
-      <!--1.1.F-->
-      <div class="form-check form-check-inline">
-        <input
-          class="form-check-input"
-          type="checkbox"
-          id="inlineCheckbox3"
-          value="advanced"
-          v-model="complexity"
-        />
-        <label class="form-check-label" for="inlineCheckbox2">Advanced</label>
-      </div>
-      <br />
-      <br />
-      <label class="form-label">Best for: </label>
-      <br />
-      <!--1.1.G-->
-      <div class="form-check form-check-inline">
-        <input
-          class="form-check-input"
-          type="radio"
-          name="exampleRadios"
-          id="exampleRadios1"
-          value="solo"
-          v-model="best_for"
-        />
-        <label class="form-check-label" for="exampleRadios1"> Solo </label>
-      </div>
-      <!--1.1.H-->
-      <div class="form-check form-check-inline">
-        <input
-          class="form-check-input"
-          type="radio"
-          name="exampleRadios"
-          id="exampleRadios2"
-          v-model="best_for"
-          value="couples"
-        />
-        <label class="form-check-label" for="exampleRadios2"> Couples </label>
-      </div>
-
-      <br />
-      <br />
-      <!--end of radio buttons--->
-      <label class="form-label">Type of Dance:</label>
-      <br />
-      <!--1.2.A-->
-      <div class="form-check form-check-inline">
-        <input
-          class="form-check-input"
-          type="radio"
-          name="exampleRadios"
-          id="exampleRadios1"
-          value="modern"
-          v-model="category"
-        />
-        <label class="form-check-label" for="exampleRadios1"> Modern </label>
-      </div>
-      <!--1.2.B-->
-      <div class="form-check form-check-inline">
-        <input
-          class="form-check-input"
-          type="radio"
-          name="exampleRadios"
-          id="exampleRadios2"
-          value="not_so_modern"
-          v-model="category"
-        />
-        <label class="form-check-label" for="exampleRadios2">
-          Not-So-Modern
-        </label>
-      </div>
-      <!--1.2.C-->
-      <div class="form-check form-check-inline">
-        <input
-          class="form-check-input"
-          type="radio"
-          name="exampleRadios"
-          id="exampleRadios3"
-          value="traditional"
-          v-model="category"
-        />
-        <label class="form-check-label" for="exampleRadios3">
-          Traditional
-        </label>
+        <br />
+        <!--1.1.D-->
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            id="inlineCheckbox1"
+            v-model="complexity"
+            value="beginner"
+          />
+          <label class="form-check-label" for="inlineCheckbox1">Beginner</label>
+        </div>
+        <!--1.1.E-->
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            id="inlineCheckbox2"
+            v-model="complexity"
+            value="intermediate"
+          />
+          <label class="form-check-label" for="inlineCheckbox2"
+            >Intermediate</label
+          >
+        </div>
+        <!--1.1.F-->
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            id="inlineCheckbox3"
+            value="advanced"
+            v-model="complexity"
+          />
+          <label class="form-check-label" for="inlineCheckbox2">Advanced</label>
+        </div>
       </div>
       <br />
       <br />
+      <div>
+        <label class="form-label">Best for: </label>
+        <br />
+        <!--1.1.G-->
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="exampleRadios"
+            id="exampleRadios1"
+            value="solo"
+            v-model="best_for"
+          />
+          <label class="form-check-label" for="exampleRadios1"> Solo </label>
+        </div>
+        <!--1.1.H-->
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="exampleRadios"
+            id="exampleRadios2"
+            v-model="best_for"
+            value="couples"
+          />
+          <label class="form-check-label" for="exampleRadios2"> Couples </label>
+        </div>
+      </div>
+      <br />
+      <br />
+      <div>
+        <!--end of radio buttons--->
+        <label class="form-label">Type of Dance:</label>
+        <br />
+        <!--1.2.A-->
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="exampleRadios"
+            id="exampleRadios1"
+            value="modern"
+            v-model="category"
+          />
+          <label class="form-check-label" for="exampleRadios1"> Modern </label>
+        </div>
+        <!--1.2.B-->
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="exampleRadios"
+            id="exampleRadios2"
+            value="not_so_modern"
+            v-model="category"
+          />
+          <label class="form-check-label" for="exampleRadios2">
+            Not-So-Modern
+          </label>
+        </div>
+        <!--1.2.C-->
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="exampleRadios"
+            id="exampleRadios3"
+            value="traditional"
+            v-model="category"
+          />
+          <label class="form-check-label" for="exampleRadios3">
+            Traditional
+          </label>
+        </div>
+        <br />
+        <br />
+      </div>
       <!--1.2.D-->
       <div class="mb-3">
         <label class="form-label">Price per Session:</label>

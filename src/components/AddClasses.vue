@@ -85,33 +85,34 @@
       </div>
       <br />
       <br />
-      <label class="form-label">Best for: </label>
-      <br />
-      <!--1.1.G-->
-      <div class="form-check form-check-inline">
-        <input
-          class="form-check-input"
-          type="radio"
-          name="exampleRadios"
-          id="exampleRadios1"
-          value="solo"
-          v-model="best_for"
-        />
-        <label class="form-check-label" for="exampleRadios1"> Solo </label>
+      <div>
+        <label class="form-label">Best for: </label>
+        <br />
+        <!--1.1.G-->
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="exampleRadios"
+            id="exampleRadios1"
+            value="solo"
+            v-model="best_for"
+          />
+          <label class="form-check-label" for="exampleRadios1"> Solo </label>
+        </div>
+        <!--1.1.H-->
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="exampleRadios"
+            id="exampleRadios2"
+            v-model="best_for"
+            value="couples"
+          />
+          <label class="form-check-label" for="exampleRadios2"> Couples </label>
+        </div>
       </div>
-      <!--1.1.H-->
-      <div class="form-check form-check-inline">
-        <input
-          class="form-check-input"
-          type="radio"
-          name="exampleRadios"
-          id="exampleRadios2"
-          v-model="best_for"
-          value="couples"
-        />
-        <label class="form-check-label" for="exampleRadios2"> Couples </label>
-      </div>
-
       <br />
       <br />
       <!--end of radio buttons--->
