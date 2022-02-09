@@ -120,7 +120,7 @@ export default {
       } catch (err) {
         swal(
           "Oh No!!!",
-          "Hey there's a duplicate email on our database, you prolly created one before. Please change your email address.",
+          "There's a duplicate email address on our database, you prolly created one before. Please sign up with a new email address.",
           "error"
         );
       }
